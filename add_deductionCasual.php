@@ -1,0 +1,39 @@
+<?php
+include("db.php");
+$conn =  new mysqli("localhost","root","","payroll");
+
+?>
+
+<?php
+
+if(isset($_POST['submitd'])!="")
+{
+    $emp_id      = $_POST['emp_id'];
+    $d_date      = $_POST['d_date'];
+    $d_cause      = $_POST['d_cause'];
+    $d_amount      = $_POST['d_amount'];
+    $d_method     = $_POST['pay_method'];
+
+    $sql = $conn->query("INSERT into deductions(emp_id, d_date, d_cause, d_amount,d_method)VALUES('$emp_id','$d_date','$d_cause','$d_amount','$d_method')");
+
+    if($sql)
+    {
+        ?>
+        <script>
+            alert('Deduction had been successfully added.');
+            window.location.href='home_salaryCasual.php?page=regularAccount';
+        </script>
+        <?php
+    }
+
+    else
+    {
+        ?>
+        <script>
+            alert('Invalid.');
+            window.location.href='index.php';
+        </script>
+        <?php
+    }
+}
+?>
