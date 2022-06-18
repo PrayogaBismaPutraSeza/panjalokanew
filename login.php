@@ -54,6 +54,7 @@ if (isset($_POST['login'])) {
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <!--===============================================================================================-->
 </head>
 
@@ -79,8 +80,9 @@ if (isset($_POST['login'])) {
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
-                        <input class="input100" type="password" name="password" placeholder="Password">
+                        <input class="input100" type="password" name="password" placeholder="Password" id="password">
                         <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                        <div id="toggle" onclick="showHide();"></div>
                     </div>
 
                     <div class="form-group">
@@ -101,6 +103,20 @@ if (isset($_POST['login'])) {
         </div>
     </div>
 
+    <script type="text/javascript">
+        const password = document.getElementById('password');
+        const toggle = document.getElementById('toggle');
+
+        function showHide() {
+            if (password.type === 'password') {
+                password.setAttribute('type', 'text');
+                toggle.classList.add('hide')
+            } else {
+                password.setAttribute('type', 'password');
+                toggle.classList.remove('hide')
+            }
+        }
+    </script>
 
     <div id="dropDownSelect1"></div>
 
