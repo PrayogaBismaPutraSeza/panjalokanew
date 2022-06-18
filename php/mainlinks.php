@@ -1,8 +1,11 @@
+<link rel="stylesheet" href="css/style.css">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
 <!-- BOOTSTRAP STYLES-->
 <link href="css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLES-->
 <link href="css/font-awesome.css" rel="stylesheet" />
-   <!--CUSTOM BASIC STYLES-->
+<!--CUSTOM BASIC STYLES-->
 <link href="css/basic.css" rel="stylesheet" />
 <!--CUSTOM MAIN STYLES-->
 <link href="css/custom.css" rel="stylesheet" />
@@ -40,7 +43,7 @@
 <script src="assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
 <script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
 
-   <link href="assets/css/remark.css" rel="stylesheet">
-   <script src="assets/jquery/billCalculation.js" type="text/javascript"></script>
-   <script src="assets/js/ajax.js" type="text/javascript"></script>
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link href="assets/css/remark.css" rel="stylesheet">
+<script src="assets/jquery/billCalculation.js" type="text/javascript"></script>
+<script src="assets/js/ajax.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">

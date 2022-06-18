@@ -8,15 +8,13 @@ include("add_deductionRegular.php");
 <?php
 $query  = "SELECT * from overtime";
 $q = $conn->query($query);
-while($row = $q->fetch_assoc())
-{
+while ($row = $q->fetch_assoc()) {
     @$rate           = $row['rate'];
 }
 
 $query  = "SELECT * from salary";
 $q = $conn->query($query);
-while($row = $q->fetch_assoc())
-{
+while ($row = $q->fetch_assoc()) {
     @$emp_id           = $row['emp_id'];
     @$salary           = $row['salary_rate'];
 }
@@ -25,6 +23,7 @@ $netpay = 0;
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -38,17 +37,17 @@ $netpay = 0;
     <title></title>
 
     <script>
-        <!--
-        var ScrollMsg= "Payroll and Management System - "
-        var CharacterPosition=0;
-        function StartScrolling() {
-            document.title=ScrollMsg.substring(CharacterPosition,ScrollMsg.length)+
-                ScrollMsg.substring(0, CharacterPosition);
-            CharacterPosition++;
-            if(CharacterPosition > ScrollMsg.length) CharacterPosition=0;
-            window.setTimeout("StartScrolling()",150); }
-        StartScrolling();
-        // -->
+        // var ScrollMsg = "Payroll and Management System - "
+        // var CharacterPosition = 0;
+
+        // function StartScrolling() {
+        //     document.title = ScrollMsg.substring(CharacterPosition, ScrollMsg.length) +
+        //         ScrollMsg.substring(0, CharacterPosition);
+        //     CharacterPosition++;
+        //     if (CharacterPosition > ScrollMsg.length) CharacterPosition = 0;
+        //     window.setTimeout("StartScrolling()", 150);
+        // }
+        // StartScrolling();
     </script>
 
     <link href="assets/must.png" rel="shortcut icon">
@@ -63,289 +62,318 @@ $netpay = 0;
     <link rel="stylesheet" type="text/css" href="assets/css/dataTables.min.css">
 
 </head>
+
 <body>
 
-<div class="container">
-    <div class="masthead">
-        <h3>
-            <b><a href="index.php">Payroll and Management System</a></b>
-            <a data-toggle="modal" href="#colins" class="pull-right"><b>Admin</b></a>
-        </h3>
-        <nav>
-            <ul class="nav nav-justified">
-                <li class="active"><a href="home_company.php" >Regular</a></li>
-                <li><a href="home_employee.php" >Casula</a></li>
-                <li ><a href="home_salaryRegular.php">JOb Order</a></li>
-            </ul>
-        </nav>
-    </div>
+    <div class="container">
+        <div class="masthead">
+            <h3>
+                <b><a href="index.php">Payroll and Management System</a></b>
+                <a data-toggle="modal" href="#colins" class="pull-right"><b>Admin</b></a>
+            </h3>
+            <nav>
+                <ul class="nav nav-justified">
+                    <li class="active"><a href="home_company.php">Regular</a></li>
+                    <li><a href="home_employee.php">Casula</a></li>
+                    <li><a href="home_salaryRegular.php">JOb Order</a></li>
+                </ul>
+            </nav>
+        </div>
 
-    <br>
-    <div class="well bs-component">
-        <form class="form-horizontal">
-            <div class="alert alert-success" >
-                <i class="icon-calendar icon-large" ></i>
-
-
-                <?php
-                date_default_timezone_set("Asia/Jakarta");
-                echo  date("l, F d, Y") . "<br>";
-
-                ?>
-            </div>
-            <fieldset>
-                <button type="button" data-toggle="modal" data-target="#addSalary" class="btn btn-success">Set Salary</button>
-                <button type="button" data-toggle="modal" data-target="#overtime" class="btn btn-primary">Modify Overtime Rate</button>
-                <button type="button" data-toggle="modal" data-target="#salary" class="btn btn-info">Home</button>
+        <br>
+        <div class="well bs-component">
+            <form class="form-horizontal">
+                <div class="alert alert-success">
+                    <i class="icon-calendar icon-large"></i>
 
 
-                <p class="pull-right">Overtime rate per hour: <big><b><?php echo $rate; ?>.00</b></big></p><br>
-                <p class="pull-right">Salary rate: <big><b><?php echo $salary; ?>.00</b></big></p>
-                <p align="center"><big><b>Account</b></big></p>
-                <div class="table-responsive">
-                    <form method="post" action="" >
-                        <table class="table table-bordered table-hover table-condensed" id="myTable">
-                            <!-- <h3><b>Ordinance</b></h3> -->
-                            <thead>
-                            <tr class="info">
-                                <th><p align="center">ID</p></th>
-                                <th><p align="center">Name</p></th>
-                                <th><p align="center">Salary</p></th>
-                                <th><p align="center">Deduction</p></th>
-                                <th><p align="center">Advance</p></th>
-                                <th><p align="center">Bonus</p></th>
-                                <th><p align="center">Net Pay</p></th>
-                                <th><p align="center">Action</p></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            $query1  = "SELECT * from overtime";
-                            $q1 = $conn->query($query1);
-                            while($row1 = $q1->fetch_assoc())
-                            {
-                                $rate   = $row1['rate'];
-                            }
+                    <?php
+                    date_default_timezone_set("Asia/Jakarta");
+                    echo  date("l, F d, Y") . "<br>";
+
+                    ?>
+                </div>
+                <fieldset>
+                    <button type="button" data-toggle="modal" data-target="#addSalary" class="btn btn-success">Set Salary</button>
+                    <button type="button" data-toggle="modal" data-target="#overtime" class="btn btn-primary">Modify Overtime Rate</button>
+                    <button type="button" data-toggle="modal" data-target="#salary" class="btn btn-info">Home</button>
 
 
-                            $query2  = "SELECT * from employee where emp_type = 'regular'";
-                            $q2 = $conn->query($query2);
-                            while($row2 = $q2->fetch_assoc())
-                            {
+                    <p class="pull-right">Overtime rate per hour: <big><b><?php echo $rate; ?>.00</b></big></p><br>
+                    <p class="pull-right">Salary rate: <big><b><?php echo $salary; ?>.00</b></big></p>
+                    <p align="center"><big><b>Account</b></big></p>
+                    <div class="table-responsive">
+                        <form method="post" action="">
+                            <table class="table table-bordered table-hover table-condensed" id="myTable">
+                                <!-- <h3><b>Ordinance</b></h3> -->
+                                <thead>
+                                    <tr class="info">
+                                        <th>
+                                            <p align="center">ID</p>
+                                        </th>
+                                        <th>
+                                            <p align="center">Name</p>
+                                        </th>
+                                        <th>
+                                            <p align="center">Salary</p>
+                                        </th>
+                                        <th>
+                                            <p align="center">Deduction</p>
+                                        </th>
+                                        <th>
+                                            <p align="center">Advance</p>
+                                        </th>
+                                        <th>
+                                            <p align="center">Bonus</p>
+                                        </th>
+                                        <th>
+                                            <p align="center">Net Pay</p>
+                                        </th>
+                                        <th>
+                                            <p align="center">Action</p>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $query1  = "SELECT * from overtime";
+                                    $q1 = $conn->query($query1);
+                                    while ($row1 = $q1->fetch_assoc()) {
+                                        $rate   = $row1['rate'];
+                                    }
 
 
-                                $emp_id         = $row2['emp_id'];
-                                $lname           = $row2['lname'];
-                                $fname           = $row2['fname'];
+                                    $query2  = "SELECT * from employee where emp_type = 'regular'";
+                                    $q2 = $conn->query($query2);
+                                    while ($row2 = $q2->fetch_assoc()) {
 
 
-                                $query3  = "SELECT * from salary where emp_id = $emp_id";
-                                $q3 = $conn->query($query3);
-                                $row3 = $q3->fetch_assoc();
-
-                                $query4  = "SELECT d_amount from deductions where emp_id = $emp_id";
-                                $q4 = $conn->query($query4);
-                                $row4 = $q4->fetch_assoc();
-
-                                $salary_rate   = $row3['salary_rate'];
-
-                                $advance        = $row3['advance'];
-                                $bonus           = $row3['bonus'];
-
-                                $deduction       = $row4['d_amount'];
-                                $income   = $bonus + $salary_rate;
-                                $netpay   = $income - $deduction - $advance;
+                                        $emp_id         = $row2['emp_id'];
+                                        $lname           = $row2['lname'];
+                                        $fname           = $row2['fname'];
 
 
+                                        $query3  = "SELECT * from salary where emp_id = $emp_id";
+                                        $q3 = $conn->query($query3);
+                                        $row3 = $q3->fetch_assoc();
 
-                                ?>
-                                <tr>
-                                    <td align="center"><?php echo $emp_id?></td>
-                                    <td align="center"><?php echo $lname?>, <?php echo $fname?></td>
-                                    <td align="center"><?php echo $salary_rate?></td>
-                                    <td align="center"><big><b><?php echo $deduction?></b></big>.00</td>
-                                    <td align="center"><big><b><?php echo $advance?></b></big> hrs</td>
-                                    <td align="center"><big><b><?php echo $bonus?></b></big>.00</td>
-                                    <td align="center"><big><b><?php echo $netpay?></b></big>.00</td>
-                                    <td align="center">
+                                        $query4  = "SELECT d_amount from deductions where emp_id = $emp_id";
+                                        $q4 = $conn->query($query4);
+                                        $row4 = $q4->fetch_assoc();
 
-                                        <a class="btn btn-primary" href="edit_regularAccount.php?emp_id=<?php echo $row2["emp_id"]; ?>">Edit</a>
-                                        <a class="btn btn-danger" href="delete_salary.php?emp_id=<?php echo $row2["emp_id"]; ?>">Delete</a>
-                                    </td>
+                                        $salary_rate   = $row3['salary_rate'];
+
+                                        $advance        = $row3['advance'];
+                                        $bonus           = $row3['bonus'];
+
+                                        $deduction       = $row4['d_amount'];
+                                        $income   = $bonus + $salary_rate;
+                                        $netpay   = $income - $deduction - $advance;
+
+
+
+                                    ?>
+                                        <tr>
+                                            <td align="center"><?php echo $emp_id ?></td>
+                                            <td align="center"><?php echo $lname ?>, <?php echo $fname ?></td>
+                                            <td align="center"><?php echo $salary_rate ?></td>
+                                            <td align="center"><big><b><?php echo $deduction ?></b></big>.00</td>
+                                            <td align="center"><big><b><?php echo $advance ?></b></big> hrs</td>
+                                            <td align="center"><big><b><?php echo $bonus ?></b></big>.00</td>
+                                            <td align="center"><big><b><?php echo $netpay ?></b></big>.00</td>
+                                            <td align="center">
+
+                                                <a class="btn btn-primary" href="edit_regularAccount.php?emp_id=<?php echo $row2["emp_id"]; ?>">Edit</a>
+                                                <a class="btn btn-danger" href="delete_salary.php?emp_id=<?php echo $row2["emp_id"]; ?>">Delete</a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+
+                                <tr class="info">
+                                    <th>
+                                        <p align="center">Id</p>
+                                    </th>
+                                    <th>
+                                        <p align="center">Name</p>
+                                    </th>
+                                    <th>
+                                        <p align="center">Salary</p>
+                                    </th>
+                                    <th>
+                                        <p align="center">Deduction</p>
+                                    </th>
+                                    <th>
+                                        <p align="center">Advance</p>
+                                    </th>
+                                    <th>
+                                        <p align="center">Bonus</p>
+                                    </th>
+                                    <th>
+                                        <p align="center">Net Pay</p>
+                                    </th>
+                                    <th>
+                                        <p align="center">Action</p>
+                                    </th>
                                 </tr>
-                            <?php } ?>
-                            </tbody>
-
-                            <tr class="info">
-                                <th><p align="center">Id</p></th>
-                                <th><p align="center">Name</p></th>
-                                <th><p align="center">Salary</p></th>
-                                <th><p align="center">Deduction</p></th>
-                                <th><p align="center">Advance</p></th>
-                                <th><p align="center">Bonus</p></th>
-                                <th><p align="center">Net Pay</p></th>
-                                <th><p align="center">Action</p></th>
-                            </tr>
-                        </table>
-                    </form>
-                </div>
-            </fieldset>
-        </form>
-    </div>
-
-    <!-- this modal is for OVERTIME -->
-    <div class="modal fade" id="overtime" role="dialog">
-        <div class="modal-dialog modal-sm">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header" style="padding:20px 50px;">
-                    <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
-                    <h3 align="center">Enter the amount of <big><b>Overtime</b></big> rate per hour.</h3>
-                </div>
-                <div class="modal-body" style="padding:40px 50px;">
-
-                    <form class="form-horizontal" action="update_overtime.php" name="form" method="post">
-                        <div class="form-group">
-                            <input type="text" name="rate" class="form-control" value="<?php echo $rate; ?>" required="required">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="submit" name="submit" class="btn btn-success" value="Submit">
-                        </div>
-                    </form>
-
-                </div>
-            </div>
+                            </table>
+                        </form>
+                    </div>
+                </fieldset>
+            </form>
         </div>
-    </div>
 
-    <!-- this modal is for ADDING Salary -->
-    <div class="modal fade" id="addSalary" role="dialog">
-        <div class="modal-dialog">
+        <!-- this modal is for OVERTIME -->
+        <div class="modal fade" id="overtime" role="dialog">
+            <div class="modal-dialog modal-sm">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header" style="padding:20px 50px;">
-                    <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
-                    <h3 align="center"><b>Add Salary for and Employee</b></h3>
-                </div>
-                <div class="modal-body" style="padding:40px 50px;">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:20px 50px;">
+                        <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
+                        <h3 align="center">Enter the amount of <big><b>Overtime</b></big> rate per hour.</h3>
+                    </div>
+                    <div class="modal-body" style="padding:40px 50px;">
 
-                    <form class="form-horizontal" action="#" name="form" method="post">
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">ID</label>
-                            <div class="col-sm-8">
-                                <input type="text" name="emp_id" class="form-control" placeholder="Employee ID" required="required">
+                        <form class="form-horizontal" action="update_overtime.php" name="form" method="post">
+                            <div class="form-group">
+                                <input type="text" name="rate" class="form-control" value="<?php echo $rate; ?>" required="required">
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">Salary Rate</label>
-                            <div class="col-sm-8">
-                                <input type="text" name="salary_rate" class="form-control" placeholder="Enter Salary" required="required">
-                            </div>
-                        </div>
-
-
-
-
-
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label"></label>
-                            <div class="col-sm-8">
+                            <div class="form-group">
                                 <input type="submit" name="submit" class="btn btn-success" value="Submit">
-                                <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
                             </div>
-                        </div>
-                    </form>
+                        </form>
 
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- this modal is for SALARY -->
-    <div class="modal fade" id="salary" role="dialog">
-        <div class="modal-dialog modal-sm">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header" style="padding:20px 50px;">
-                    <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
-                    <h3 align="center">Enter the amount of <big><b>Salary</b></big> rate.</h3>
-                </div>
-                <div class="modal-body" style="padding:40px 50px;">
-
-                    <form class="form-horizontal" action="update_salary.php" name="form" method="post">
-                        <div class="form-group">
-                            <input type="text" name="emp_id" class="form-control" value="<?php echo $emp_id; ?>" required="required">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="salary_rate" class="form-control" value="<?php echo $salary; ?>" required="required">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="submit" name="submit" class="btn btn-success" value="Submit">
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- this modal is for my Colins -->
-    <div class="modal fade" id="colins" role="dialog">
-        <div class="modal-dialog modal-sm">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header" style="padding:20px 50px;">
-                    <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
-                    <h3 align="center">You are logged in as <b><?php echo $_SESSION['username']; ?></b></h3>
-                </div>
-                <div class="modal-body" style="padding:40px 50px;">
-                    <div align="center">
-                        <a href="logout.php" class="btn btn-block btn-danger">Logout</a>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- this modal is for ADDING Salary -->
+        <div class="modal fade" id="addSalary" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:20px 50px;">
+                        <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
+                        <h3 align="center"><b>Add Salary for and Employee</b></h3>
+                    </div>
+                    <div class="modal-body" style="padding:40px 50px;">
+
+                        <form class="form-horizontal" action="#" name="form" method="post">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">ID</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="emp_id" class="form-control" placeholder="Employee ID" required="required">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Salary Rate</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="salary_rate" class="form-control" placeholder="Enter Salary" required="required">
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label"></label>
+                                <div class="col-sm-8">
+                                    <input type="submit" name="submit" class="btn btn-success" value="Submit">
+                                    <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- this modal is for SALARY -->
+        <div class="modal fade" id="salary" role="dialog">
+            <div class="modal-dialog modal-sm">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:20px 50px;">
+                        <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
+                        <h3 align="center">Enter the amount of <big><b>Salary</b></big> rate.</h3>
+                    </div>
+                    <div class="modal-body" style="padding:40px 50px;">
+
+                        <form class="form-horizontal" action="update_salary.php" name="form" method="post">
+                            <div class="form-group">
+                                <input type="text" name="emp_id" class="form-control" value="<?php echo $emp_id; ?>" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="salary_rate" class="form-control" value="<?php echo $salary; ?>" required="required">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-success" value="Submit">
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- this modal is for my Colins -->
+        <div class="modal fade" id="colins" role="dialog">
+            <div class="modal-dialog modal-sm">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:20px 50px;">
+                        <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
+                        <h3 align="center">You are logged in as <b><?php echo $_SESSION['username']; ?></b></h3>
+                    </div>
+                    <div class="modal-body" style="padding:40px 50px;">
+                        <div align="center">
+                            <a href="logout.php" class="btn btn-block btn-danger">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-</div>
-
-<!-- Bootstrap core JavaScript
+    <!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- <script src="assets/js/docs.min.js"></script> -->
-<script src="assets/js/search.js"></script>
-<script type="text/javascript" charset="utf-8" language="javascript" src="assets/js/dataTables.min.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- <script src="assets/js/docs.min.js"></script> -->
+    <script src="assets/js/search.js"></script>
+    <script type="text/javascript" charset="utf-8" language="javascript" src="assets/js/dataTables.min.js"></script>
 
-<!-- FOR DataTable -->
-<script>
-    {
-        $(document).ready(function()
+    <!-- FOR DataTable -->
+    <script>
         {
-            $('#myTable').DataTable();
-        });
-    }
-</script>
+            $(document).ready(function() {
+                $('#myTable').DataTable();
+            });
+        }
+    </script>
 
-<!-- this function is for modal -->
-<script>
-    $(document).ready(function()
-    {
-        $("#myBtn").click(function()
-        {
-            $("#myModal").modal();
+    <!-- this function is for modal -->
+    <script>
+        $(document).ready(function() {
+            $("#myBtn").click(function() {
+                $("#myModal").modal();
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
+
 </html>
