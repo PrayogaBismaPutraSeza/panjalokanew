@@ -3,6 +3,10 @@
 </div>
 <!-- /. WRAPPER  -->
 
+<div id="footer">
+    Copyright © 2022 By <a href="https://www.polinema.ac.id/" target="_blank">Student of State Polythecnic of Malang</a>
+</div>
+
 </section>
 
 <script>
