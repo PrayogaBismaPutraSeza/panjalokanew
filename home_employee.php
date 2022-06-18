@@ -93,6 +93,7 @@ include("php/headerEmployee.php");
                       <td align="center"><a href="view_employee.php?emp_id=<?php echo $row["emp_id"]; ?>" title="Update"><?php echo $row['salary'] ?></a></td>
 
                       <td align="center">
+                        <a class="btn btn-warning" href="view_employee.php?emp_id=<?php echo $row["emp_id"]; ?>">Edit</a>
                         <a class="btn btn-danger" href="delete.php?emp_id=<?php echo $row["emp_id"]; ?>">Hapus</a>
                       </td>
                     </tr>
@@ -157,7 +158,7 @@ include("php/headerEmployee.php");
               </div>
 
               <div class="form-group">
-                <label class="col-sm-4 control-label">No Hp</label>
+                <label class="col-sm-4 control-label">Hp</label>
                 <div class="col-sm-8">
                   <input type="text" name="mobile" class="form-control" placeholder="Nomor Hp" required="required">
                 </div>
@@ -211,7 +212,7 @@ include("php/headerEmployee.php");
               <div class="form-group">
                 <label class="col-sm-4 control-label"></label>
                 <div class="col-sm-8">
-                  <input type="submit" name="submit" class="btn btn-success" value="Masukkan">
+                  <input type="submit" name="submit" class="btn btn-success" value="Tambahkan">
                   <input type="reset" name="" class="btn btn-danger" value="Kosongkan Form">
                 </div>
               </div>
