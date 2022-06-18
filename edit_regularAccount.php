@@ -8,121 +8,120 @@ include("add_deductionRegular.php");
 
 
 
-    <?php
-    $id=$_REQUEST['emp_id'];
+<?php
+$id = $_REQUEST['emp_id'];
 
-    global $d_amount;
+global $d_amount;
 
-      $query2  = "SELECT * from employee where emp_id = '".$id."'";
-    $q2 = $conn->query($query2);
-    while($row2 = $q2->fetch_assoc())
-      {
+$query2  = "SELECT * from employee where emp_id = '" . $id . "'";
+$q2 = $conn->query($query2);
+while ($row2 = $q2->fetch_assoc()) {
     include("calculations/regularCalculation.php");
 
 
 
-        ?>
-        <?php
-        include("php/headerSalary.php");
-        ?>
-                <div id="page-wrapper">
-                    <div id="page-inner">
+?>
+    <?php
+    include("php/headerSalary.php");
+    ?>
+    <div id="page-wrapper">
+        <div id="page-inner">
 
 
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="page-head-line">Salary of <?php echo ' '.$row2['fname']." ". $row2['lname'] ?></h1>
-                <h1 class="page-subhead-line">Welcome to <strong><?php echo ' '. $siteName ?></strong> Today is:
-                <i class="icon-calendar icon-large" ></i>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-head-line">Salary of <?php echo ' ' . $row2['fname'] . " " . $row2['lname'] ?></h1>
+                    <h1 class="page-subhead-line">Welcome to <strong><?php echo ' ' . $siteName ?></strong> Today is:
+                        <i class="icon-calendar icon-large"></i>
 
 
-                <?php
-                date_default_timezone_set("Asia/Dhaka");
-                echo  date(" l, F d, Y") . "<br>";
+                        <?php
+                        date_default_timezone_set("Asia/Dhaka");
+                        echo  date(" l, F d, Y") . "<br>";
 
-                ?>
-                 </h1>
+                        ?>
+                    </h1>
 
+                </div>
             </div>
-        </div>
 
-        <form class="form-horizontal" action="update_regularAccount.php" method="post" name="form">
+            <form class="form-horizontal" action="update_regularAccount.php" method="post" name="form">
 
 
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-4 bg-info">
-                        <input type="hidden" name="new" value="1" />
-                        <input name="id" type="hidden" value="<?php echo $id?>" />
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4 bg-info">
+                            <input type="hidden" name="new" value="1" />
+                            <input name="id" type="hidden" value="<?php echo $id ?>" />
 
-                        <br>
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">Salary  :</label>
-                            <div class="col-sm-3">
-                                <input type="text" name="salary" class="form-control" value="<?php echo $row2['salary'];?>" required="required">
+                            <br>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Salary :</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="salary" class="form-control" value="<?php echo $row2['salary']; ?>" required="required">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Advance :</label>
+                                <div class="col-sm-3">
+                                    <input type="readonly" name="advance" class="form-control" value="<?php echo $advanceSalary; ?>" required="required" readonly>
+                                </div>
+                                <div class="col-sm-5">
+                                    <span style="color:blue"><?php echo $message1 ?> </span><br>
+                                    <span style="color:red"><?php echo $message2 ?> </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Bonus :</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="bonus" class="form-control" value="<?php echo $row2['bonus']; ?>" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Deduction Amount:</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="totalDeduction" class="form-control" value="<?php echo $d_amount; ?>" required="required" readonly>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label class="col-sm-4 control-label">Net Pay :</label>
+                                <div class="col-sm-3">
+                                    <?php echo $netpay; ?>.00
+                                </div>
+                                <div class="col-sm-5">
+                                    <span style="color:#ff4d4d"><?php echo $message3; ?><span><br>
+                                            <span style="color:#809fff"><?php echo $message4; ?><span>
+                                </div>
+
+
+                            </div>
+                            <div class="form-group">
+
+                                <label class="col-sm-4 control-label">Total Paid :</label>
+                                <div class="col-sm-3">
+                                    <?php echo $salaryPaid; ?>
+                                </div>
+                                <div class="col-sm-5">
+                                    <?php echo "Paid in Cash: " . $paid_in_cash; ?><br>
+                                    <?php echo "Paid in Bkash: " . $paid_in_bkash; ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label"></label>
+                                <div class="col-sm-3">
+                                    <?php include("php/regularSubmitButton.php"); ?>
+                                    <a href="home_salaryRegular.php" class="btn btn-danger">Cancel</a>
+                                    <br><br>
+                                </div>
+                                <div class="col-sm-12">
+                                    <span style="color:#809fff"><?php echo $submitMessage; ?><span>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">Advance  :</label>
-                            <div class="col-sm-3">
-                                <input type="readonly" name="advance" class="form-control" value="<?php echo $advanceSalary;?>" required="required" readonly>
-                            </div>
-                            <div class="col-sm-5">
-                                <span style="color:blue"><?php echo $message1?>  </span><br>
-                                <span style="color:red"><?php echo $message2?>  </span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">Bonus  :</label>
-                            <div class="col-sm-3">
-                                <input type="text" name="bonus" class="form-control" value="<?php echo $row2['bonus'];?>" required="required">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">Deduction Amount:</label>
-                            <div class="col-sm-3">
-                                <input type="text" name="totalDeduction" class="form-control" value="<?php echo $d_amount;?>" required="required" readonly>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label class="col-sm-4 control-label">Net Pay  :</label>
-                            <div class="col-sm-3">
-                                <?php echo $netpay;?>.00
-                            </div>
-                            <div class="col-sm-5">
-                                <span style="color:#ff4d4d"><?php echo $message3;?><span><br>
-                                  <span style="color:#809fff"><?php echo $message4;?><span>
-                            </div>
-
-
-                        </div>
-                        <div class="form-group">
-
-                            <label class="col-sm-4 control-label">Total Paid  :</label>
-                            <div class="col-sm-3">
-                                <?php echo $salaryPaid;?>
-                            </div>
-                            <div class="col-sm-5">
-                                <?php echo "Paid in Cash: ".$paid_in_cash;?><br>
-                                <?php echo "Paid in Bkash: ".$paid_in_bkash;?>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-5 control-label"></label>
-                            <div class="col-sm-3">
-                                <?php include("php/regularSubmitButton.php"); ?>
-                                <a href="home_salaryRegular.php" class="btn btn-danger">Cancel</a>
-                                <br><br>
-                            </div>
-                            <div class="col-sm-12">
-                                <span style="color:#809fff"><?php echo $submitMessage;?><span>
-                            </div>
-                        </div>
-                    </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
@@ -133,68 +132,85 @@ include("add_deductionRegular.php");
                     </div>
 
                     <div class="well bs-component">
-                      <form class="form-horizontal">
-                        <fieldset>
+                        <form class="form-horizontal">
+                            <fieldset>
 
-                          <div class="table-responsive">
-                            <form method="post" action="" >
-                        <button type="button" data-toggle="modal" data-target="#addDeduction" class="btn btn-success">Add Deduction</button>
-                        <br><br>
-                        <table class="table table-bordered table-hover table-condensed" id="myTable">
-                            <!-- <h3><b>Ordinance</b></h3> -->
-                            <thead>
-                            <tr class="info">
-                                <th><p align="center">Date</p></th>
-                                <th><p align="center">Cause</p></th>
-                                <th><p align="center">Amount</p></th>
-                                <th><p align="center">Method</p></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            $id=$_REQUEST['emp_id'];
+                                <div class="table-responsive">
+                                    <form method="post" action="">
+                                        <button type="button" data-toggle="modal" data-target="#addDeduction" class="btn btn-success">Add Deduction</button>
+                                        <br><br>
+                                        <table class="table table-bordered table-hover table-condensed" id="myTable">
+                                            <!-- <h3><b>Ordinance</b></h3> -->
+                                            <thead>
+                                                <tr class="info">
+                                                    <th>
+                                                        <p align="center">Date</p>
+                                                    </th>
+                                                    <th>
+                                                        <p align="center">Cause</p>
+                                                    </th>
+                                                    <th>
+                                                        <p align="center">Amount</p>
+                                                    </th>
+                                                    <th>
+                                                        <p align="center">Method</p>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $id = $_REQUEST['emp_id'];
 
-                            $query5  = "SELECT * from deductions where emp_id = '$id'";
-                            $q5 = $conn->query($query5);
-                            while($row5 = $q5->fetch_assoc()) {
+                                                $query5  = "SELECT * from deductions where emp_id = '$id'";
+                                                $q5 = $conn->query($query5);
+                                                while ($row5 = $q5->fetch_assoc()) {
 
-                              date_default_timezone_set("Asia/Dhaka");
-                              $thisMonth =  date("m-Y");
-                              $dMonth = date('m-Y', strtotime($row5['d_date']));
-                              if($thisMonth == $dMonth){
-                                $d_date = $row5['d_date'];
-                                $d_Cause = $row5['d_cause'];
-                                $d_amount = $row5['d_amount'];
-                                $d_method = $row5['d_method'];
+                                                    date_default_timezone_set("Asia/Dhaka");
+                                                    $thisMonth =  date("m-Y");
+                                                    $dMonth = date('m-Y', strtotime($row5['d_date']));
+                                                    if ($thisMonth == $dMonth) {
+                                                        $d_date = $row5['d_date'];
+                                                        $d_Cause = $row5['d_cause'];
+                                                        $d_amount = $row5['d_amount'];
+                                                        $d_method = $row5['d_method'];
 
-                                ?>
-                                <tr>
-                                    <td align="center"><?php echo $d_date?></td>
-                                    <td align="center"><?php echo $d_Cause?></td>
-                                    <td align="center"><big><b><?php echo $d_amount?></b></big></td>
-                                    <td align="center"><big><b><?php echo $d_method?></b></big></td>
-                                </tr>
-                            <?php }} ?>
+                                                ?>
+                                                        <tr>
+                                                            <td align="center"><?php echo $d_date ?></td>
+                                                            <td align="center"><?php echo $d_Cause ?></td>
+                                                            <td align="center"><big><b><?php echo $d_amount ?></b></big></td>
+                                                            <td align="center"><big><b><?php echo $d_method ?></b></big></td>
+                                                        </tr>
+                                                <?php }
+                                                } ?>
 
-                            </tbody>
+                                            </tbody>
 
-                            <tr class="info">
-                                <th><p align="center">Date</p></th>
-                                <th><p align="center">Cause</p></th>
-                                <th><p align="center">Amount</p></th>
-                                <th><p align="center">Method</p></th>
-                            </tr>
-                        </table>
+                                            <tr class="info">
+                                                <th>
+                                                    <p align="center">Date</p>
+                                                </th>
+                                                <th>
+                                                    <p align="center">Cause</p>
+                                                </th>
+                                                <th>
+                                                    <p align="center">Amount</p>
+                                                </th>
+                                                <th>
+                                                    <p align="center">Method</p>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                </div>
+
                     </div>
-
-      </div>
-  </fieldset>
-</form>
-</div>
+                    </fieldset>
+            </form>
+        </div>
 
         </form>
-        <?php
-    }
+    <?php
+}
     ?>
 
     <!-- this modal is for ADDING Deduction -->
@@ -212,13 +228,13 @@ include("add_deductionRegular.php");
                     <form class="form-horizontal" action="add_deductionRegular.php" name="form" method="post">
                         <div class="form-group">
                             <?php
-                            $id=$_REQUEST['emp_id'];
+                            $id = $_REQUEST['emp_id'];
 
                             ?>
 
                             <label class="col-sm-4 control-label">ID :</label>
                             <div class="col-sm-8">
-                                <input type="text" name="emp_id" class="form-control"  value="<?php echo $id; ?>">
+                                <input type="text" name="emp_id" class="form-control" value="<?php echo $id; ?>">
                             </div>
                         </div>
 
@@ -247,7 +263,7 @@ include("add_deductionRegular.php");
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Payment method :</label>
                             <div class="col-sm-4">
-                                <input type="radio" name="pay_method"  value="cash">Cash &nbsp;&nbsp;
+                                <input type="radio" name="pay_method" value="cash">Cash &nbsp;&nbsp;
                                 <input type="radio" name="pay_method" value="bkash">Bkash
 
 
@@ -291,25 +307,23 @@ include("add_deductionRegular.php");
         </div>
     </div>
 
-<!-- this function is for datetimepiker -->
+    <!-- this function is for datetimepiker -->
     <script>
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
         });
     </script>
 
-<!-- this function is for modal -->
-<script>
-    $(document).ready(function()
-    {
-        $("#myBtn").click(function()
-        {
-            $("#myModal").modal();
+    <!-- this function is for modal -->
+    <script>
+        $(document).ready(function() {
+            $("#myBtn").click(function() {
+                $("#myModal").modal();
+            });
         });
-    });
-</script>
-</br>
-<?php
-include ("last.php");
+    </script>
+    </br>
+    <?php
+    include("last.php");
 
-?>
+    ?>

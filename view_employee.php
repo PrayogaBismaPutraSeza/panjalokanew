@@ -82,9 +82,9 @@ include("php/headerEmployee.php");
           <div class="col-sm-4">
             <select name="emp_type" class="form-control" required>
               <option value="<?php echo $row['emp_type']; ?>"><?php echo $row['emp_type']; ?></option>
-              <option value="Job Order">Job Order</option>
-              <option value="Regular">Regular</option>
-              <option value="Casual">Casual</option>
+              <option value="Tetap">Tetap</option>
+              <option value="Freelance">Freelance</option>
+              <option value="Kontrak">Kontrak</option>
             </select>
           </div>
         </div>
@@ -95,12 +95,13 @@ include("php/headerEmployee.php");
               <option value="<?php echo $row['division']; ?>"><?php echo $row['division']; ?></option>
               <option value="Admin">Admin</option>
               <option value="Human Resource">Human Resource</option>
-              <option value="Accounting">Accounting</option>
+              <option value="Gudang">Gudang</option>
               <option value="Engineering">Engineering</option>
-              <option value="MIS">MIS</option>
+              <option value="Produksi">Produksi</option>
               <option value="Supply">Supply</option>
               <option value="Maintenance">Maintenance</option>
               <option value="Control">Control</option>
+              <option value="Lainnya">Lainnya</option>
             </select>
           </div>
         </div><br><br>
