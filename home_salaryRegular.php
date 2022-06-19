@@ -64,7 +64,7 @@ include("php/header.php");
                     <p align="center">Gaji</p>
                   </th>
                   <th>
-                    <p align="center">Due</p>
+                    <p align="center">Kekurangan</p>
                   </th>
                   <th>
                     <p align="center">Pembayaran</p>
@@ -98,7 +98,7 @@ include("php/header.php");
                     <td align="center"><big><b><?php echo $advanceSalary ?></b></big> .00</td>
                     <td align="center"><big><b><?php echo $bonus ?></b></big>.00</td>
                     <td align="center">
-                      <a class="btn btn-success" href="edit_regularAccount.php?emp_id=<?php echo $row2["emp_id"]; ?>">Detail</a>
+                      <a class="btn btn-warning" href="edit_regularAccount.php?emp_id=<?php echo $row2["emp_id"]; ?>">Edit</a>
                     </td>
                   </tr>
                 <?php } ?>
@@ -115,7 +115,7 @@ include("php/header.php");
                   <p align="center">Gaji</p>
                 </th>
                 <th>
-                  <p align="center">Due</p>
+                  <p align="center">Kekurangan</p>
                 </th>
                 <th>
                   <p align="center">Pembayaran</p>
@@ -172,7 +172,7 @@ include("php/header.php");
       <div class="modal-content">
         <div class="modal-header" style="padding:20px 50px;">
           <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
-          <h3 align="center"><b>Tambah Bonus Pegawai</b></h3>
+          <h3 align="center"><b>Tambah Bonus Pegawai Tetap</b></h3>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
 

@@ -78,7 +78,7 @@ $netpay   = $income - $salaryPaid;
 $message3 = " Jika tidak dibayar uang ini akan tetap jatuh tempo pada bulan depan.";
 $message3 = "";
 if ($due > 0) {
-  $message4 = "* Had due $due.00 on $due_date";
+  $message4 = "* Gaji Kurang $due.00 Pada $due_date";
   $remark = $message4;
 } else {
   $message4 = "";
@@ -95,7 +95,7 @@ if ($d_amount <= 0) {
 }
 
 if ($advance > 0) {
-  $message1 = "* Gaji kurang $advance.00 pada tanggal $a_date";
+  $message1 = "* Gaji lebih $advance.00 pada $a_date";
   $remark = $message1;
 } else {
   $message1 = "";

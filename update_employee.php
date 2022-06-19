@@ -10,14 +10,15 @@ $mobile     = $_POST['mobile'];
 $gender     = $_POST['gender'];
 $division   = $_POST['division'];
 $emp_type   = $_POST['emp_type'];
+$salary_rate   = $_POST['salary'];
 
 
-$query  = "UPDATE product SET stok='$stok - $banyak'";
+$query  = "UPDATE employee SET emp_type='$emp_type', lname='$lname', fname='$fname', gender='$gender', division='$division' , mobileNo='$mobile', salary = '$salary_rate' WHERE emp_id='$id'";
 $sql = $conn->query($query);
 if ($sql) {
 ?>
   <script>
-    alert('Pegawai berhasil di ubah.');
+    alert('Pegawai berhasil di update.');
     window.location.href = 'home_employee.php';
   </script>
 <?php

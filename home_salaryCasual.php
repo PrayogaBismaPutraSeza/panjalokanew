@@ -39,7 +39,7 @@ include("php/header.php");
     <div class="row">
         <div class="col-md-12">
             <h1 class="page-head-line">Gaji Pegawai Freelance</h1>
-            <h1 class="page-subhead-line">Selamat Datang di<strong><?php echo ' ' . $siteName ?></strong>
+            <h1 class="page-subhead-line">Selamat Datang di Sistem ERP<strong><?php echo ' ' . $siteName ?></strong>
                 <i class="icon-calendar icon-large"></i>
 
 
@@ -69,28 +69,28 @@ include("php/header.php");
                                         <p align="center">ID</p>
                                     </th>
                                     <th>
-                                        <p align="center">Name</p>
+                                        <p align="center">Nama</p>
                                     </th>
                                     <th>
-                                        <p align="center">Salary rate</p>
+                                        <p align="center">Gaji</p>
                                     </th>
                                     <th>
-                                        <p align="center">Works</p>
+                                        <p align="center">Hari Kerja</p>
                                     </th>
                                     <th>
-                                        <p align="center">Due</p>
+                                        <p align="center">Kekurangan</p>
                                     </th>
                                     <th>
-                                        <p align="center">Deduction</p>
+                                        <p align="center">Pembayaran</p>
                                     </th>
                                     <th>
-                                        <p align="center">Advance</p>
+                                        <p align="center">Kelebihan</p>
                                     </th>
                                     <th>
                                         <p align="center">Bonus</p>
                                     </th>
                                     <th>
-                                        <p align="center">Action</p>
+                                        <p align="center">Aksi</p>
                                     </th>
                                 </tr>
                             </thead>
@@ -103,7 +103,7 @@ include("php/header.php");
 
 
 
-                                $query2  = "SELECT * from employee where emp_type = 'Casual'";
+                                $query2  = "SELECT * from employee where emp_type = 'Freelance'";
                                 $q2 = $conn->query($query2);
                                 while ($row2 = $q2->fetch_assoc()) {
 
@@ -113,16 +113,15 @@ include("php/header.php");
                                 ?>
                                     <tr>
                                         <td align="center"><?php echo $emp_id ?></td>
-                                        <td align="center"><?php echo $lname ?>, <?php echo $fname ?></td>
-                                        <td align="center"><big><b><?php echo $salary_rate ?></b></big>.00/day</td>
-                                        <td align="center"><big><b><?php echo $days ?></b></big> days</td>
+                                        <td align="center"><b><?php echo $fname ?>, <?php echo $lname ?></b></td>
+                                        <td align="center"><big><b><?php echo $salary_rate ?></b></big>.00/Hari</td>
+                                        <td align="center"><big><b><?php echo $days ?></b></big> Hari</td>
                                         <td align="center"><big><b><?php echo $due ?></b></big> .00</td>
                                         <td align="center"><big><b><?php echo $deduction ?></b></big>.00</td>
                                         <td align="center"><big><b><?php echo $advance ?></b></big> .00</td>
                                         <td align="center"><big><b><?php echo $bonus ?></b></big>.00</td>
                                         <td align="center">
-                                            <a class="btn btn-warning" href="edit_casualAccount.php?emp_id=<?php echo $row2["emp_id"]; ?>">Modify</a>
-                                            <a class="btn btn-danger" href="delete_salary.php?emp_id=<?php echo $row2["emp_id"]; ?>">Delete</a>
+                                            <a class="btn btn-warning" href="edit_casualAccount.php?emp_id=<?php echo $row2["emp_id"]; ?>">Edit</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -133,28 +132,28 @@ include("php/header.php");
                                     <p align="center">ID</p>
                                 </th>
                                 <th>
-                                    <p align="center">Name</p>
+                                    <p align="center">Nama</p>
                                 </th>
                                 <th>
-                                    <p align="center">Salary rate</p>
+                                    <p align="center">Gaji</p>
                                 </th>
                                 <th>
-                                    <p align="center">Works</p>
+                                    <p align="center">Hari Kerja</p>
                                 </th>
                                 <th>
-                                    <p align="center">Due</p>
+                                    <p align="center">Kekurangan</p>
                                 </th>
                                 <th>
-                                    <p align="center">Deduction</p>
+                                    <p align="center">Pembayaran</p>
                                 </th>
                                 <th>
-                                    <p align="center">Advance</p>
+                                    <p align="center">Kelebihan</p>
                                 </th>
                                 <th>
                                     <p align="center">Bonus</p>
                                 </th>
                                 <th>
-                                    <p align="center">Action</p>
+                                    <p align="center">Aksi</p>
                                 </th>
                             </tr>
                         </table>
@@ -173,19 +172,19 @@ include("php/header.php");
             <div class="modal-content">
                 <div class="modal-header" style="padding:20px 50px;">
                     <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
-                    <h3 align="center"><b>Add Salary for and Employee</b></h3>
+                    <h3 align="center"><b>Tambahkan Bonus Pegawai Freelance</b></h3>
                 </div>
                 <div class="modal-body" style="padding:40px 50px;">
 
                     <form class="form-horizontal" action="#" name="form" method="post">
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">Company :</label>
+                            <label class="col-sm-4 control-label">Pegawai :</label>
                             <div class="col-sm-8">
                                 <select class="form-control" id="emp_id" style=" height:35px;" name="emp_id" onchange="myFunction(this.value)">
-                                    <option value=''>------- Select --------</option>
-                                    <option value='all'>All Casual Employee</option>
+                                    <option value=''>------- Pilih --------</option>
+                                    <option value='all'>Semua Pegawai Freelance</option>
                                     <?php
-                                    $query1  = "SELECT emp_id, fname,lname from employee where emp_type='Casual'";
+                                    $query1  = "SELECT emp_id, fname,lname from employee where emp_type='Freelance'";
                                     $q1 = $conn->query($query1);
                                     while ($row1 = $q1->fetch_assoc()) {
                                     ?>
@@ -198,7 +197,7 @@ include("php/header.php");
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Bonus</label>
                             <div class="col-sm-8">
-                                <input type="text" name="salary_rate" class="form-control" placeholder="Enter Bonus Amount" required="required">
+                                <input type="text" name="salary_rate" class="form-control" placeholder="Masukkan Jumlah Bonus" required="required">
                                 <input type="hidden" name="salary_type" value="2" class="form-control" placeholder="Enter Salary" required="required">
 
                             </div>
@@ -211,8 +210,8 @@ include("php/header.php");
                         <div class="form-group">
                             <label class="col-sm-4 control-label"></label>
                             <div class="col-sm-8">
-                                <input type="submit" name="submit" class="btn btn-success" value="Submit">
-                                <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
+                                <input type="submit" name="submit" class="btn btn-success" value="Tambahkan">
+                                <input type="reset" name="" class="btn btn-danger" value="Kosongkan Form">
                             </div>
                         </div>
                     </form>

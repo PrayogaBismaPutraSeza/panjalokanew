@@ -156,8 +156,8 @@ include("php/header.php");
             <div class="form-group">
               <label class="col-sm-4 control-label">Metode Pembayaran :</label>
               <div class="col-sm-4">
-                <input type="radio" name="method" value="cash">Tunai &nbsp;&nbsp;
-                <input type="radio" name="method" value="bkash">Transfer
+                <input type="radio" name="method" value="cash"> Tunai &nbsp;&nbsp;
+                <input type="radio" name="method" value="bkash"> Transfer
 
 
               </div>
@@ -166,7 +166,7 @@ include("php/header.php");
             <div class="form-group">
               <label class="col-sm-4 control-label"></label>
               <div class="col-sm-8">
-                <input type="submit" name="submit" class="btn btn-success" value="Submit">
+                <input type="submit" name="submit" class="btn btn-success" value="Tambahkan">
                 <input type="reset" name="" class="btn btn-danger" value="Kosongkan Form">
               </div>
             </div>

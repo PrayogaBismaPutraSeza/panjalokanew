@@ -20,14 +20,14 @@ include("php/header.php");
 
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-head-line">Salary of <?php echo ' ' . $row2['fname'] . " " . $row2['lname'] ?></h1>
-                <h1 class="page-subhead-line">Welcome to <strong><?php echo ' ' . $siteName ?></strong> Today is:
+                <h1 class="page-head-line">Gaji<?php echo ' ' . $row2['fname'] . " " . $row2['lname'] ?></h1>
+                <h1 class="page-subhead-line">Selamat Datang di Sistem ERP<strong><?php echo ' ' . $siteName ?></strong>
                     <i class="icon-calendar icon-large"></i>
 
 
                     <?php
-                    date_default_timezone_set("Asia/Dhaka");
-                    echo  date(" l, F d, Y") . "<br>";
+                    date_default_timezone_set("Asia/Jakarta");
+                    echo  date(" l, F d Y") . "<br>";
 
                     ?>
                 </h1>
@@ -45,26 +45,26 @@ include("php/header.php");
                         <input name="id" type="hidden" value="<?php echo $id; ?>" />
                         <br><br>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Salary Rate :</label>
+                            <label class="col-sm-3 control-label">Gaji :</label>
                             <div class="col-sm-4">
                                 <input type="text" name="salary" class="form-control" value="<?php echo $salary_rate; ?>" required="required">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Working Days :</label>
+                            <label class="col-sm-3 control-label">Hari Kerja :</label>
                             <div class="col-sm-4">
                                 <input type="text" name="days" class="form-control" value="<?php echo $days; ?>" required="required">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Salary :</label>
+                        <!-- <div class="form-group">
+                            <label class="col-sm-3 control-label">Gaji :</label>
                             <div class="col-sm-4">
                                 <input type="text" name="tsalary" class="form-control" value="<?php echo $salary; ?>" required="required">
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Advance :</label>
+                            <label class="col-sm-3 control-label">Kelebihan :</label>
                             <div class="col-sm-4">
                                 <input type="readonly" name="advance" class="form-control" value="<?php echo $advanceSalary; ?>" required="required">
                             </div>
@@ -80,7 +80,7 @@ include("php/header.php");
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Deduction Amount:</label>
+                            <label class="col-sm-3 control-label">Jumlah Pembayaran:</label>
                             <div class="col-sm-4">
                                 <input type="text" name="totalDeduction" class="form-control" value="<?php echo $d_amount; ?>" required="required">
                             </div>
@@ -90,7 +90,7 @@ include("php/header.php");
 
                         <div class="form-group">
 
-                            <label class="col-sm-3 control-label">Net Pay :</label>
+                            <label class="col-sm-3 control-label">Yang harus dibayar :</label>
                             <div class="col-sm-4">
                                 <?php echo $netpay; ?>.00
                             </div>
@@ -101,13 +101,13 @@ include("php/header.php");
                         </div>
                         <div class="form-group">
 
-                            <label class="col-sm-3 control-label">Total Paid :</label>
+                            <label class="col-sm-3 control-label">Total Pembayaran :</label>
                             <div class="col-sm-4">
                                 <?php echo $salaryPaid; ?>
                             </div>
                             <div class="col-sm-5">
-                                <?php echo "Paid in Cash: " . $paid_in_cash; ?><br>
-                                <?php echo "Paid in Bkash: " . $paid_in_bkash; ?>
+                                <?php echo "Tunai : " . $paid_in_cash; ?><br>
+                                <?php echo "Transfer : " . $paid_in_bkash; ?>
                             </div>
                         </div>
                         <div class="form-group">
@@ -132,7 +132,7 @@ include("php/header.php");
                                     <thead>
                                         <tr class="info">
                                             <th>
-                                                <p align="center">Dates</p>
+                                                <p align="center">Tanggal</p>
                                             </th>
                                         </tr>
                                     </thead>
@@ -169,7 +169,7 @@ include("php/header.php");
 
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-subhead-line">Desuction List:</strong>
+                    <h1 class="page-subhead-line">Daftar Pembayaran:</strong>
 
 
                 </div>
@@ -181,9 +181,9 @@ include("php/header.php");
 
                         <div class="table-responsive">
                             <form method="post" action="">
-                                <button type="button" data-toggle="modal" data-target="#addDeduction" class="btn btn-success">Add Deduction</button>
+                                <button type="button" data-toggle="modal" data-target="#addDeduction" class="btn btn-success">Tambah Pembayaran</button>
 
-                                <button type="button" data-toggle="modal" data-target="#addDates" class="btn btn-success">Add Working Dates</button>
+                                <button type="button" data-toggle="modal" data-target="#addDates" class="btn btn-success">Tambah Hari Kerja</button>
                                 </br></br>
 
                                 <table class="table table-hover " id="myTable1">
@@ -191,16 +191,13 @@ include("php/header.php");
                                     <thead>
                                         <tr class="info">
                                             <th>
-                                                <p align="center">Date</p>
+                                                <p align="center">Tanggal</p>
                                             </th>
                                             <th>
-                                                <p align="center">Cause</p>
+                                                <p align="center">Detail</p>
                                             </th>
                                             <th>
-                                                <p align="center">Amount</p>
-                                            </th>
-                                            <th>
-                                                <p align="center">Action</p>
+                                                <p align="center">Jumlah</p>
                                             </th>
                                         </tr>
                                     </thead>
@@ -225,9 +222,6 @@ include("php/header.php");
                                                 <td align="center"><?php echo $d_Cause ?></td>
                                                 <td align="center"><big><b><?php echo $d_amount ?></b></big>.00</td>
                                                 <td align="center">
-
-                                                    <a class="btn btn-primary" href="edit_regularAccount.php?emp_id=<?php echo $row2["emp_id"]; ?>">Edit</a>
-                                                    <a class="btn btn-danger" href="delete_salary.php?emp_id=<?php echo $row2["emp_id"]; ?>">Delete</a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -236,16 +230,13 @@ include("php/header.php");
 
                                     <tr class="info">
                                         <th>
-                                            <p align="center">Date</p>
+                                            <p align="center">Tanggal</p>
                                         </th>
                                         <th>
-                                            <p align="center">Cause</p>
+                                            <p align="center">Detail</p>
                                         </th>
                                         <th>
-                                            <p align="center">Amount</p>
-                                        </th>
-                                        <th>
-                                            <p align="center">Action</p>
+                                            <p align="center">Jumlah</p>
                                         </th>
                                     </tr>
                                 </table>
@@ -270,7 +261,7 @@ include("php/header.php");
         <div class="modal-content">
             <div class="modal-header" style="padding:20px 50px;">
                 <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
-                <h3 align="center"><b>Add Deduction for an Employee</b></h3>
+                <h3 align="center"><b>Tambahkan Pembayaran</b></h3>
             </div>
             <div class="modal-body" style="padding:40px 50px;">
 
@@ -299,22 +290,22 @@ include("php/header.php");
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-4 control-label">Cause :</label>
+                        <label class="col-sm-4 control-label">Detail :</label>
                         <div class="col-sm-8">
-                            <input type="text" name="d_cause" class="form-control" placeholder="Enter Deduction Cause" required="required">
+                            <input type="text" name="d_cause" class="form-control" placeholder="Masukkan alasan pembayaran" required="required">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label">Amount :</label>
+                        <label class="col-sm-4 control-label">Jumlah :</label>
                         <div class="col-sm-8">
-                            <input type="text" name="d_amount" class="form-control" placeholder="Enter Amount" required="required">
+                            <input type="text" name="d_amount" class="form-control" placeholder="Masukkan Jumlah" required="required">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label">Payment method :</label>
+                        <label class="col-sm-4 control-label">Metode Pembayaran :</label>
                         <div class="col-sm-4">
-                            <input type="radio" name="pay_method" value="cash">Cash &nbsp;&nbsp;
-                            <input type="radio" name="pay_method" value="bkash">Bkash
+                            <input type="radio" name="pay_method" value="cash"> Tunai &nbsp;&nbsp;
+                            <input type="radio" name="pay_method" value="bkash"> Transfer
 
 
                         </div>
@@ -326,8 +317,8 @@ include("php/header.php");
                     <div class="form-group">
                         <label class="col-sm-4 control-label"></label>
                         <div class="col-sm-8">
-                            <input type="submit" name="submitd" class="btn btn-success" value="Submit">
-                            <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
+                            <input type="submit" name="submitd" class="btn btn-success" value="Tambahkan">
+                            <input type="reset" name="" class="btn btn-danger" value="Kosongkan Form">
                         </div>
                     </div>
                 </form>
@@ -346,7 +337,7 @@ include("php/header.php");
         <div class="modal-content">
             <div class="modal-header" style="padding:20px 50px;">
                 <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
-                <h3 align="center"><b>Add Working Date for an Employee</b></h3>
+                <h3 align="center"><b>Tambahkan Hari Kerja</b></h3>
             </div>
             <div class="modal-body" style="padding:40px 50px;">
 
@@ -363,7 +354,7 @@ include("php/header.php");
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label">Date :</label>
+                        <label class="col-sm-4 control-label">Tanggal :</label>
                         <div class="col-sm-8">
                             <input class="form-control" id="datepicker1" name="w_date" type="text" required="required" />
                             <script>
@@ -378,8 +369,8 @@ include("php/header.php");
                     <div class="form-group">
                         <label class="col-sm-4 control-label"></label>
                         <div class="col-sm-8">
-                            <input type="submit" name="submit" class="btn btn-success" value="Submit">
-                            <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
+                            <input type="submit" name="submit" class="btn btn-success" value="Tambahkan">
+                            <input type="reset" name="" class="btn btn-danger" value="Kosongkan Form">
                         </div>
                     </div>
                 </form>

@@ -16,7 +16,7 @@ while ($row4 = $q4->fetch_assoc()) {
 if (!$idFound) {
   $day =  date("d");
   if ($day == "28" || $day == "29" || $day == "30" || $day == "31") {
-    $submitMessage = "Pesan: Anda hanya dapat melakukan pembayaran gaji sekali dalam sebulan.";
+    $submitMessage = "Pesan: Anda hanya dapat melakukan submit gaji sekali dalam sebulan.";
 ?>
     <input type="hidden" name="netpay" value="<?php echo $netpay; ?>">
     <input type="hidden" name="new_advance" value="<?php echo $advanceSalary; ?>">

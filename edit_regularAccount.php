@@ -134,7 +134,7 @@ while ($row2 = $q2->fetch_assoc()) {
 
                             <div class="table-responsive">
                                 <form method="post" action="">
-                                    <button type="button" data-toggle="modal" data-target="#addDeduction" class="btn btn-success">Buat Pembayaran</button>
+                                    <button type="button" data-toggle="modal" data-target="#addDeduction" class="btn btn-success">Tambah Pembayaran</button>
                                     <br><br>
                                     <table class="table table-bordered table-hover table-condensed" id="myTable">
                                         <!-- <h3><b>Ordinance</b></h3> -->
@@ -260,8 +260,8 @@ while ($row2 = $q2->fetch_assoc()) {
                     <div class="form-group">
                         <label class="col-sm-4 control-label">Metode Pembayaran :</label>
                         <div class="col-sm-4">
-                            <input type="radio" name="pay_method" value="cash">Tunai &nbsp;&nbsp;
-                            <input type="radio" name="pay_method" value="bkash">Transfer
+                            <input type="radio" name="pay_method" value="cash"> Tunai &nbsp;&nbsp;
+                            <input type="radio" name="pay_method" value="bkash"> Transfer
 
 
                         </div>

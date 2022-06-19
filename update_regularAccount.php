@@ -26,9 +26,9 @@ $advance_status = $_POST['advance_status'];
 $remark = $_POST['remark'];
 $emp_type = $_POST['emp_type'];
 $ADpay_id = $_POST['ADpay_id'];
-if ($emp_type == "Regular") {
+if ($emp_type == "Tetap") {
   $location = "home_salaryRegular.php";
-} else if ($emp_type == "Tetap") {
+} else if ($emp_type == "Freelance") {
   $location = "home_salaryCasual.php";
 } else {
   $location = "home_salaryJobOrder.php";

@@ -73,14 +73,12 @@ include("php/header.php");
                 while ($row = $q->fetch_assoc()) {
                   $id     = $row['emp_id'];
                   $emp_id = $id;
-                  $lname  = $row['lname'];
-                  $lnumber  = $row['mobileNo'];
                   $fname  = $row['fname'];
-                  $type   = $row['emp_type'];
-
-
-
-
+                  $lname  = $row['lname'];
+                  $mobile  = $row['mobileNo'];
+                  $gender = $row['gender'];
+                  $division = $row['division'];
+                  $emp_type   = $row['emp_type'];
                 ?>
 
                   <tr>
