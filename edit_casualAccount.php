@@ -132,7 +132,7 @@ include("php/header.php");
                                     <thead>
                                         <tr class="info">
                                             <th>
-                                                <p align="center">Tanggal</p>
+                                                <p align="center">Bulan</p>
                                             </th>
                                         </tr>
                                     </thead>
@@ -221,7 +221,6 @@ include("php/header.php");
                                                 <td align="center"><?php echo $d_date ?></td>
                                                 <td align="center"><?php echo $d_Cause ?></td>
                                                 <td align="center"><big><b><?php echo $d_amount ?></b></big>.00</td>
-                                                <td align="center">
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -278,7 +277,7 @@ include("php/header.php");
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label">Date :</label>
+                        <label class="col-sm-4 control-label">Tanggal :</label>
                         <div class="col-sm-8">
                             <input class="form-control" id="datepicker" name="d_date" type="text" />
                             <script>

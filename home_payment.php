@@ -9,14 +9,14 @@ include("php/header.php");
 <div id="page-inner">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="page-head-line">Payment</h1>
-            <h1 class="page-subhead-line">Welcome to <strong><?php echo ' ' . $siteName ?></strong> Today is:
+            <h1 class="page-head-line">Pembayaran Gaji</h1>
+            <h1 class="page-subhead-line">Selamat Datang di Sistem ERP<strong><?php echo ' ' . $siteName ?></strong>
                 <i class="icon-calendar icon-large"></i>
 
 
                 <?php
                 date_default_timezone_set("Asia/Jakarta");
-                echo  date(" l, F d, Y") . "<br>";
+                echo  date(" l, F d Y") . "<br>";
 
                 ?>
             </h1>
@@ -35,31 +35,31 @@ include("php/header.php");
                             <thead>
                                 <tr class="info">
                                     <th>
-                                        <p align="center">ID/Name</p>
+                                        <p align="center">ID/Nama</p>
                                     </th>
                                     <th>
-                                        <p align="center">Type</p>
+                                        <p align="center">Status Pegawai</p>
                                     </th>
                                     <th>
-                                        <p align="center"> Total Paid</p>
+                                        <p align="center"> Gaji</p>
                                     </th>
                                     <th>
-                                        <p align="center"> Advance/Due</p>
+                                        <p align="center"> Kelebihan/Kekurangan</p>
                                     </th>
                                     <th>
-                                        <p align="center">Paid in cash</p>
+                                        <p align="center">Tunai</p>
                                     </th>
                                     <th>
-                                        <p align="center">Paid in Bkash</p>
+                                        <p align="center">Transder</p>
                                     </th>
                                     <th>
-                                        <p align="center">Payment Date</p>
+                                        <p align="center">Tanggal Pembayaran</p>
                                     </th>
                                     <th>
-                                        <p align="center">Remark</p>
+                                        <p align="center">Komentar</p>
                                     </th>
                                     <th>
-                                        <p align="center">Payment Status</p>
+                                        <p align="center">Status Pembayaran</p>
                                     </th>
                                 </tr>
                             </thead>
@@ -71,10 +71,10 @@ include("php/header.php");
                                 while ($row2 = $q2->fetch_assoc()) {
                                     if ($row2["due_status"] == 1) {
                                         $currentAD = $row2["due"];
-                                        $AD = "Due: ";
+                                        $AD = "Kekurangan: ";
                                     } else if ($row2["advance_status"] == 1) {
                                         $currentAD = $row2["advance"];
-                                        $AD = "Advance: ";
+                                        $AD = "Kelebihan: ";
                                     }
                                     $query  = "SELECT * from employee where emp_id='" . $row2["emp_id"] . "' ";
                                     $q = $conn->query($query);
@@ -83,10 +83,10 @@ include("php/header.php");
 
                                     if ($row2["pay_status"] == 1) {
                                         $class = "paid";
-                                        $remark = "Paid";
+                                        $remark = "Terbayar";
                                     } else {
                                         $class = "notpaid";
-                                        $remark = "Not Paid";
+                                        $remark = "Tidak Terbayar";
                                     }
 
 
@@ -110,28 +110,28 @@ include("php/header.php");
                                     <p align="center">ID/Name</p>
                                 </th>
                                 <th>
-                                    <p align="center">Type</p>
+                                    <p align="center">Status Pegawai</p>
                                 </th>
                                 <th>
-                                    <p align="center"> Total Paid</p>
+                                    <p align="center">Gaji</p>
                                 </th>
                                 <th>
-                                    <p align="center"> Advance/Due</p>
+                                    <p align="center">Kelebihan/Kekurangan</p>
                                 </th>
                                 <th>
-                                    <p align="center">Paid in cash</p>
+                                    <p align="center">Tunai</p>
                                 </th>
                                 <th>
-                                    <p align="center">Paid in Bkash</p>
+                                    <p align="center">Transfer</p>
                                 </th>
                                 <th>
-                                    <p align="center">Payment Date</p>
+                                    <p align="center">Tanggal Pembayaran</p>
                                 </th>
                                 <th>
-                                    <p align="center">Remark</p>
+                                    <p align="center">Komentar</p>
                                 </th>
                                 <th>
-                                    <p align="center">Payment Status</p>
+                                    <p align="center">Status Pembayaran</p>
                                 </th>
                             </tr>
                         </table>

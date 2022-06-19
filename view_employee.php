@@ -84,7 +84,7 @@ include("php/header.php");
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-5 control-label">Departmen :</label>
+        <label class="col-sm-5 control-label">Divisi :</label>
         <div class="col-sm-4">
           <select name="division" class="form-control" placeholder="Division" required>
             <option value="<?php echo $row['division']; ?>"><?php echo $row['division']; ?></option>
@@ -99,8 +99,13 @@ include("php/header.php");
             <option value="Lainnya">Lainnya</option>
           </select>
         </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">Gaji :</label>
+        <div class="col-sm-4">
+          <input type="text" name="salary" class="form-control" value="<?php echo $row['salary']; ?>" required="required">
+        </div>
       </div><br><br>
-
       <div class="form-group">
         <label class="col-sm-5 control-label"></label>
         <div class="col-sm-4">

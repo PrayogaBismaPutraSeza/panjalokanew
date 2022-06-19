@@ -113,7 +113,7 @@ include("php/header.php");
                                 ?>
                                     <tr>
                                         <td align="center"><?php echo $emp_id ?></td>
-                                        <td align="center"><b><?php echo $fname ?>, <?php echo $lname ?></b></td>
+                                        <td align="center"><b><?php echo $fname ?> <?php echo $lname ?></b></td>
                                         <td align="center"><big><b><?php echo $salary_rate ?></b></big>.00/Hari</td>
                                         <td align="center"><big><b><?php echo $days ?></b></big> Hari</td>
                                         <td align="center"><big><b><?php echo $due ?></b></big> .00</td>
