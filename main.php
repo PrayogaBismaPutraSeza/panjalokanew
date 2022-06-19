@@ -132,9 +132,9 @@
 
   <div class="col-md-4">
     <div class="main-box mb-red">
-      <a href="home_bill.php">
+      <a href="home_sell.php">
         <i class="fa fa-file-text fa-5x"></i>
-        <h5>Bill</h5>
+        <h5>Sell</h5>
       </a>
     </div>
   </div>
@@ -152,121 +152,6 @@
 
 
 
-<div class="row">
-  <div class="col-md-12">
-    <h1 class="page-subhead-line"><strong>Laporan Tahunan Lainnya</strong>
-  </div>
-
-  <div class="col-9">
-    <div class="col-md-3">
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Total Gaji Dibayar</h3>
-          <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-        </div>
-        <div class="panel-body">
-          <div class="main-box bg-info">
-            <h5>
-              Rp.
-              <?php
-              $total_paid = 0;
-              $query  = "SELECT * from payment";
-              $q = $conn->query($query);
-              while ($row = $q->fetch_assoc()) {
-                $total_paid = $total_paid + $row["pay_amount"];
-              }
-              echo $total_paid;
-              ?>
-              paid
-            </h5>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-    <div class="col-md-3">
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Total Bill</h3>
-          <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-        </div>
-        <div class="panel-body">
-          <div class="main-box bg-info">
-            <h5>
-              Rp.
-              <?php
-              $total_received = 0;
-              $query  = "SELECT * from companybill";
-              $q = $conn->query($query);
-              while ($row = $q->fetch_assoc()) {
-                $total_received = $total_received + $row["receive_amount"];
-              }
-              echo $total_received;
-              ?>
-              diterima
-            </h5>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Total Penghasilan</h3>
-          <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-        </div>
-        <div class="panel-body">
-          <div class="main-box bg-info">
-            <h5>
-              Rp.
-              <?php
-
-              echo $total_received - $total_paid;
-              ?>
-
-            </h5>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-  </div>
-  <div class="col-3">
-    <div class="col-md-3">
-      <div class="panel panel-danger">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Total Paid in Bkask</h3>
-          <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
-        </div>
-        <div class="panel-body">
-          <div class="main-box bg-primary">
-            <h5>
-              Rp.
-              <?php
-              $total_paid = 0;
-              $query  = "SELECT paid_in_bkash from payment";
-              $q = $conn->query($query);
-              while ($row = $q->fetch_assoc()) {
-                $total_paid = $total_paid + $row["paid_in_bkash"];
-              }
-              echo $total_paid;
-              ?>
-              Dibayar
-            </h5>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
 
 </div>
 <script>

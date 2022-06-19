@@ -1,27 +1,33 @@
 <?php
 
+
+
+
+
 ?>
 
 <?php
 
-if(isset($_POST['submit'])!="")
+if(isset($_POST['submit'])!="") 
 {
-
-    $nama  =$_POST['nama'];
+    include("db.php");
+    $p_name  =$_POST['p_name'];
     $banyak =$_POST['banyak'];
     $harga   =$_POST['harga'];
-    $stok  =$_POST['stok'];
-    $total_bayar  =$_POST['total_bayar'];
+    $total  =$_POST['total'];
 
+    $p_id         = $_POST['p_id'];
+    $quantity   = $_POST['result'];
 
+    $sellProduct = $conn->query("INSERT into sell(p_name, banyak, harga, total)VALUES('$p_name','$banyak','$harga', '$total')");
+    $query  = "UPDATE product SET stock='$quantity' WHERE p_id='$p_id'";
+    $sql = $conn->query($query);
 
-    $sellProduct = $conn->query("INSERT into sell(nama, banyak, harga, stok, total_bayar)VALUES('$nama','$banyak','$harga', '$stok', '$total_bayar')");
-
-    if($sellProduct)
+    if($sellProduct && $sql)
     {
         ?>
         <script>
-            alert('Product has been successfully added.');
+            alert('Product has been sold.');
             window.location.href='home_sell.php?page=sell_list';
         </script>
         <?php

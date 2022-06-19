@@ -65,12 +65,12 @@
                 </ul>
             </li>
             <li>
-                <a href="home_bill.php">
+                <a href="home_sell.php">
                     <i class='bx bx-bookmark-alt'></i>
-                    <span class="link_name">Bill</span>
+                    <span class="link_name">Sell</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="home_bill.php">Bill</a></li>
+                    <li><a class="link_name" href="home_sell.php">Sell</a></li>
                 </ul>
             </li>
             <li>

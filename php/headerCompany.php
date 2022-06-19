@@ -64,7 +64,7 @@
                         <a href="home_report.php"><i class="fa fa-inr "></i>Laporan</a>
                     </li>
                     <li>
-                        <a href="home_sell.php"><i class="fa fa-file-text "></i>Bill </a>
+                        <a href="home_sell.php"><i class="fa fa-file-text "></i>Sell </a>
                     </li>
 
 
