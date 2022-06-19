@@ -28,6 +28,8 @@ include("php/header.php");
         <form class="form-horizontal">
             <fieldset>
 
+                <a class="btn btn-success" href="report_payment.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
+                <br><br>
                 <div class="table-responsive">
                     <form method="post" action="">
                         <table class="table table-bordered table-hover table-condensed" id="myTable">
@@ -38,7 +40,7 @@ include("php/header.php");
                                         <p align="center">ID/Nama</p>
                                     </th>
                                     <th>
-                                        <p align="center">Status Pegawai</p>
+                                        <p align="center">Status</p>
                                     </th>
                                     <th>
                                         <p align="center"> Gaji</p>
@@ -107,7 +109,7 @@ include("php/header.php");
 
                             <tr class="info">
                                 <th>
-                                    <p align="center">ID/Name</p>
+                                    <p align="center">ID/Nama</p>
                                 </th>
                                 <th>
                                     <p align="center">Status Pegawai</p>
