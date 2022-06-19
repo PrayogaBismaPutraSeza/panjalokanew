@@ -27,14 +27,14 @@ while ($row2 = $q2->fetch_assoc()) {
     <div id="page-inner">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-head-line">Salary of <?php echo ' ' . $row2['fname'] . " " . $row2['lname'] ?></h1>
-                <h1 class="page-subhead-line">Welcome to <strong><?php echo ' ' . $siteName ?></strong> Today is:
+                <h1 class="page-head-line">Gaji<?php echo ' ' . $row2['fname'] . " " . $row2['lname'] ?></h1>
+                <h1 class="page-subhead-line">Selamat Datang di Sitem ERP<strong><?php echo ' ' . $siteName ?></strong>
                     <i class="icon-calendar icon-large"></i>
 
 
                     <?php
-                    date_default_timezone_set("Asia/Dhaka");
-                    echo  date(" l, F d, Y") . "<br>";
+                    date_default_timezone_set("Asia/Jakarta");
+                    echo  date(" l, F d Y") . "<br>";
 
                     ?>
                 </h1>
@@ -53,14 +53,14 @@ while ($row2 = $q2->fetch_assoc()) {
 
                         <br>
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">Salary :</label>
+                            <label class="col-sm-4 control-label">Gaji :</label>
                             <div class="col-sm-3">
                                 <input type="text" name="salary" class="form-control" value="<?php echo $row2['salary']; ?>" required="required">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">Advance :</label>
+                            <label class="col-sm-4 control-label">Kelebihan :</label>
                             <div class="col-sm-3">
                                 <input type="readonly" name="advance" class="form-control" value="<?php echo $advanceSalary; ?>" required="required" readonly>
                             </div>
@@ -76,7 +76,7 @@ while ($row2 = $q2->fetch_assoc()) {
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">Deduction Amount:</label>
+                            <label class="col-sm-4 control-label">Jumlah Pembayaran:</label>
                             <div class="col-sm-3">
                                 <input type="text" name="totalDeduction" class="form-control" value="<?php echo $d_amount; ?>" required="required" readonly>
                             </div>
@@ -85,7 +85,7 @@ while ($row2 = $q2->fetch_assoc()) {
 
                         <div class="form-group">
 
-                            <label class="col-sm-4 control-label">Net Pay :</label>
+                            <label class="col-sm-4 control-label">Yang harus dibayar :</label>
                             <div class="col-sm-3">
                                 <?php echo $netpay; ?>.00
                             </div>
@@ -98,13 +98,13 @@ while ($row2 = $q2->fetch_assoc()) {
                         </div>
                         <div class="form-group">
 
-                            <label class="col-sm-4 control-label">Total Paid :</label>
+                            <label class="col-sm-4 control-label">Total Pembayaran :</label>
                             <div class="col-sm-3">
                                 <?php echo $salaryPaid; ?>
                             </div>
                             <div class="col-sm-5">
-                                <?php echo "Paid in Cash: " . $paid_in_cash; ?><br>
-                                <?php echo "Paid in Bkash: " . $paid_in_bkash; ?>
+                                <?php echo "Tunai : " . $paid_in_cash; ?><br>
+                                <?php echo "Transfer : " . $paid_in_bkash; ?>
                             </div>
                         </div>
                         <div class="form-group">
@@ -122,7 +122,7 @@ while ($row2 = $q2->fetch_assoc()) {
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-subhead-line">Deduction List:</strong>
+                        <h1 class="page-subhead-line">Daftar Pembayaran:</strong>
 
 
                     </div>
@@ -134,23 +134,23 @@ while ($row2 = $q2->fetch_assoc()) {
 
                             <div class="table-responsive">
                                 <form method="post" action="">
-                                    <button type="button" data-toggle="modal" data-target="#addDeduction" class="btn btn-success">Add Deduction</button>
+                                    <button type="button" data-toggle="modal" data-target="#addDeduction" class="btn btn-success">Buat Pembayaran</button>
                                     <br><br>
                                     <table class="table table-bordered table-hover table-condensed" id="myTable">
                                         <!-- <h3><b>Ordinance</b></h3> -->
                                         <thead>
                                             <tr class="info">
                                                 <th>
-                                                    <p align="center">Date</p>
+                                                    <p align="center">Tanggal</p>
                                                 </th>
                                                 <th>
-                                                    <p align="center">Cause</p>
+                                                    <p align="center">Detail</p>
                                                 </th>
                                                 <th>
-                                                    <p align="center">Amount</p>
+                                                    <p align="center">Jumlah</p>
                                                 </th>
                                                 <th>
-                                                    <p align="center">Method</p>
+                                                    <p align="center">Metode</p>
                                                 </th>
                                             </tr>
                                         </thead>
@@ -162,7 +162,7 @@ while ($row2 = $q2->fetch_assoc()) {
                                             $q5 = $conn->query($query5);
                                             while ($row5 = $q5->fetch_assoc()) {
 
-                                                date_default_timezone_set("Asia/Dhaka");
+                                                date_default_timezone_set("Asia/Jakarta");
                                                 $thisMonth =  date("m-Y");
                                                 $dMonth = date('m-Y', strtotime($row5['d_date']));
                                                 if ($thisMonth == $dMonth) {
@@ -185,16 +185,16 @@ while ($row2 = $q2->fetch_assoc()) {
 
                                         <tr class="info">
                                             <th>
-                                                <p align="center">Date</p>
+                                                <p align="center">Tanggal</p>
                                             </th>
                                             <th>
-                                                <p align="center">Cause</p>
+                                                <p align="center">Detail</p>
                                             </th>
                                             <th>
-                                                <p align="center">Amount</p>
+                                                <p align="center">Jumlah</p>
                                             </th>
                                             <th>
-                                                <p align="center">Method</p>
+                                                <p align="center">Metode</p>
                                             </th>
                                         </tr>
                                     </table>
@@ -218,7 +218,7 @@ while ($row2 = $q2->fetch_assoc()) {
         <div class="modal-content">
             <div class="modal-header" style="padding:20px 50px;">
                 <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
-                <h3 align="center"><b>Add Deduction for an Employee</b></h3>
+                <h3 align="center"><b>Tambahkan Pembayaran</b></h3>
             </div>
             <div class="modal-body" style="padding:40px 50px;">
 
@@ -236,7 +236,7 @@ while ($row2 = $q2->fetch_assoc()) {
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-4 control-label">Date :</label>
+                        <label class="col-sm-4 control-label">Tanggal :</label>
                         <div class="col-sm-8">
 
                             <input class="form-control" id="datepicker" name="d_date" type="text" />
@@ -246,22 +246,22 @@ while ($row2 = $q2->fetch_assoc()) {
 
 
                     <div class="form-group">
-                        <label class="col-sm-4 control-label">Cause :</label>
+                        <label class="col-sm-4 control-label">Detail :</label>
                         <div class="col-sm-8">
-                            <input type="text" name="d_cause" class="form-control" placeholder="Enter Deduction Cause" required="required">
+                            <input type="text" name="d_cause" class="form-control" placeholder="Masukkan alasan pembayaran" required="required">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label">Amount :</label>
+                        <label class="col-sm-4 control-label">Jumlah :</label>
                         <div class="col-sm-8">
-                            <input type="text" name="d_amount" class="form-control" placeholder="Enter Amount" required="required">
+                            <input type="text" name="d_amount" class="form-control" placeholder="Masukkan Jumlah" required="required">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label">Payment method :</label>
+                        <label class="col-sm-4 control-label">Metode Pembayaran :</label>
                         <div class="col-sm-4">
-                            <input type="radio" name="pay_method" value="cash">Cash &nbsp;&nbsp;
-                            <input type="radio" name="pay_method" value="bkash">Bkash
+                            <input type="radio" name="pay_method" value="cash">Tunai &nbsp;&nbsp;
+                            <input type="radio" name="pay_method" value="bkash">Transfer
 
 
                         </div>
@@ -274,8 +274,8 @@ while ($row2 = $q2->fetch_assoc()) {
                     <div class="form-group">
                         <label class="col-sm-4 control-label"></label>
                         <div class="col-sm-8">
-                            <input type="submit" name="submit" class="btn btn-success" value="Submit">
-                            <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
+                            <input type="submit" name="submit" class="btn btn-success" value="Tambahkan">
+                            <input type="reset" name="" class="btn btn-danger" value="Kosongkan Form">
                         </div>
                     </div>
                 </form>

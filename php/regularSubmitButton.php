@@ -16,7 +16,7 @@ while ($row4 = $q4->fetch_assoc()) {
 if (!$idFound) {
   $day =  date("d");
   if ($day == "28" || $day == "29" || $day == "30" || $day == "31") {
-    $submitMessage = "Note: You can submit salary calculations only once in a month.";
+    $submitMessage = "Pesan: Anda hanya dapat melakukan pembayaran gaji sekali dalam sebulan.";
 ?>
     <input type="hidden" name="netpay" value="<?php echo $netpay; ?>">
     <input type="hidden" name="new_advance" value="<?php echo $advanceSalary; ?>">
@@ -32,13 +32,13 @@ if (!$idFound) {
     <input type="submit" name="submit" value="Submit" class="btn btn-success">
   <?php
   } else {
-    $submitMessage = "Note: The submit button will come on the last days of the month.";
+    $submitMessage = "Pesan: Tombol submit dapat digunakan pada akhir bulan.";
   }
 } else {
-  $submitMessage = "Note: You have submitted already.Check payment list.";
+  $submitMessage = "Pesan: Anda sudah melakukan submit. Periksa Daftar Pembayaran.";
   ?>
   <script>
-    alert('You have already submitted in this month.');
+    alert('Anda sudah melakukan submit pada bulan ini.');
   </script>
 
 <?php

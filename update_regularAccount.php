@@ -14,7 +14,7 @@ while ($row4 = $q4->fetch_assoc()) {
   }
 }
 
-$sql = $conn->query("UPDATE salary SET salary_rate='$salary_rate', bonus='$bonus' WHERE emp_id='$id'");
+$sql = $conn->query("UPDATE employee SET salary='$salary_rate', bonus='$bonus' WHERE emp_id='$id'");
 
 $netpay     = $_POST['netpay'];
 $advanceSalary     = $_POST['new_advance'];
@@ -28,12 +28,12 @@ $emp_type = $_POST['emp_type'];
 $ADpay_id = $_POST['ADpay_id'];
 if ($emp_type == "Regular") {
   $location = "home_salaryRegular.php";
-} else if ($emp_type == "Casual") {
+} else if ($emp_type == "Tetap") {
   $location = "home_salaryCasual.php";
 } else {
   $location = "home_salaryJobOrder.php";
 }
-date_default_timezone_set("Asia/Dhaka");
+date_default_timezone_set("Asia/Jakarta");
 $pay_date = date("Y-m-d");
 $pay_status = "1";
 $thisMonth = date("m");
