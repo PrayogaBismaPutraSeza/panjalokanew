@@ -24,6 +24,15 @@
                 </ul>
             </li>
             <li>
+                <a href="home_customer.php">
+                    <i class='bx bx-user'></i>
+                    <span class="link_name">Customer</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="home_customer.php">Customer</a></li>
+                </ul>
+            </li>
+            <li>
                 <div class="iocn-link">
                     <a href="#">
                         <i class='bx bx-collection'></i>
