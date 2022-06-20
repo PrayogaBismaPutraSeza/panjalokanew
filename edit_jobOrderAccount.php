@@ -66,7 +66,7 @@ include("php/header.php");
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Bonus :</label>
                             <div class="col-sm-4">
-                                <input type="text" name="bonus" class="form-control" value="<?php echo $row3['bonus']; ?>" required="required">
+                                <input type="text" name="bonus" class="form-control" value="<?php echo $bonus; ?>" required="required">
                             </div>
                         </div>
                         <div class="form-group">
@@ -83,7 +83,7 @@ include("php/header.php");
 
                             <label class="col-sm-3 control-label">Yang harus dibayar :</label>
                             <div class="col-sm-4">
-                                <?php echo $netpay; ?>.00
+                                <?php echo $netpay; ?>
                             </div>
                             <div class="col-sm-5">
                                 <span style="color:#ff4d4d"><?php echo $message3; ?><span><br>
@@ -143,9 +143,6 @@ include("php/header.php");
                                                     <th>
                                                         <p align="center">Jumlah</p>
                                                     </th>
-                                                    <th>
-                                                        <p align="center">Aksi</p>
-                                                    </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -167,8 +164,7 @@ include("php/header.php");
                                                     <tr>
                                                         <td align="center"><?php echo $d_date ?></td>
                                                         <td align="center"><?php echo $d_Cause ?></td>
-                                                        <td align="center"><big><b><?php echo $d_amount ?></b></big>.00</td>
-                                                        <td align="center">
+                                                        <td align="center"><?php echo $d_amount ?></td>
                                                         </td>
                                                     </tr>
                                                 <?php } ?>
@@ -184,9 +180,6 @@ include("php/header.php");
                                                 </th>
                                                 <th>
                                                     <p align="center">Jumlah</p>
-                                                </th>
-                                                <th>
-                                                    <p align="center">Aksi</p>
                                                 </th>
                                             </tr>
                                         </table>
@@ -229,7 +222,7 @@ include("php/header.php");
                     <div class="form-group">
                         <label class="col-sm-4 control-label">Tanggal :</label>
                         <div class="col-sm-8">
-                            <input class="form-control" id="datepicker" name="d_date" type="text" />
+                            <input class="form-control" id="datepicker" placeholder="Pilih Tanggal" name="d_date" type="text" />
                             <script>
                                 $('#datepicker').datepicker({
                                     uiLibrary: 'bootstrap4'
