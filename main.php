@@ -44,7 +44,7 @@
                 while ($row = $q->fetch_assoc()) {
                   $total_cost = $total_cost + $row["pay_amount"];
                 }
-                
+
                 ?>
                 <a class="btn btn-primary" align="center" href="dailyTransactions.php"><strong>Total Pengeluaran : Rp.</strong><?php echo $total_cost ?> </a>
 
@@ -68,7 +68,7 @@
 
               </div>
               <div class="col-sm-3 bg-info">
-                <a class="btn btn-primary w-600" align="center" href="#"><strong>Extra : Rp.</strong> <?php echo $total_cash - ($total_cost + $total_salary); ?> </a>
+                <a class="btn btn-primary w-600" align="center" href="#"><strong>Uang Bersih : Rp.</strong> <?php echo $total_cash - ($total_cost + $total_salary); ?> </a>
 
               </div>
             </div>

@@ -57,7 +57,7 @@ include("php/header.php");
         <form class="form-horizontal">
 
             <fieldset>
-                <button type="button" data-toggle="modal" data-target="#addSalary" class="btn btn-success">Tambah Bonus</button>
+                <button type="button" data-toggle="modal" data-target="#addSalary" class="btn btn-success">Tambah Bonus Baru</button>
                 <br><br>
                 <div class="table-responsive">
                     <form method="post" action="">

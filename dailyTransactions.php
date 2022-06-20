@@ -132,7 +132,7 @@ include("php/header.php");
             <div class="form-group">
               <label class="col-sm-4 control-label">Tanggal :</label>
               <div class="col-sm-8">
-                <input class="form-control" id="datepicker" name="date" type="text" />
+                <input class="form-control" id="datepicker" placeholder="Pilih Tanggal" name="date" type="text" />
                 <script>
                   $('#datepicker').datepicker({
                     uiLibrary: 'bootstrap4'

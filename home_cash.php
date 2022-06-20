@@ -12,14 +12,14 @@ include("php/header.php");
 
     <div class="row">
         <div class="col-md-12">
-            <h1 class="page-head-line">Company Cash</h1>
-            <h1 class="page-subhead-line">Welcome to <strong><?php echo ' ' . $siteName ?></strong> Today is:
+            <h1 class="page-head-line">Uang Perusahaan</h1>
+            <h1 class="page-subhead-line">Selamat Datang di Sistem ERP <strong><?php echo ' ' . $siteName ?></strong>
                 <i class="icon-calendar icon-large"></i>
 
 
                 <?php
                 date_default_timezone_set("Asia/Jakarta");
-                echo  date(" l, F d, Y") . "<br>";
+                echo  date(" l, F d Y") . "<br>";
 
                 ?>
             </h1>
@@ -30,10 +30,8 @@ include("php/header.php");
     <div class="well bs-component">
         <form class="form-horizontal">
             <fieldset>
-                <button type="button" data-toggle="modal" data-target="#addcash" class="btn btn-success">New Given Cash</button>
-
-
-                <p align="center"><big><b>Cash Given List.</b></big></p>
+                <button type="button" data-toggle="modal" data-target="#addcash" class="btn btn-success">Tambah Uang Perusahaan Baru</button>
+                <br><br>
                 <div class="table-responsive">
                     <form method="post" action="">
                         <table class="table table-sm table-condensed" id="myTable">
@@ -44,13 +42,13 @@ include("php/header.php");
                                         <p align="center">SN:</p>
                                     </th>
                                     <th>
-                                        <p align="center">Given Date</p>
+                                        <p align="center">Tanggal</p>
                                     </th>
                                     <th>
-                                        <p align="center">Amount</p>
+                                        <p align="center">Jumlah</p>
                                     </th>
                                     <th>
-                                        <p align="center">remark</p>
+                                        <p align="center">Komentar</p>
                                     </th>
                                 </tr>
                             </thead>
@@ -93,13 +91,13 @@ include("php/header.php");
                                     <p align="center">SN:</p>
                                 </th>
                                 <th>
-                                    <p align="center">Given Date</p>
+                                    <p align="center">Tanggal</p>
                                 </th>
                                 <th>
-                                    <p align="center">Amount</p>
+                                    <p align="center">Jumlah</p>
                                 </th>
                                 <th>
-                                    <p align="center">remark</p>
+                                    <p align="center">Komentar</p>
                                 </th>
                             </tr>
                         </table>
@@ -118,16 +116,16 @@ include("php/header.php");
             <div class="modal-content">
                 <div class="modal-header" style="padding:30px 60px;">
 
-                    <h3 align="center"><b>Add new given cash record</b></h3>
+                    <h3 align="center"><b>Tambahkan Uang Perusahaan</b></h3>
                     <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
                 </div>
                 <div class="modal-body" style="padding:40px 50px;">
 
                     <form class="form-horizontal" action="add_cash.php" name="form" method="post">
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">Bill Date :</label>
+                            <label class="col-sm-4 control-label">Tanggal :</label>
                             <div class="col-sm-4">
-                                <input class="form-control" id="datepicker" placeholder="Select Date" name="given_date" type="text" />
+                                <input class="form-control" id="datepicker" placeholder="Pilih Tanggal" name="given_date" type="text" />
                                 <script>
                                     $('#datepicker').datepicker({
                                         uiLibrary: 'bootstrap4'
@@ -136,15 +134,15 @@ include("php/header.php");
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">Amount :</label>
+                            <label class="col-sm-4 control-label">Jumlah :</label>
                             <div class="col-sm-8">
-                                <input type="number" name="amount" class="form-control" placeholder="Enter cash amount" required="required">
+                                <input type="number" name="amount" class="form-control" placeholder="Masukkan jumlah uang" required="required">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">Remark :</label>
+                            <label class="col-sm-4 control-label">Catatan :</label>
                             <div class="col-sm-8">
-                                <input type="text" name="remark" class="form-control" placeholder="Remark for given cash">
+                                <input type="text" name="remark" class="form-control" placeholder="Masukkan Catatan">
                             </div>
                         </div>
 
@@ -153,8 +151,8 @@ include("php/header.php");
                         <div class="form-group">
                             <label class="col-sm-4 control-label"></label>
                             <div class="col-sm-8">
-                                <input type="submit" name="submitcash" class="btn btn-success" value="Submit">
-                                <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
+                                <input type="submit" name="submitcash" class="btn btn-success" value="Tambahkan">
+                                <input type="reset" name="" class="btn btn-danger" value="Kosongkan Form">
                             </div>
                         </div>
                     </form>
