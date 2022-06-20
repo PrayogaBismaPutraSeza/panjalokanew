@@ -128,6 +128,14 @@
     </div>
   </div>
 
+  <div class="col-md-4">
+    <div class="main-box mb-red">
+      <a href="home_supply.php">
+        <i class="fa fa-truck fa-5x"></i>
+        <h5>Buy Supply</h5>
+      </a>
+    </div>
+  </div>              
 
   <div class="col-md-4">
     <div class="main-box mb-red">

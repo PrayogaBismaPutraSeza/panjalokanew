@@ -1,6 +1,6 @@
 <?php
 include("first.php"); //include auth.php file on all secure pages
-include("payment_regular.php");
+
 ?>
 <div class="row">
     <div class="col-md-12">

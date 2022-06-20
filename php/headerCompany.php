@@ -64,6 +64,15 @@
                         <a href="home_report.php"><i class="fa fa-inr "></i>Laporan</a>
                     </li>
                     <li>
+                        <a href="home_supply.php">
+                        <i class='bx bxs-truck'></i>
+                            <span class="link_name">Buy Supply</span>
+                        </a>
+                        <ul class="sub-menu blank">
+                            <li><a class="link_name" href="home_supply.php">Buy Supply</a></li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="home_sell.php"><i class="fa fa-file-text "></i>Sell </a>
                     </li>
 

@@ -74,6 +74,15 @@
                 </ul>
             </li>
             <li>
+                <a href="home_supply.php">
+                <i class='bx bxs-truck'></i>
+                    <span class="link_name">Buy Supply</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="home_supply.php">Buy Supply</a></li>
+                </ul>
+            </li>
+            <li>
                 <a href="home_sell.php">
                     <i class='bx bx-bookmark-alt'></i>
                     <span class="link_name">Sell</span>

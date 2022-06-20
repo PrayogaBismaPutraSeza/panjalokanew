@@ -26,7 +26,7 @@ include("php/header.php");
 
         ?>
       </h1>
-
+      <div class="col-sm-3 "><a class="btn btn-success" href="report_cash.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a></div>
     </div>
   </div>
 

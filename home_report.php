@@ -23,9 +23,10 @@ include("php/header.php");
 
                 ?>
             </h1>
-            <div class="col-sm-3 "><a class="btn btn-success" href="report_cash.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a></div>
+                <div class="col-sm-3 "><a class="btn btn-success" href="report_cash.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a></div>
                 <div class="col-sm-3 "><a class="btn btn-primary" href="home_sell.php" target="_blank"><i ></i> Laporan Penjualan PDF</a></div>
                 <div class="col-sm-3 "><a class="btn btn-danger" href="home_payment.php" target="_blank"><i ></i> Laporan Pembayaran Gaji PDF</a></div>
+                <div class="col-sm-3 "><a class="btn btn-danger" href="dailyTransactions.php" target="_blank"><i ></i> Laporan Pembelian Harian PDF</a></div>
         </div>
     </div>
 
