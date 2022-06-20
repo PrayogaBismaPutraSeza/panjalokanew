@@ -46,7 +46,7 @@ include("php/header.php");
                     <p align="center">Id/Nama</p>
                   </th>
                   <th>
-                    <p align="center">Perusahaan</p>
+                    <p align="center">Gudang</p>
                   </th>
                   <th>
                     <p align="center">Jenis</p>
@@ -108,7 +108,7 @@ include("php/header.php");
                   <p align="center">Id/Nama</p>
                 </th>
                 <th>
-                  <p align="center">Perusahaan</p>
+                  <p align="center">Gudang</p>
                 </th>
                 <th>
                   <p align="center">Jenis</p>
