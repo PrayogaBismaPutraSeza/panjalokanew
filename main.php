@@ -44,6 +44,11 @@
                 while ($row = $q->fetch_assoc()) {
                   $total_cost = $total_cost + $row["pay_amount"];
                 }
+                $query  = "SELECT total from buy where delete_status='0'";
+                $q = $conn->query($query);
+                while ($row = $q->fetch_assoc()) {
+                  $total_cost = $total_cost + $row["total"];
+                }
 
                 ?>
                 <a class="btn btn-primary" align="center" href="dailyTransactions.php"><strong>Total Pengeluaran : Rp.</strong><?php echo $total_cost ?> </a>

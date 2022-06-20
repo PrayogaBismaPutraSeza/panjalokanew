@@ -33,8 +33,9 @@ include("php/header.php");
   <div class="well bs-component">
     <form class="form-horizontal">
       <fieldset>
-
+        
         <button type="button" data-toggle="modal" data-target="#addSupply" class="btn btn-success">Add New Supply</button>
+        <div class="col-sm-1 "><a class="btn btn-info" href="report_supply.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a></div>
         <br><br>
         <div class="table-responsive">
           <form method="post" action="">
