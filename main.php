@@ -21,7 +21,11 @@
                 while ($row = $q->fetch_assoc()) {
                   $total_cash = $total_cash + $row["amount"];
                 }
-
+                $query  = "SELECT total from sell where delete_status='0'";
+                $q = $conn->query($query);
+                while ($row = $q->fetch_assoc()) {
+                  $total_cash = $total_cash + $row["total"];
+                }
                 ?>
                 <a class="btn btn-primary " align="center" href="home_cash.php"><strong>Total Uang Perusahaan : Rp.</strong> <?php echo $total_cash; ?> </a>
 
@@ -40,12 +44,7 @@
                 while ($row = $q->fetch_assoc()) {
                   $total_cost = $total_cost + $row["pay_amount"];
                 }
-                $query  = "SELECT d_amount from deductions";
-                $q = $conn->query($query);
-                while ($row = $q->fetch_assoc()) {
-                  $total_cost = $total_cost + $row["d_amount"];
-                  $deduction = $deduction + $row["d_amount"];
-                }
+                
                 ?>
                 <a class="btn btn-primary" align="center" href="dailyTransactions.php"><strong>Total Pengeluaran : Rp.</strong><?php echo $total_cost ?> </a>
 

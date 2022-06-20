@@ -12,7 +12,7 @@ include("php/header.php");
 
     <div class="row">
         <div class="col-md-12">
-            <h1 class="page-head-line">Company Cash</h1>
+            <h1 class="page-head-line">Laporan Keungan Perusahaan</h1>
             <h1 class="page-subhead-line">Welcome to <strong><?php echo ' ' . $siteName ?></strong> Today is:
                 <i class="icon-calendar icon-large"></i>
 
@@ -23,18 +23,23 @@ include("php/header.php");
 
                 ?>
             </h1>
-
+            <div class="col-sm-3 "><a class="btn btn-success" href="report_cash.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a></div>
+                <div class="col-sm-3 "><a class="btn btn-primary" href="home_sell.php" target="_blank"><i ></i> Laporan Penjualan PDF</a></div>
+                <div class="col-sm-3 "><a class="btn btn-danger" href="home_payment.php" target="_blank"><i ></i> Laporan Pembayaran Gaji PDF</a></div>
         </div>
     </div>
 
     <div class="well bs-component">
         <form class="form-horizontal">
             <fieldset>
-                <button type="button" data-toggle="modal" data-target="#addcash" class="btn btn-success">New Given Cash</button>
+                
+                
+               
 
 
-                <p align="center"><big><b>Cash Given List.</b></big></p>
+                <div><p align="center"><big><b>Cash Given List.</b></big></p></div>
                 <div class="table-responsive">
+                    
                     <form method="post" action="">
                         <table class="table table-sm table-condensed" id="myTable">
                             <!-- <h3><b>Ordinance</b></h3> -->
@@ -118,8 +123,7 @@ include("php/header.php");
             <div class="modal-content">
                 <div class="modal-header" style="padding:30px 60px;">
 
-                    <h3 align="center"><b>Add new given cash record</b></h3>
-                    <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
+                
                 </div>
                 <div class="modal-body" style="padding:40px 50px;">
 

@@ -37,7 +37,7 @@ include("php/header.php");
             <form class="form-horizontal">
               <fieldset>
 
-                
+              <a class="btn btn-success" href="report_sell.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
                 <br><br>
                 <div class="table-responsive">
                   <form method="post" action="" >
@@ -45,6 +45,7 @@ include("php/header.php");
                       <!-- <h3><b>Ordinance</b></h3> -->
                       <thead>
                         <tr class="info">
+                          <th><p align="center">Date</p></th> 
                           <th><p align="center">Id/Name</p></th> 
                           <th><p align="center">Quantity</p></th>
                             <th><p align="center">Price</p></th>
@@ -62,6 +63,8 @@ include("php/header.php");
                         $q = $conn->query($query);
                         while($row = $q->fetch_assoc())
                           {
+                            date_default_timezone_set("Asia/Dhaka");
+                            $GivenDate = date('D , d-M , Y', strtotime($row["given_date"]));
                             $s_id  =$row['s_id'];
                             $p_name  =$row['p_name'];
                             $banyak  =$row['banyak'];
@@ -71,13 +74,13 @@ include("php/header.php");
                         ?>
 
                         <tr>
+                        <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $GivenDate?></a></td>
                           <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $s_id?>/  <?php echo $p_name ?></a></td>
                           <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $banyak?></a></td>
                             <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $harga ?></a></td>
                             <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $total ?> </a></td>
 
                           <td align="center">
-                            <a class="btn btn-warning" href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>">Edit</a>
                             <a class="btn btn-danger" href="delete_sell.php?s_id=<?php echo $row["s_id"]; ?>">Delete</a>
 
                           </td>
@@ -87,6 +90,7 @@ include("php/header.php");
                       </tbody>
 
                         <tr class="info">
+                        <th><p align="center">Date</p></th> 
                           <th><p align="center">Id/Name</p></th>
                           <th><p align="center">Quantity</p></th>
                             <th><p align="center">Price</p></th>

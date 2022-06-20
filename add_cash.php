@@ -6,7 +6,7 @@ $conn =  new mysqli("localhost","root","","payroll");
 
 if(isset($_POST['submitcash'])!="")
 {
-  date_default_timezone_set("Asia/Dhaka");
+  date_default_timezone_set("Asia/Jakarta");
   $given_date = date('Y-m-d', strtotime($_POST['given_date']));
 
     $amount     = $_POST['amount'];

@@ -54,7 +54,17 @@ while ($row = $q->fetch_assoc()) {
           <input type="text" name="p_name" class="form-control" value="<?php echo $row['p_name']; ?>" required="required">
         </div>
       </div>
-
+      <div class="form-group">
+                            <label class="col-sm-5 control-label">Date :</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" id="datepicker" placeholder="Select Date" name="given_date" type="text" />
+                                <script>
+                                    $('#datepicker').datepicker({
+                                        uiLibrary: 'bootstrap4'
+                                    });
+                                </script>
+                            </div>
+                        </div>
       <div class="form-group">
         <label class="col-sm-5 control-label">Stok :</label>
         <div class="col-sm-4">
