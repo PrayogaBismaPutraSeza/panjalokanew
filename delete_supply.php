@@ -4,7 +4,7 @@ require('db.php');
 $b_id = $_GET['b_id'];
 
 
-$deleteProduct = $conn->query("DELETE  FROM buy  WHERE b_id=$b_id");
+$deleteProduct = $conn->query("DELETE FROM buy  WHERE b_id=$b_id");
 if ($deleteProduct) {
 ?>
     <script>
