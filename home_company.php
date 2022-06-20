@@ -29,7 +29,7 @@ include("php/header.php");
     <div class="well bs-component">
         <form class="form-horizontal">
             <fieldset>
-                <button type="button" data-toggle="modal" data-target="#addCompany" class="btn btn-success">Tambah Supplier</button>
+                <button type="button" data-toggle="modal" data-target="#addCompany" class="btn btn-success">Tambah Supplier baru</button>
                 <p align="center"><big><b>Daftar Suppliers</b></big></p>
                 <div class="table-responsive">
                     <form method="post" action="">
@@ -126,19 +126,19 @@ include("php/header.php");
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Alamat</label>
                             <div class="col-sm-8">
-                                <input type="textarea" rows="4" cols="50" name="address" class="form-control" placeholder="Alamat" required="required">
+                                <input type="textarea" rows="4" cols="50" name="address" class="form-control" placeholder="Masukkan alamat" required="required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Hp</label>
                             <div class="col-sm-8">
-                                <input type="text" name="mobile" class="form-control" placeholder="No Hp" required="required">
+                                <input type="text" name="mobile" class="form-control" placeholder="Masukkan Nomor Hp" required="required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Detail</label>
                             <div class="col-sm-8">
-                                <input type="textarea" rows="4" cols="30" name="details" class="form-control" placeholder="Detail Supplier" required="required">
+                                <input type="textarea" rows="4" cols="30" name="details" class="form-control" placeholder="Masukkan detail supplier" required="required">
                             </div>
                         </div>
 
