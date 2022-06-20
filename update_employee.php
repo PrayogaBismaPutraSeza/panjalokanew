@@ -18,7 +18,7 @@ $sql = $conn->query($query);
 if ($sql) {
 ?>
   <script>
-    alert('Pegawai berhasil di update.');
+    alert('Pegawai berhasil di update');
     window.location.href = 'home_employee.php';
   </script>
 <?php

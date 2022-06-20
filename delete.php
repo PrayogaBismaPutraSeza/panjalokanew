@@ -7,7 +7,7 @@ $deleteCompany = $conn->query("DELETE FROM employee WHERE emp_id=$id");
 if ($deleteCompany) {
 ?>
     <script>
-        alert('Karyawan Berhasil Dihapus');
+        alert('Pegawai Berhasil Dihapus');
         window.location.href = 'home_employee.php';
     </script>
 <?php

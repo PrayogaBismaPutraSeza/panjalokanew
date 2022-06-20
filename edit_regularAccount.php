@@ -87,7 +87,7 @@ while ($row2 = $q2->fetch_assoc()) {
 
                             <label class="col-sm-4 control-label">Yang harus dibayar :</label>
                             <div class="col-sm-3">
-                                <?php echo $netpay; ?>.00
+                                <?php echo $netpay; ?>
                             </div>
                             <div class="col-sm-5">
                                 <span style="color:#ff4d4d"><?php echo $message3; ?><span><br>
@@ -175,8 +175,8 @@ while ($row2 = $q2->fetch_assoc()) {
                                                     <tr>
                                                         <td align="center"><?php echo $d_date ?></td>
                                                         <td align="center"><?php echo $d_Cause ?></td>
-                                                        <td align="center"><big><b><?php echo $d_amount ?></b></big></td>
-                                                        <td align="center"><big><b><?php echo $d_method ?></b></big></td>
+                                                        <td align="center"><?php echo $d_amount ?></td>
+                                                        <td align="center"><?php echo $d_method ?></td>
                                                     </tr>
                                             <?php }
                                             } ?>
@@ -239,7 +239,7 @@ while ($row2 = $q2->fetch_assoc()) {
                         <label class="col-sm-4 control-label">Tanggal :</label>
                         <div class="col-sm-8">
 
-                            <input class="form-control" id="datepicker" name="d_date" type="text" />
+                            <input class="form-control" id="datepicker" placeholder="Pilih Tanggal" name="d_date" type="text" />
 
                         </div>
                     </div>

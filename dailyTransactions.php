@@ -26,15 +26,13 @@ include("php/header.php");
 
         ?>
       </h1>
-      <div class="col-sm-3 "><a class="btn btn-success" href="report_cash.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a></div>
     </div>
   </div>
-
   <div class="well bs-component">
     <form class="form-horizontal">
       <fieldset>
-
         <button type="button" data-toggle="modal" data-target="#addTransaction" class="btn btn-success">Tambah Transaksi Baru</button>
+        <a class="btn btn-success" href="report_cash.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
         <br><br>
         <div class="table-responsive">
           <form method="post" action="">

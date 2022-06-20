@@ -49,25 +49,25 @@ while ($row = $q->fetch_assoc()) {
       <input name="id" type="hidden" value="<?php echo $row['id']; ?>" />
 
       <div class="form-group">
-        <label class="col-sm-5 control-label">Company :</label>
+        <label class="col-sm-5 control-label">Supplier :</label>
         <div class="col-sm-4">
           <input type="text" name="name" class="form-control" value="<?php echo $row['name']; ?>" required="required">
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-5 control-label">Address :</label>
+        <label class="col-sm-5 control-label">Alamat :</label>
         <div class="col-sm-4">
           <input type="text" name="address" class="form-control" value="<?php echo $row['address']; ?>" required="required">
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-5 control-label">Mobile :</label>
+        <label class="col-sm-5 control-label">No Hp :</label>
         <div class="col-sm-4">
           <input type="text" name="mobile" class="form-control" value="<?php echo $row['mobile']; ?>" required="required">
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-5 control-label">Details :</label>
+        <label class="col-sm-5 control-label">Detail :</label>
         <div class="col-sm-4">
           <input type="text" name="details" class="form-control" value="<?php echo $row['details']; ?>" required="required">
         </div>

@@ -16,7 +16,7 @@ include("php/header.php");
   <div class="row">
     <div class="col-md-12">
       <h1 class="page-head-line">Pegawai</h1>
-      <h1 class="page-subhead-line">Selamat Datang di <strong><?php echo ' ' . $siteName ?></strong>
+      <h1 class="page-subhead-line">Selamat Datang di Sistem ERP<strong><?php echo ' ' . $siteName ?></strong>
         <i class="icon-calendar icon-large"></i>
 
 
@@ -34,7 +34,7 @@ include("php/header.php");
     <form class="form-horizontal">
       <fieldset>
 
-        <button type="button" data-toggle="modal" data-target="#addEmployee" class="btn btn-success">Tambah Pegawai</button>
+        <button type="button" data-toggle="modal" data-target="#addEmployee" class="btn btn-success">Tambah Pegawai Baru</button>
         <br><br>
         <div class="table-responsive">
           <form method="post" action="">
@@ -82,7 +82,7 @@ include("php/header.php");
                 ?>
 
                   <tr>
-                    <td align="center"><a href="view_employee.php?emp_id=<?php echo $row["emp_id"]; ?>" title="Update"><?php echo $row['fname'] ?>, <?php echo $row['lname'] ?></br><?php echo $row['mobileNo'] ?></a></td>
+                    <td align="center"><a href="view_employee.php?emp_id=<?php echo $row["emp_id"]; ?>" title="Update"><?php echo $row['fname'] ?> <?php echo $row['lname'] ?></br><?php echo $row['mobileNo'] ?></a></td>
                     <td align="center"><a href="view_employee.php?emp_id=<?php echo $row["emp_id"]; ?>" title="Update"><?php echo $row['gender'] ?></a></td>
                     <td align="center"><a href="view_employee.php?emp_id=<?php echo $row["emp_id"]; ?>" title="Update"><?php echo $row['emp_type'] ?></a></td>
                     <td align="center"><a href="view_employee.php?emp_id=<?php echo $row["emp_id"]; ?>" title="Update"><?php echo $row['division'] ?></a></td>
@@ -154,9 +154,9 @@ include("php/header.php");
             </div>
 
             <div class="form-group">
-              <label class="col-sm-4 control-label">Hp</label>
+              <label class="col-sm-4 control-label">No Hp</label>
               <div class="col-sm-8">
-                <input type="text" name="mobile" class="form-control" placeholder="Nomor Hp" required="required">
+                <input type="text" name="mobile" class="form-control" placeholder="Masukkan nomor Hp" required="required">
               </div>
             </div>
             <div class="form-group">

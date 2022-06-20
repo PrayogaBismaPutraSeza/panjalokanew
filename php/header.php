@@ -47,6 +47,15 @@
                 </ul>
             </li>
             <li>
+                <a href="home_supply.php">
+                    <i class='bx bxs-truck'></i>
+                    <span class="link_name">Buy Supply</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="home_supply.php">Buy Supply</a></li>
+                </ul>
+            </li>
+            <li>
                 <a href="home_store.php">
                     <i class='bx bx-store'></i>
                     <span class="link_name">Toko</span>
@@ -71,15 +80,6 @@
                 </a>
                 <ul class="sub-menu blank">
                     <li><a class="link_name" href="home_report.php">Laporan</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="home_supply.php">
-                <i class='bx bxs-truck'></i>
-                    <span class="link_name">Buy Supply</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="home_supply.php">Buy Supply</a></li>
                 </ul>
             </li>
             <li>

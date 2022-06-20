@@ -24,7 +24,7 @@ while ($row = $q->fetch_assoc()) {
     <div class="row">
       <div class="col-md-12">
         <h1 class="page-head-line">Customer: <?php echo $row['name']; ?></h1>
-        <h1 class="page-subhead-line">Selamat Datang di <strong><?php echo ' ' . $siteName ?></strong>
+        <h1 class="page-subhead-line">Selamat Datang di Sistem ERP<strong><?php echo ' ' . $siteName ?></strong>
           <i class="icon-calendar icon-large"></i>
 
 

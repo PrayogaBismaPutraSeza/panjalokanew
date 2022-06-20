@@ -46,7 +46,7 @@ include("php/header.php");
   <div class="well bs-component">
     <form class="form-horizontal">
       <fieldset>
-        <button type="button" data-toggle="modal" data-target="#addSalary" class="btn btn-success">Tambah Bonus</button>
+        <button type="button" data-toggle="modal" data-target="#addSalary" class="btn btn-success">Tambah Bonus Baru</button>
         <br><br>
         <div class="table-responsive">
           <form method="post" action="">
@@ -91,12 +91,12 @@ include("php/header.php");
                 ?>
                   <tr>
                     <td align="center"><?php echo $emp_id ?></td>
-                    <td align="center"><b> <?php echo $fname ?> <?php echo $lname ?></b></td>
+                    <td align="center"><?php echo $fname ?> <?php echo $lname ?></td>
                     <td align="center"><?php echo $salary_rate ?></td>
                     <td align="center"><?php echo $due ?></td>
-                    <td align="center"><big><b><?php echo $deduction ?></b></big>.00</td>
-                    <td align="center"><big><b><?php echo $advanceSalary ?></b></big> .00</td>
-                    <td align="center"><big><b><?php echo $bonus ?></b></big>.00</td>
+                    <td align="center"><?php echo $deduction ?></td>
+                    <td align="center"><?php echo $advanceSalary ?></td>
+                    <td align="center"><?php echo $bonus ?></b></td>
                     <td align="center">
                       <a class="btn btn-warning" href="edit_regularAccount.php?emp_id=<?php echo $row2["emp_id"]; ?>">Edit</a>
                     </td>
@@ -181,7 +181,7 @@ include("php/header.php");
               <label class="col-sm-4 control-label">Pegawai :</label>
               <div class="col-sm-8">
                 <select class="form-control" id="emp_id" style=" height:35px;" name="emp_id" onchange="myFunction(this.value)">
-                  <option value=''>------- Pilih --------</option>
+                  <option value=''>------- Pilih Pegawai--------</option>
                   <option value='all'>Semua Pegawai Tetap</option>
                   <?php
                   $query1  = "SELECT emp_id, fname,lname from employee where emp_type='Tetap'";

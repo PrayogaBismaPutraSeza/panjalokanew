@@ -15,14 +15,14 @@ if (isset($_POST['submit']) != "") {
     if ($sql) {
 ?>
         <script>
-            alert('Supplier berhasil ditambahkan.');
+            alert('Supplier berhasil ditambahkan');
             window.location.href = 'home_company.php?page=company_list';
         </script>
     <?php
     } else {
     ?>
         <script>
-            alert('Invalid.');
+            alert('Invalid');
             window.location.href = 'index.php';
         </script>
 <?php

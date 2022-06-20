@@ -101,7 +101,7 @@ if ($advance > 0) {
   $message1 = "";
 }
 if ($advanceSalary > 0) {
-  $message2 = "* $advanceSalary Akan dipotong dengan gaji bulan depan'";
+  $message2 = "* $advanceSalary Akan dipotong dengan gaji bulan depan";
   $advance_status = "1";
   $newAdvance_status = "1";
 } else {

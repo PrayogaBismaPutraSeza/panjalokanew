@@ -12,7 +12,7 @@ include("php/header.php");
     <div class="row">
         <div class="col-md-12">
             <h1 class="page-head-line">Customer</h1>
-            <h1 class="page-subhead-line">Selamat Datang di <strong><?php echo ' ' . $siteName ?></strong>
+            <h1 class="page-subhead-line">Selamat Datang di Sistem ERP<strong><?php echo ' ' . $siteName ?></strong>
                 <i class="icon-calendar icon-large"></i>
 
 
@@ -29,7 +29,7 @@ include("php/header.php");
     <div class="well bs-component">
         <form class="form-horizontal">
             <fieldset>
-                <button type="button" data-toggle="modal" data-target="#addCustomer" class="btn btn-success">Tambah Customer</button>
+                <button type="button" data-toggle="modal" data-target="#addCustomer" class="btn btn-success">Tambah Customer Baru</button>
                 <p align="center"><big><b>Daftar Customer</b></big></p>
                 <div class="table-responsive">
                     <form method="post" action="">
@@ -126,19 +126,19 @@ include("php/header.php");
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Alamat</label>
                             <div class="col-sm-8">
-                                <input type="textarea" rows="4" cols="50" name="address" class="form-control" placeholder="Alamat" required="required">
+                                <input type="textarea" rows="4" cols="50" name="address" class="form-control" placeholder="Masukkan alamat" required="required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Hp</label>
                             <div class="col-sm-8">
-                                <input type="text" name="mobile" class="form-control" placeholder="No Hp" required="required">
+                                <input type="text" name="mobile" class="form-control" placeholder="Masukkan nomor Hp" required="required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Detail</label>
                             <div class="col-sm-8">
-                                <input type="textarea" rows="4" cols="30" name="details" class="form-control" placeholder="Detail Customer" required="required">
+                                <input type="textarea" rows="4" cols="30" name="details" class="form-control" placeholder="Masukkan detail customer" required="required">
                             </div>
                         </div>
 

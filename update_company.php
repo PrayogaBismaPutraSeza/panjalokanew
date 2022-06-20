@@ -15,14 +15,14 @@ $sql = $conn->query($query);
 if ($sql) {
 ?>
   <script>
-    alert('Supplier berhasil di ubah.');
+    alert('Supplier berhasil di ubah');
     window.location.href = 'home_company.php';
   </script>
 <?php
 } else {
 ?>
   <script>
-    alert('Invalid action.');
+    alert('Invalid action');
     window.location.href = 'home_employee.php';
   </script>
 <?php

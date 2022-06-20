@@ -46,7 +46,7 @@ $addPayment = $conn->query("INSERT into payment(emp_id, pay_date,pay_amount, pai
 if ($sql && $addPayment) {
 ?>
   <script>
-    alert('Account successfully updated.');
+    alert('Pembayaran sudah ditambahkan.');
     window.location.href = '<?php echo $location; ?>';
   </script>
 
