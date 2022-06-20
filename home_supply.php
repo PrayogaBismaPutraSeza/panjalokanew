@@ -51,7 +51,7 @@ include("php/header.php");
                     <p align="center">Harga</p>
                   </th>
                   <th>
-                    <p align="center">Stok</p>
+                    <p align="center">Kuantitas</p>
                   </th>
                   <th>
                     <p align="center">Total</p>
@@ -112,7 +112,7 @@ include("php/header.php");
                   <p align="center">Harga</p>
                 </th>
                 <th>
-                  <p align="center">Stok</p>
+                  <p align="center">Kuantitas</p>
                 </th>
                 <th>
                   <p align="center">Total</p>
