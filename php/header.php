@@ -67,10 +67,10 @@
             <li>
                 <a href="home_payment.php">
                     <i class='bx bx-money'></i>
-                    <span class="link_name">Payment</span>
+                    <span class="link_name">Pembayaran</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="home_payment.php">Payment</a></li>
+                    <li><a class="link_name" href="home_payment.php">Pembayaran</a></li>
                 </ul>
             </li>
             <li>
@@ -106,7 +106,7 @@
                         <!--<img src="image/profile.jpg" alt="profileImg">-->
                     </div>
                     <div class="name-job">
-                        <div class="profile_name">Panjaloka</div>
+                        <div class="profile_name">Sistem ERP</div>
                     </div>
                     <a href="logout.php">
                         <i class='bx bx-log-out'></i>
