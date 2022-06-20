@@ -4,8 +4,8 @@ require('db.php');
 $p_id = $_GET['p_id'];
 
 
-$deleteProduct = $conn->query("UPDATE  product set delete_status='1' WHERE p_id='" . $p_id . "'");
-$deleteStock = $conn->query("DELETE  from stock WHERE p_id='" . $p_id . "'");
+// $deleteProduct = $conn->query("UPDATE  product set delete_status='1' WHERE p_id='" . $p_id . "'");
+$deleteProduct = $conn->query("DELETE FROM product WHERE p_id=$p_id");
 if ($deleteProduct) {
 ?>
   <script>

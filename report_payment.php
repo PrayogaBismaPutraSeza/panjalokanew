@@ -37,10 +37,7 @@ include("payment_regular.php");
                                     <p align="center">Tanggal Pembayaran</p>
                                 </th>
                                 <th>
-                                    <p align="center">Komentar</p>
-                                </th>
-                                <th>
-                                    <p align="center">Status Pembayaran</p>
+                                    <p align="center">Catatan</p>
                                 </th>
                             </tr>
                         </thead>
@@ -61,16 +58,6 @@ include("payment_regular.php");
                                 $q = $conn->query($query);
                                 $row = $q->fetch_assoc();
 
-
-                                if ($row2["pay_status"] == 1) {
-                                    $class = "paid";
-                                    $remark = "Terbayar";
-                                } else {
-                                    $class = "notpaid";
-                                    $remark = "Tidak Terbayar";
-                                }
-
-
                             ?>
                                 <tr>
                                     <td align="center"><?php echo $row["emp_id"] ?>/<?php echo $row["fname"] ?> <?php echo $row["lname"] ?></td>
@@ -81,7 +68,6 @@ include("payment_regular.php");
                                     <td align="center"><?php echo $row2["paid_in_bkash"] ?></td>
                                     <td align="center"><?php echo $row2["pay_date"] ?></td>
                                     <td align="center"><?php echo $row2["pay_remark"] ?></td>
-                                    <td align="center" class="<?php echo $class ?>"><?php echo $remark ?></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -109,10 +95,7 @@ include("payment_regular.php");
                                 <p align="center">Tanggal Pembayaran</p>
                             </th>
                             <th>
-                                <p align="center">Komentar</p>
-                            </th>
-                            <th>
-                                <p align="center">Status Pembayaran</p>
+                                <p align="center">Catatan</p>
                             </th>
                         </tr>
                     </table>

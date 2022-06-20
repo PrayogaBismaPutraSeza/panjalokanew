@@ -50,7 +50,7 @@ include("php/header.php");
 		<div class="col-sm-8 col-sm-offset-2">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					Change Password
+					Ganti Password
 				</div>
 				<form action="setting.php" method="post" id="signupForm1" class="form-horizontal">
 					<div class="panel-body">
@@ -59,7 +59,7 @@ include("php/header.php");
 
 
 						<div class="form-group">
-							<label class="col-sm-4 control-label" for="Old">Old Password</label>
+							<label class="col-sm-4 control-label" for="Old">Password Lama</label>
 							<div class="col-sm-5">
 								<input type="password" class="form-control" id="oldpassword" name="oldpassword" />
 							</div>
@@ -67,7 +67,7 @@ include("php/header.php");
 
 
 						<div class="form-group">
-							<label class="col-sm-4 control-label" for="Password"> New Password</label>
+							<label class="col-sm-4 control-label" for="Password">Password Baru</label>
 							<div class="col-sm-5">
 								<input class="form-control" name="newpassword" id="newpassword" type="password">
 							</div>
@@ -83,7 +83,7 @@ include("php/header.php");
 
 						<div class="form-group">
 							<div class="col-sm-9 col-sm-offset-4">
-								<button type="submit" name="save" class="btn btn-primary">Save </button>
+								<button type="submit" name="save" class="btn btn-primary">Simpan </button>
 							</div>
 						</div>
 

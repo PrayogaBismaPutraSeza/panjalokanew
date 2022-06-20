@@ -48,7 +48,7 @@ include("php/header.php");
                                         <p align="center">Jumlah</p>
                                     </th>
                                     <th>
-                                        <p align="center">Komentar</p>
+                                        <p align="center">Catatan</p>
                                     </th>
                                 </tr>
                             </thead>
@@ -97,7 +97,7 @@ include("php/header.php");
                                     <p align="center">Jumlah</p>
                                 </th>
                                 <th>
-                                    <p align="center">Komentar</p>
+                                    <p align="center">Catatan</p>
                                 </th>
                             </tr>
                         </table>

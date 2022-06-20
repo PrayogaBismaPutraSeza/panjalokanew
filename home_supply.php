@@ -57,7 +57,7 @@ include("php/header.php");
                     <p align="center">Total</p>
                   </th>
                   <th>
-                    <p align="center">Action</p>
+                    <p align="center">Aksi</p>
                   </th>
                 </tr>
               </thead>
@@ -82,7 +82,7 @@ include("php/header.php");
 
                   <tr>
                     <td align="center"><?php echo $given_date ?></a></td>
-                    <td align="center"><?php echo $b_id ?>/ <?php echo $p_name ?></a></td>
+                    <td align="center"><?php echo $b_id ?>/<?php echo $p_name ?></a></td>
                     <td align="center"><?php echo $company ?></a></td>
                     <td align="center"><?php echo $harga ?></a></td>
                     <td align="center"><?php echo $banyak ?></a></td>
@@ -90,7 +90,7 @@ include("php/header.php");
 
 
                     <td align="center">
-                      <a class="btn btn-danger" href="delete_supply.php?b_id=<?php echo $row["b_id"]; ?>">Delete</a>
+                      <a class="btn btn-danger" href="delete_supply.php?b_id=<?php echo $row["b_id"]; ?>">Hapus</a>
 
                     </td>
                   </tr>
@@ -103,10 +103,10 @@ include("php/header.php");
                   <p align="center">Tanggal</p>
                 </th>
                 <th>
-                  <p align="center">Id/Name</p>
+                  <p align="center">Id/Nama</p>
                 </th>
                 <th>
-                  <p align="center">Company</p>
+                  <p align="center">Supplier</p>
                 </th>
                 <th>
                   <p align="center">Harga</p>
@@ -118,7 +118,7 @@ include("php/header.php");
                   <p align="center">Total</p>
                 </th>
                 <th>
-                  <p align="center">Action</p>
+                  <p align="center">Aksi</p>
                 </th>
               </tr>
             </table>
@@ -138,15 +138,15 @@ include("php/header.php");
           <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
 
           <input type="hidden" name="b_id" value="<?php echo $b_id; ?>" class="form-control">
-          <h3 align="center"><b>Add Supply</b></h3>
+          <h3 align="center"><b>Tambah Supply</b></h3>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
 
           <form class="form-horizontal" action="#" name="form" method="post">
             <div class="form-group">
-              <label class="col-sm-4 control-label">Date :</label>
+              <label class="col-sm-4 control-label">Tanggal :</label>
               <div class="col-sm-4">
-                <input class="form-control" id="datepicker" placeholder="Select Date" name="given_date" type="text" />
+                <input class="form-control" id="datepicker" placeholder="Pilih Tanggal" name="given_date" type="text" />
                 <script>
                   $('#datepicker').datepicker({
                     uiLibrary: 'bootstrap4'
@@ -155,26 +155,26 @@ include("php/header.php");
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-4 control-label">Select Operation :</label>
+              <label class="col-sm-4 control-label">Pilih Operasi :</label>
               <div class="col-sm-4">
-                <input type="radio" id="supplyOps" name="supplyOps" value="add">Buy
+                <input type="radio" id="supplyOps" name="supplyOps" value="add"> Beli
 
 
               </div>
             </div>
             <div class="form-group">
 
-              <label class="col-sm-4 control-label">Product Name :</label>
+              <label class="col-sm-4 control-label">Nama Produk :</label>
               <div class="col-sm-8">
-                <input type="text" name="p_name" class="form-control" placeholder="Enter product name" required="required">
+                <input type="text" name="p_name" class="form-control" placeholder="Masukkan nama produk" required="required">
               </div>
             </div>
 
             <div class="form-group">
-              <label class="col-sm-4 control-label">Company :</label>
+              <label class="col-sm-4 control-label">Supllier :</label>
               <div class="col-sm-8">
                 <select class="form-control" id="company" style=" height:35px;" name="company" onchange="myFunction(this.value)">
-                  <option value=''>------- Select --------</option>
+                  <option value=''>------- Pilih Supplier --------</option>
                   <?php
                   $query1  = "SELECT id, name from company";
                   $q1 = $conn->query($query1);
@@ -186,15 +186,15 @@ include("php/header.php");
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-4 control-label">Quantity :</label>
+              <label class="col-sm-4 control-label">Kuantitas :</label>
               <div class="col-sm-8">
-                <input type="number" id="banyak" name="banyak" class="form-control" placeholder="Enter product quantity" required="required">
+                <input type="number" id="banyak" name="banyak" class="form-control" placeholder="Masukkan kuantitas produk" required="required">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-4 control-label">Price :</label>
+              <label class="col-sm-4 control-label">Harga :</label>
               <div class="col-sm-8">
-                <input type="number" id="harga" name="harga" class="form-control" placeholder="Enter product price" required="required">
+                <input type="number" id="harga" name="harga" class="form-control" placeholder="Masukkan harga produk" required="required">
               </div>
             </div>
 
@@ -208,8 +208,8 @@ include("php/header.php");
             <div class="form-group">
               <label class="col-sm-4 control-label"></label>
               <div class="col-sm-8">
-                <input type="submit" name="submit" class="btn btn-success" value="Submit">
-                <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
+                <input type="submit" name="submit" class="btn btn-success" value="Tambahkan">
+                <input type="reset" name="" class="btn btn-danger" value="Kosongkan Form">
               </div>
             </div>
           </form>

@@ -34,7 +34,7 @@ include("php/header.php");
     <form class="form-horizontal">
       <fieldset>
 
-        <a class="btn btn-success" href="report_sell.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
+        <a class="btn btn-info" href="report_sell.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
         <br><br>
         <div class="table-responsive">
           <form method="post" action="">
@@ -43,22 +43,22 @@ include("php/header.php");
               <thead>
                 <tr class="info">
                   <th>
-                    <p align="center">Date</p>
+                    <p align="center">Tanggal</p>
                   </th>
                   <th>
-                    <p align="center">Id/Name</p>
+                    <p align="center">Id/Nama</p>
                   </th>
                   <th>
-                    <p align="center">Quantity</p>
+                    <p align="center">Kuantitas</p>
                   </th>
                   <th>
-                    <p align="center">Price</p>
+                    <p align="center">Harga</p>
                   </th>
                   <th>
                     <p align="center">Total</p>
                   </th>
                   <th>
-                    <p align="center">Action</p>
+                    <p align="center">Aksi</p>
                   </th>
                 </tr>
               </thead>
@@ -89,7 +89,7 @@ include("php/header.php");
                     <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $total ?> </a></td>
 
                     <td align="center">
-                      <a class="btn btn-danger" href="delete_sell.php?s_id=<?php echo $row["s_id"]; ?>">Delete</a>
+                      <a class="btn btn-danger" href="delete_sell.php?s_id=<?php echo $row["s_id"]; ?>">Hapus</a>
 
                     </td>
                   </tr>
@@ -99,22 +99,22 @@ include("php/header.php");
 
               <tr class="info">
                 <th>
-                  <p align="center">Date</p>
+                  <p align="center">Tanggal</p>
                 </th>
                 <th>
-                  <p align="center">Id/Name</p>
+                  <p align="center">Id/Nama</p>
                 </th>
                 <th>
-                  <p align="center">Quantity</p>
+                  <p align="center">Kuantitas</p>
                 </th>
                 <th>
-                  <p align="center">Price</p>
+                  <p align="center">Harga</p>
                 </th>
                 <th>
                   <p align="center">Total</p>
                 </th>
                 <th>
-                  <p align="center">Action</p>
+                  <p align="center">Aksi</p>
                 </th>
               </tr>
             </table>

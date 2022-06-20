@@ -80,7 +80,7 @@ while ($row = $q->fetch_assoc()) {
       <div class="form-group">
         <label class="col-sm-5 control-label">Pilih Operasi:</label>
         <div class="col-sm-4">
-          <input type="radio" id="sell_operation" name="sell_operation" value="sub">Jual
+          <input type="radio" id="sell_operation" name="sell_operation" value="sub"> Jual
 
 
         </div>

@@ -8,13 +8,12 @@
 
 <?php
 
-if(isset($_POST['submit'])!="") 
-{
+if (isset($_POST['submit']) != "") {
     include("db.php");
-    $p_name  =$_POST['p_name'];
-    $banyak =$_POST['banyak'];
-    $harga   =$_POST['harga'];
-    $total  =$_POST['total'];
+    $p_name  = $_POST['p_name'];
+    $banyak = $_POST['banyak'];
+    $harga   = $_POST['harga'];
+    $total  = $_POST['total'];
 
     date_default_timezone_set("Asia/Jakarta");
     $given_date = date('Y-m-d', strtotime($_POST['given_date']));
@@ -26,24 +25,20 @@ if(isset($_POST['submit'])!="")
     $query  = "UPDATE product SET stock='$quantity' WHERE p_id='$p_id'";
     $sql = $conn->query($query);
 
-    if($sellProduct && $sql)
-    {
-        ?>
+    if ($sellProduct && $sql) {
+?>
         <script>
-            alert('Product has been sold.');
-            window.location.href='home_store.php?page=product_list';
+            alert('Produk berhasil dijual.');
+            window.location.href = 'home_store.php?page=product_list';
         </script>
-        <?php
-    }
-
-    else
-    {
-        ?>
+    <?php
+    } else {
+    ?>
         <script>
             alert('Invalid.');
-            window.location.href='index.php';
+            window.location.href = 'index.php';
         </script>
-        <?php
+<?php
     }
 }
 ?>

@@ -10,32 +10,29 @@ include("php/header.php");
 <div id="page-inner">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="page-head-line">Laporan Keungan Perusahaan</h1>
-            <h1 class="page-subhead-line">Welcome to <strong><?php echo ' ' . $siteName ?></strong> Today is:
+            <h1 class="page-head-line">Laporan Keuangan Perusahaan</h1>
+            <h1 class="page-subhead-line">Selamat Datang di<strong><?php echo ' ' . $siteName ?></strong>
                 <i class="icon-calendar icon-large"></i>
 
 
                 <?php
                 date_default_timezone_set("Asia/Jakarta");
-                echo  date(" l, F d, Y") . "<br>";
+                echo  date(" l, F d Y") . "<br>";
 
                 ?>
             </h1>
-               
+
         </div>
     </div>
 
     <div class="well bs-component">
         <form class="form-horizontal">
             <fieldset>
-                <div class="col-sm-3 "><a class="btn btn-success" href="report_cash.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a></div>
-                <div class="col-sm-3 "><a class="btn btn-primary" href="home_sell.php" target="_blank"><i></i> Laporan Penjualan PDF</a></div>
-                <div class="col-sm-3 "><a class="btn btn-danger" href="home_payment.php" target="_blank"><i></i> Laporan Pembayaran Gaji PDF</a></div>
-                <div class="col-sm-3 "><a class="btn btn-info" href="home_supply.php" target="_blank"><i></i> Laporan Pembelian Supply PDF</a></div>
+                <a class="btn btn-success" href="report_cash.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
+                <a class="btn btn-primary" href="home_sell.php" target="_blank"><i class='bx bx-printer'></i> Laporan Penjualan PDF</a>
+                <a class="btn btn-danger" href="home_payment.php" target="_blank"><i class='bx bx-printer'></i> Laporan Pembayaran Gaji PDF</a>
+                <a class="btn btn-info" href="home_supply.php" target="_blank"><i class='bx bx-printer'></i> Laporan Pembelian Supply PDF</a>
                 <br><br>
-                <div>
-                    <p align="center"><big><b>Cash Given List.</b></big></p>
-                </div>
                 <div class="table-responsive">
 
                     <form method="post" action="">
@@ -47,13 +44,13 @@ include("php/header.php");
                                         <p align="center">SN:</p>
                                     </th>
                                     <th>
-                                        <p align="center">Given Date</p>
+                                        <p align="center">Tanggal</p>
                                     </th>
                                     <th>
-                                        <p align="center">Amount</p>
+                                        <p align="center">Jumlah</p>
                                     </th>
                                     <th>
-                                        <p align="center">remark</p>
+                                        <p align="center">Catatan</p>
                                     </th>
                                 </tr>
                             </thead>
@@ -85,7 +82,7 @@ include("php/header.php");
                                     <tr>
                                         <td align="center"><?php echo $sn ?></td>
                                         <td align="center"><?php echo $GivenDate ?></td>
-                                        <td align="center"><?php echo $amount  ?>.00</td>
+                                        <td align="center"><?php echo $amount  ?></td>
                                         <td align="center"><?php echo $remark  ?></td>
                                     </tr>
                                 <?php } ?>
@@ -96,13 +93,13 @@ include("php/header.php");
                                     <p align="center">SN:</p>
                                 </th>
                                 <th>
-                                    <p align="center">Given Date</p>
+                                    <p align="center">Tanggal</p>
                                 </th>
                                 <th>
-                                    <p align="center">Amount</p>
+                                    <p align="center">Jumlah</p>
                                 </th>
                                 <th>
-                                    <p align="center">remark</p>
+                                    <p align="center">Catatan</p>
                                 </th>
                             </tr>
                         </table>

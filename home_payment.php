@@ -28,7 +28,7 @@ include("php/header.php");
         <form class="form-horizontal">
             <fieldset>
 
-                <a class="btn btn-success" href="report_payment.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
+                <a class="btn btn-info" href="report_payment.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
                 <br><br>
                 <div class="table-responsive">
                     <form method="post" action="">
@@ -58,10 +58,7 @@ include("php/header.php");
                                         <p align="center">Tanggal Pembayaran</p>
                                     </th>
                                     <th>
-                                        <p align="center">Komentar</p>
-                                    </th>
-                                    <th>
-                                        <p align="center">Status Pembayaran</p>
+                                        <p align="center">Catatan</p>
                                     </th>
                                 </tr>
                             </thead>
@@ -82,27 +79,16 @@ include("php/header.php");
                                     $q = $conn->query($query);
                                     $row = $q->fetch_assoc();
 
-
-                                    if ($row2["pay_status"] == 1) {
-                                        $class = "paid";
-                                        $remark = "Terbayar";
-                                    } else {
-                                        $class = "notpaid";
-                                        $remark = "Tidak Terbayar";
-                                    }
-
-
                                 ?>
                                     <tr>
                                         <td align="center"><?php echo $row["emp_id"] ?>/<?php echo $row["fname"] ?> <?php echo $row["lname"] ?></td>
                                         <td align="center"><?php echo $row["emp_type"] ?></td>
-                                        <td align="center"><big><b><?php echo $row2["pay_amount"] ?>.00 </b></big></td>
-                                        <td align="center"><big><b><?php echo $AD . $currentAD ?>.00 </b></big></td>
-                                        <td align="center"><big><b><?php echo $row2["paid_in_cash"] ?></b></big>.00</td>
-                                        <td align="center"><big><b><?php echo $row2["paid_in_bkash"] ?></b></big></td>
-                                        <td align="center"><big><b><?php echo $row2["pay_date"] ?></b></big></td>
-                                        <td align="center"><big><b><?php echo $row2["pay_remark"] ?></b></big></td>
-                                        <td align="center" class="<?php echo $class ?>"><big><b><?php echo $remark ?></b></big> </td>
+                                        <td align="center"><?php echo $row2["pay_amount"] ?></td>
+                                        <td align="center"><?php echo $AD . $currentAD ?></td>
+                                        <td align="center"><?php echo $row2["paid_in_cash"] ?></td>
+                                        <td align="center"><?php echo $row2["paid_in_bkash"] ?></td>
+                                        <td align="center"><?php echo $row2["pay_date"] ?></td>
+                                        <td align="center"><?php echo $row2["pay_remark"] ?></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
@@ -130,10 +116,7 @@ include("php/header.php");
                                     <p align="center">Tanggal Pembayaran</p>
                                 </th>
                                 <th>
-                                    <p align="center">Komentar</p>
-                                </th>
-                                <th>
-                                    <p align="center">Status Pembayaran</p>
+                                    <p align="center">Catatan</p>
                                 </th>
                             </tr>
                         </table>
