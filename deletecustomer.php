@@ -3,7 +3,7 @@ require('db.php');
 
 $id = $_GET['id'];
 
-$deleteCustomer = $conn->query("UPDATE  customer set delete_status='1' WHERE id='" . $id . "'");
+$deleteCustomer = $conn->query("DELETE FROM customer WHERE id=$id");
 if ($deleteCustomer) {
 ?>
     <script>
