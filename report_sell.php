@@ -54,11 +54,11 @@ include("first.php"); //include auth.php file on all secure pages
                             ?>
                             <tr>
                             <td align="center"><?php echo $no++?></a></td> 
-                            <td align="center"><?php echo $row["s_id"]; ?><?php echo $GivenDate?></a></td>
-                            <td align="center"><?php echo $row["s_id"]; ?><?php echo $s_id?>/  <?php echo $p_name ?></a></td>
-                            <td align="center"><?php echo $row["s_id"]; ?><?php echo $banyak?></a></td>
-                            <td align="center"><?php echo $row["s_id"]; ?><?php echo $harga ?></a></td>
-                            <td align="center"><?php echo $row["s_id"]; ?><?php echo $total ?> </a></td>
+                            <td align="center"><?php echo $GivenDate?></a></td>
+                            <td align="center"><?php echo $s_id?>/  <?php echo $p_name ?></a></td>
+                            <td align="center"><?php echo $banyak?></a></td>
+                            <td align="center"><?php echo $harga ?></a></td>
+                            <td align="center"><?php echo $total ?> </a></td>
                             </tr>
                             <?php 
                             }

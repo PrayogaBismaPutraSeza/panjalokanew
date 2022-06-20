@@ -176,7 +176,7 @@ include("php/header.php");
                 <select class="form-control" id="company" style=" height:35px;" name="company" onchange="myFunction(this.value)">
                   <option value=''>------- Pilih Supplier --------</option>
                   <?php
-                  $query1  = "SELECT id, name from company";
+                  $query1  = "SELECT id, name from company where delete_status = '0'";
                   $q1 = $conn->query($query1);
                   while ($row1 = $q1->fetch_assoc()) {
                   ?>
