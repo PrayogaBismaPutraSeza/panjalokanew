@@ -132,7 +132,7 @@ include("php/header.php");
                                     <thead>
                                         <tr class="info">
                                             <th>
-                                                <p align="center">Bulan</p>
+                                                <p align="center">Tanggal</p>
                                             </th>
                                         </tr>
                                     </thead>
@@ -220,7 +220,7 @@ include("php/header.php");
                                             <tr>
                                                 <td align="center"><?php echo $d_date ?></td>
                                                 <td align="center"><?php echo $d_Cause ?></td>
-                                                <td align="center"><big><b><?php echo $d_amount ?></b></big>.00</td>
+                                                <td align="center"><?php echo $d_amount ?></td>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -279,7 +279,7 @@ include("php/header.php");
                     <div class="form-group">
                         <label class="col-sm-4 control-label">Tanggal :</label>
                         <div class="col-sm-8">
-                            <input class="form-control" id="datepicker" name="d_date" type="text" />
+                            <input class="form-control" id="datepicker" placeholder="Pilih Tanggal" name="d_date" type="text" />
                             <script>
                                 $('#datepicker').datepicker({
                                     uiLibrary: 'bootstrap4'
@@ -297,7 +297,7 @@ include("php/header.php");
                     <div class="form-group">
                         <label class="col-sm-4 control-label">Jumlah :</label>
                         <div class="col-sm-8">
-                            <input type="text" name="d_amount" class="form-control" placeholder="Masukkan Jumlah" required="required">
+                            <input type="text" name="d_amount" class="form-control" placeholder="Masukkan jumlah" required="required">
                         </div>
                     </div>
                     <div class="form-group">
@@ -355,7 +355,7 @@ include("php/header.php");
                     <div class="form-group">
                         <label class="col-sm-4 control-label">Tanggal :</label>
                         <div class="col-sm-8">
-                            <input class="form-control" id="datepicker1" name="w_date" type="text" required="required" />
+                            <input class="form-control" id="datepicker1" name="w_date" placeholder="Pilih Tanggal" type="text" required="required" />
                             <script>
                                 $('#datepicker1').datepicker({
                                     uiLibrary: 'bootstrap4'

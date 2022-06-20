@@ -18,7 +18,7 @@ if (isset($_POST['submitd']) != "") {
     if ($sql) {
 ?>
         <script>
-            alert('Deduction had been successfully added.');
+            alert('Pembayaran Berhasil.');
             window.location.href = 'home_salaryCasual.php?page=regularAccount';
         </script>
     <?php

@@ -114,12 +114,12 @@ include("php/header.php");
                                     <tr>
                                         <td align="center"><?php echo $emp_id ?></td>
                                         <td align="center"><b><?php echo $fname ?> <?php echo $lname ?></b></td>
-                                        <td align="center"><big><b><?php echo $salary_rate ?></b></big>.00/Hari</td>
-                                        <td align="center"><big><b><?php echo $days ?></b></big> Hari</td>
-                                        <td align="center"><big><b><?php echo $due ?></b></big> .00</td>
-                                        <td align="center"><big><b><?php echo $deduction ?></b></big>.00</td>
-                                        <td align="center"><big><b><?php echo $advance ?></b></big> .00</td>
-                                        <td align="center"><big><b><?php echo $bonus ?></b></big>.00</td>
+                                        <td align="center"><?php echo $salary_rate ?>/Hari</td>
+                                        <td align="center"><?php echo $days ?> Hari</td>
+                                        <td align="center"><?php echo $due ?></b></td>
+                                        <td align="center"><?php echo $deduction ?></b></td>
+                                        <td align="center"><?php echo $advance ?></b></td>
+                                        <td align="center"><?php echo $bonus ?></b></td>
                                         <td align="center">
                                             <a class="btn btn-warning" href="edit_casualAccount.php?emp_id=<?php echo $row2["emp_id"]; ?>">Edit</a>
                                         </td>
@@ -181,7 +181,7 @@ include("php/header.php");
                             <label class="col-sm-4 control-label">Pegawai :</label>
                             <div class="col-sm-8">
                                 <select class="form-control" id="emp_id" style=" height:35px;" name="emp_id" onchange="myFunction(this.value)">
-                                    <option value=''>------- Pilih --------</option>
+                                    <option value=''>------- Pilih Pegawai--------</option>
                                     <option value='all'>Semua Pegawai Freelance</option>
                                     <?php
                                     $query1  = "SELECT emp_id, fname,lname from employee where emp_type='Freelance'";
