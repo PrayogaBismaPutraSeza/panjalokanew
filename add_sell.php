@@ -31,7 +31,7 @@ if(isset($_POST['submit'])!="")
         ?>
         <script>
             alert('Product has been sold.');
-            window.location.href='home_product.php?page=product_list';
+            window.location.href='home_store.php?page=product_list';
         </script>
         <?php
     }
