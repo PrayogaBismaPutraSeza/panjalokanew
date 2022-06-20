@@ -15,14 +15,14 @@ include("php/header.php");
 <div id="page-inner">
   <div class="row">
     <div class="col-md-12">
-      <h1 class="page-head-line">My Store</h1>
-      <h1 class="page-subhead-line">Welcome to <strong><?php echo ' ' . $siteName ?></strong> Today is:
+      <h1 class="page-head-line">Toko</h1>
+      <h1 class="page-subhead-line">Selamat Datang di Sistem ERP<strong><?php echo ' ' . $siteName ?></strong>
         <i class="icon-calendar icon-large"></i>
 
 
         <?php
         date_default_timezone_set("Asia/Jakarta");
-        echo  date(" l, F d, Y") . "<br>";
+        echo  date(" l, F d Y") . "<br>";
 
         ?>
       </h1>
@@ -34,7 +34,7 @@ include("php/header.php");
     <form class="form-horizontal">
       <fieldset>
 
-        <button type="button" data-toggle="modal" data-target="#addProduct" class="btn btn-success">Add New Product</button>
+        <button type="button" data-toggle="modal" data-target="#addProduct" class="btn btn-success">Tambah Produk Baru</button>
         <br><br>
         <div class="table-responsive">
           <form method="post" action="">
@@ -43,25 +43,25 @@ include("php/header.php");
               <thead>
                 <tr class="info">
                   <th>
-                    <p align="center">Id/Name</p>
+                    <p align="center">Id/Nama</p>
                   </th>
                   <th>
-                    <p align="center">Company</p>
+                    <p align="center">Perusahaan</p>
                   </th>
                   <th>
-                    <p align="center">Type</p>
+                    <p align="center">Jenis</p>
                   </th>
                   <th>
-                    <p align="center">Quantity</p>
+                    <p align="center">Kuantitas</p>
                   </th>
                   <th>
-                    <p align="center">Price</p>
+                    <p align="center">Harga</p>
                   </th>
                   <th>
-                    <p align="center">Stock</p>
+                    <p align="center">Stok</p>
                   </th>
                   <th>
-                    <p align="center">Action</p>
+                    <p align="center">Aksi</p>
                   </th>
                 </tr>
               </thead>
@@ -93,9 +93,9 @@ include("php/header.php");
                     <td align="center"><a href="manage_product_quantity.php?p_id=<?php echo $row["p_id"]; ?>" title="Update"><?php echo $stock ?> Ps</a></td>
 
                     <td align="center">
-                      <a class="btn btn-primary" href="manage_sell.php?p_id=<?php echo $row["p_id"]; ?>">Sell</a>
-                      <a class="btn btn-warning" href="manage_product_quantity.php?p_id=<?php echo $row["p_id"]; ?>">Manage</a>
-                      <a class="btn btn-danger" href="delete_product.php?p_id=<?php echo $row["p_id"]; ?>">Delete</a>
+                      <a class="btn btn-primary" href="manage_sell.php?p_id=<?php echo $row["p_id"]; ?>">Jual</a>
+                      <a class="btn btn-warning" href="manage_product_quantity.php?p_id=<?php echo $row["p_id"]; ?>">Kelola</a>
+                      <a class="btn btn-danger" href="delete_product.php?p_id=<?php echo $row["p_id"]; ?>">Hapus</a>
 
                     </td>
                   </tr>
@@ -105,25 +105,25 @@ include("php/header.php");
 
               <tr class="info">
                 <th>
-                  <p align="center">Id/Name</p>
+                  <p align="center">Id/Nama</p>
                 </th>
                 <th>
-                  <p align="center">Company</p>
+                  <p align="center">Perusahaan</p>
                 </th>
                 <th>
-                  <p align="center">Type</p>
+                  <p align="center">Jenis</p>
                 </th>
                 <th>
-                  <p align="center">Quantity</p>
+                  <p align="center">Kuantitas</p>
                 </th>
                 <th>
-                  <p align="center">Price</p>
+                  <p align="center">Harga</p>
                 </th>
                 <th>
-                  <p align="center">Stock</p>
+                  <p align="center">Stok</p>
                 </th>
                 <th>
-                  <p align="center">Action</p>
+                  <p align="center">Aksi</p>
                 </th>
               </tr>
             </table>
@@ -143,53 +143,53 @@ include("php/header.php");
           <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
 
           <input type="hidden" name="p_id" value="<?php echo $p_id; ?>" class="form-control">
-          <h3 align="center"><b>Add Product</b></h3>
+          <h3 align="center"><b>Tambah Produk</b></h3>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
 
           <form class="form-horizontal" action="#" name="form" method="post">
             <div class="form-group">
-              <label class="col-sm-4 control-label">Product Name :</label>
+              <label class="col-sm-4 control-label">Nama Produk :</label>
               <div class="col-sm-8">
-                <input type="text" name="pname" class="form-control" placeholder="Enter product name" required="required">
+                <input type="text" name="pname" class="form-control" placeholder="Masukkan nama produk" required="required">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-4 control-label">Company :</label>
+              <label class="col-sm-4 control-label">Perusahaan :</label>
               <div class="col-sm-8">
-                <input type="text" name="company" class="form-control" placeholder="Enter company name" required="required">
+                <input type="text" name="company" class="form-control" placeholder="Masukkan nama perusahaan" required="required">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-4 control-label">Product Type :</label>
+              <label class="col-sm-4 control-label">Jenis Produk :</label>
               <div class="col-sm-8">
-                <input type="text" name="type" class="form-control" placeholder="Enter product type" required="required">
+                <input type="text" name="type" class="form-control" placeholder="Masukkan jenis produk" required="required">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-4 control-label">Product Quantity :</label>
+              <label class="col-sm-4 control-label">Kuantitas Produk :</label>
               <div class="col-sm-8">
-                <input type="text" name="quantity" class="form-control" placeholder="Enter product quantity" required="required">
+                <input type="text" name="quantity" class="form-control" placeholder="Masukkan kuantitas produk" required="required">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-4 control-label">Price :</label>
+              <label class="col-sm-4 control-label">Harga :</label>
               <div class="col-sm-8">
-                <input type="number" name="price" class="form-control" placeholder="Enter product price" required="required">
+                <input type="number" name="price" class="form-control" placeholder="Masukkan harga produk" required="required">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-4 control-label">Stock :</label>
+              <label class="col-sm-4 control-label">Stok :</label>
               <div class="col-sm-8">
-                <input type="number" name="stock" class="form-control" placeholder="Enter stock Quantity" required="required">
+                <input type="number" name="stock" class="form-control" placeholder="Masukkan kuantitas stok" required="required">
               </div>
             </div>
 
             <div class="form-group">
               <label class="col-sm-4 control-label"></label>
               <div class="col-sm-8">
-                <input type="submit" name="submit" class="btn btn-success" value="Submit">
-                <input type="reset" name="" class="btn btn-danger" value="Clear Fields">
+                <input type="submit" name="submit" class="btn btn-success" value="Tambahkan">
+                <input type="reset" name="" class="btn btn-danger" value="Kosongkan Form">
               </div>
             </div>
           </form>

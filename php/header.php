@@ -49,10 +49,10 @@
             <li>
                 <a href="home_store.php">
                     <i class='bx bx-store'></i>
-                    <span class="link_name">Produk</span>
+                    <span class="link_name">Toko</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="home_store.php">Produk</a></li>
+                    <li><a class="link_name" href="home_store.php">Toko</a></li>
                 </ul>
             </li>
             <li>
@@ -85,10 +85,10 @@
             <li>
                 <a href="home_sell.php">
                     <i class='bx bx-bookmark-alt'></i>
-                    <span class="link_name">Sell</span>
+                    <span class="link_name">Penjualan</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="home_sell.php">Sell</a></li>
+                    <li><a class="link_name" href="home_sell.php">Penjualan</a></li>
                 </ul>
             </li>
             <li>

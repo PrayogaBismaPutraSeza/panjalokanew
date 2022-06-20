@@ -17,7 +17,7 @@ if (isset($_POST['submit']) != "") {
     if ($sql) {
 ?>
         <script>
-            alert('Transaction has been successfully added.');
+            alert('Transaksi berhasil ditambah.');
             window.location.href = 'dailyTransactions.php?page=transaction_list';
         </script>
     <?php

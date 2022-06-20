@@ -29,14 +29,14 @@ while ($row = $q->fetch_assoc()) {
   <div id="page-inner">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="page-head-line">Product: <?php echo $row['p_name']; ?></h1>
-        <h1 class="page-subhead-line">Welcome to <strong><?php echo ' ' . $siteName ?></strong> Today is:
+        <h1 class="page-head-line">Produk: <?php echo $row['p_name']; ?></h1>
+        <h1 class="page-subhead-line">Selamat Datang di Sistem ERP<strong><?php echo ' ' . $siteName ?></strong>
           <i class="icon-calendar icon-large"></i>
 
 
           <?php
           date_default_timezone_set("Asia/Jakarta");
-          echo  date(" l, F d, Y") . "<br>";
+          echo  date(" l, F d Y") . "<br>";
 
           ?>
         </h1>
@@ -50,35 +50,35 @@ while ($row = $q->fetch_assoc()) {
       <input name="p_id" type="hidden" value="<?php echo $row['p_id']; ?>" />
 
       <div class="form-group">
-        <label class="col-sm-5 control-label">Product Name :</label>
+        <label class="col-sm-5 control-label">Nama Produk :</label>
         <div class="col-sm-4">
           <input type="text" name="p_name" class="form-control" value="<?php echo $row['p_name']; ?>" required="required">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="col-sm-5 control-label">Quantity :</label>
+        <label class="col-sm-5 control-label">Kuantitas :</label>
         <div class="col-sm-4">
           <input type="number" id="stock_quantity" name="stock_quantity" class="form-control" value="<?php echo $row['stock']; ?>" required="required" readonly>
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-5 control-label">Select Operation:</label>
+        <label class="col-sm-5 control-label">Pilih Operasi:</label>
         <div class="col-sm-4">
-          <input type="radio" id="stock_operation" name="stock_operation" value="add">Add &nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" id="stock_operation" name="stock_operation" value="sub">Substract
+          <input type="radio" id="stock_operation" name="stock_operation" value="add">Tambah &nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" id="stock_operation" name="stock_operation" value="sub">Kurangi
 
 
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-5 control-label">Value :</label>
+        <label class="col-sm-5 control-label">Jumlah :</label>
         <div class="col-sm-4">
           <input type="number" id="operation_value" name="operation_value" class="form-control">
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-5 control-label">Result :</label>
+        <label class="col-sm-5 control-label">Hasil :</label>
         <div class="col-sm-4">
           <input type="number" id="result" name="result" class="form-control" readonly>
         </div>
