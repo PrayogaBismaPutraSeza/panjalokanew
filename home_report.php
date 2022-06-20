@@ -21,13 +21,7 @@ include("php/header.php");
 
                 ?>
             </h1>
-<<<<<<< HEAD
-                <div class="col-sm-3 "><a class="btn btn-success" href="report_cash.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a></div>
-                <div class="col-sm-3 "><a class="btn btn-primary" href="home_sell.php" target="_blank"><i ></i> Laporan Penjualan PDF</a></div>
-                <div class="col-sm-3 "><a class="btn btn-danger" href="home_payment.php" target="_blank"><i ></i> Laporan Pembayaran Gaji PDF</a></div>
-                <div class="col-sm-3 "><a class="btn btn-danger" href="dailyTransactions.php" target="_blank"><i ></i> Laporan Pembelian Harian PDF</a></div>
-=======
->>>>>>> be913753e59269490782202dafa42e54a34493d6
+               
         </div>
     </div>
 
@@ -37,6 +31,7 @@ include("php/header.php");
                 <div class="col-sm-3 "><a class="btn btn-success" href="report_cash.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a></div>
                 <div class="col-sm-3 "><a class="btn btn-primary" href="home_sell.php" target="_blank"><i></i> Laporan Penjualan PDF</a></div>
                 <div class="col-sm-3 "><a class="btn btn-danger" href="home_payment.php" target="_blank"><i></i> Laporan Pembayaran Gaji PDF</a></div>
+                <div class="col-sm-3 "><a class="btn btn-info" href="home_supply.php" target="_blank"><i></i> Laporan Pembelian Supply PDF</a></div>
                 <br><br>
                 <div>
                     <p align="center"><big><b>Cash Given List.</b></big></p>
