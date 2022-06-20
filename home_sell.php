@@ -13,10 +13,9 @@ while ($row = $q->fetch_assoc()) {
 include("php/header.php");
 ?>
 <div id="page-inner">
-
   <div class="row">
     <div class="col-md-12">
-      <h1 class="page-head-line">Sell</h1>
+      <h1 class="page-head-line">Penjualan</h1>
       <h1 class="page-subhead-line">Selamat Datang di Sistem ERP<strong><?php echo ' ' . $siteName ?></strong>
         <i class="icon-calendar icon-large"></i>
 
