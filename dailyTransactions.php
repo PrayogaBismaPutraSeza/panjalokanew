@@ -1,9 +1,6 @@
 <?php
-
 include("first.php");
 include("add_dailyTransaction.php");
-
-
 $query  = "SELECT * from deductions WHERE deduction_id='1'";
 $q = $conn->query($query);
 while ($row = $q->fetch_assoc()) {
@@ -32,7 +29,7 @@ include("php/header.php");
     <form class="form-horizontal">
       <fieldset>
         <button type="button" data-toggle="modal" data-target="#addTransaction" class="btn btn-success">Tambah Transaksi Baru</button>
-        <a class="btn btn-info" href="report_cash.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
+        <a class="btn btn-info" href="report_daily.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
         <br><br>
         <div class="table-responsive">
           <form method="post" action="">
@@ -154,8 +151,8 @@ include("php/header.php");
             <div class="form-group">
               <label class="col-sm-4 control-label">Metode Pembayaran :</label>
               <div class="col-sm-4">
-                <input type="radio" name="method" value="cash"> Tunai &nbsp;&nbsp;
-                <input type="radio" name="method" value="bkash"> Transfer
+                <input type="radio" name="method" value="Tunai"> Tunai &nbsp;&nbsp;
+                <input type="radio" name="method" value="Transfer"> Transfer
 
 
               </div>

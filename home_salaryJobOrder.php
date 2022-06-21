@@ -182,7 +182,6 @@ include("php/header.php");
                             <div class="col-sm-8">
                                 <select class="form-control" id="emp_id" style=" height:35px;" name="emp_id" onchange="myFunction(this.value)">
                                     <option value=''>------- Pilih Pegawai--------</option>
-                                    <option value='all'>Semua Pegawai Kontrak</option>
                                     <?php
                                     $query1  = "SELECT emp_id, fname,lname from employee where emp_type='Kontrak'";
                                     $q1 = $conn->query($query1);

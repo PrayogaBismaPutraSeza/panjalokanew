@@ -155,9 +155,9 @@ include("php/header.php");
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-4 control-label">Perusahaan :</label>
+              <label class="col-sm-4 control-label">Gudang :</label>
               <div class="col-sm-8">
-                <input type="text" name="company" class="form-control" placeholder="Masukkan nama perusahaan" required="required">
+                <input type="text" name="company" class="form-control" placeholder="Masukkan nama gudang" required="required">
               </div>
             </div>
             <div class="form-group">

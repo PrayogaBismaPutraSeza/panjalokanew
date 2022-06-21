@@ -31,6 +31,7 @@ include("php/header.php");
         <form class="form-horizontal">
             <fieldset>
                 <button type="button" data-toggle="modal" data-target="#addcash" class="btn btn-success">Tambah Uang Perusahaan Baru</button>
+                <a class="btn btn-info" href="report_cash.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
                 <br><br>
                 <div class="table-responsive">
                     <form method="post" action="">

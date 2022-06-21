@@ -40,9 +40,9 @@ while ($row4 = $q4->fetch_assoc()) {
   if ($thisMonth == $dMonth) {
     $d_amount = $d_amount + $row4['d_amount'];
   }
-  if ($row4['d_method'] == "cash") {
+  if ($row4['d_method'] == "Tunai") {
     $paid_in_cash = $paid_in_cash + $row4['d_amount'];
-  } else if ($row4['d_method'] == "bkash") {
+  } else if ($row4['d_method'] == "Transfer") {
     $paid_in_bkash = $paid_in_bkash + $row4['d_amount'];
   }
 }

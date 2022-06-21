@@ -4,7 +4,7 @@ include("payment_regular.php");
 ?>
 <div class="row">
     <div class="col-md-12">
-        <h1 class="page-head-line">Company Cash</h1>
+        <h1 class="page-head-line">Uang Perusahaan</h1>
     </div>
 </div>
 <div class="well bs-component">
@@ -12,26 +12,27 @@ include("payment_regular.php");
         <fieldset>
             <div class="table-responsive">
                 <form method="post" action="">
-                    <table class="table table-bordered table-hover table-condensed">
+                    <table class="table table-sm table-condensed">
+                        <!-- <h3><b>Ordinance</b></h3> -->
                         <thead>
-                            <tr class="info">
-                            <th>
-                                        <p align="center">SN:</p>
-                                    </th>
-                                    <th>
-                                        <p align="center">Given Date</p>
-                                    </th>
-                                    <th>
-                                        <p align="center">Amount</p>
-                                    </th>
-                                    <th>
-                                        <p align="center">remark</p>
-                                    </th>
-                           
+                            <tr class=" info">
+                                <th>
+                                    <p align="center">SN:</p>
+                                </th>
+                                <th>
+                                    <p align="center">Tanggal</p>
+                                </th>
+                                <th>
+                                    <p align="center">Jumlah</p>
+                                </th>
+                                <th>
+                                    <p align="center">Catatan</p>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
+                            <?php
+
                             global $sn;
                             global $company_name;
                             global $totalCash;
@@ -60,10 +61,23 @@ include("payment_regular.php");
                                     <td align="center"><?php echo $amount  ?>.00</td>
                                     <td align="center"><?php echo $remark  ?></td>
                                 </tr>
-                            <?php 
-                            }
-                            ?>
+                            <?php } ?>
                         </tbody>
+
+                        <tr class="info">
+                            <th>
+                                <p align="center">SN:</p>
+                            </th>
+                            <th>
+                                <p align="center">Tanggal</p>
+                            </th>
+                            <th>
+                                <p align="center">Jumlah</p>
+                            </th>
+                            <th>
+                                <p align="center">Catatan</p>
+                            </th>
+                        </tr>
                     </table>
                 </form>
             </div>

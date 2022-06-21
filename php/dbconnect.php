@@ -10,7 +10,7 @@ DEFINE("BASE_URL", "127.0.0.1");
 DEFINE('DB_USER', 'root');
 DEFINE('DB_PSWD', '');
 DEFINE('DB_HOST', 'localhost');
-DEFINE('DB_NAME', 'payroll');
+DEFINE('DB_NAME', 'panjaloka');
 
 date_default_timezone_set('Asia/Jakarta');
 $conn =  new mysqli(DB_HOST, DB_USER, DB_PSWD, DB_NAME);

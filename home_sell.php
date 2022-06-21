@@ -71,7 +71,7 @@ include("php/header.php");
                 $query = "select * from sell where delete_status = '0' ORDER BY s_id asc ";
                 $q = $conn->query($query);
                 while ($row = $q->fetch_assoc()) {
-                  date_default_timezone_set("Asia/Dhaka");
+                  date_default_timezone_set("Asia/Jakarta");
                   $GivenDate = date('D , d-M , Y', strtotime($row["given_date"]));
                   $s_id  = $row['s_id'];
                   $p_name  = $row['p_name'];

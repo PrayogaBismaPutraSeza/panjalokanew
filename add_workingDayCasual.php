@@ -1,6 +1,6 @@
 <?php
 include("db.php");
-$conn =  new mysqli("localhost", "root", "", "payroll");
+$conn =  new mysqli("localhost", "root", "", "panjaloka");
 
 ?>
 

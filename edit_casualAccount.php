@@ -303,8 +303,8 @@ include("php/header.php");
                     <div class="form-group">
                         <label class="col-sm-4 control-label">Metode Pembayaran :</label>
                         <div class="col-sm-4">
-                            <input type="radio" name="pay_method" value="cash"> Tunai &nbsp;&nbsp;
-                            <input type="radio" name="pay_method" value="bkash"> Transfer
+                            <input type="radio" name="pay_method" value="Tunai"> Tunai &nbsp;&nbsp;
+                            <input type="radio" name="pay_method" value="Transfer"> Transfer
 
 
                         </div>
