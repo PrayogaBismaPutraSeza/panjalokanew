@@ -55,7 +55,7 @@ include("php/header.php");
                                         <p align="center">Tunai</p>
                                     </th>
                                     <th>
-                                        <p align="center">Transder</p>
+                                    <p align="center">Transfer</p>
                                     </th>
                                     <th>
                                         <p align="center">Tanggal Pembayaran</p>
