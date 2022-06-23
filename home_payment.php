@@ -46,7 +46,10 @@ include("php/header.php");
                                         <p align="center"> Gaji</p>
                                     </th>
                                     <th>
-                                        <p align="center"> Kelebihan/Kekurangan</p>
+                                        <p align="center"> Kekurangan</p>
+                                    </th>
+                                    <th>
+                                        <p align="center"> Kelebihan</p>
                                     </th>
                                     <th>
                                         <p align="center">Tunai</p>
@@ -84,7 +87,8 @@ include("php/header.php");
                                         <td align="center"><?php echo $row["emp_id"] ?>/<?php echo $row["fname"] ?> <?php echo $row["lname"] ?></td>
                                         <td align="center"><?php echo $row["emp_type"] ?></td>
                                         <td align="center"><?php echo $row2["pay_amount"] ?></td>
-                                        <td align="center"><?php echo $AD . $currentAD ?></td>
+                                        <td align="center"><?php echo $row2["due"] ?></td>
+                                        <td align="center"><?php echo $row2["advance"] ?></td>
                                         <td align="center"><?php echo $row2["paid_in_cash"] ?></td>
                                         <td align="center"><?php echo $row2["paid_in_bkash"] ?></td>
                                         <td align="center"><?php echo $row2["pay_date"] ?></td>
@@ -104,8 +108,11 @@ include("php/header.php");
                                     <p align="center">Gaji</p>
                                 </th>
                                 <th>
-                                    <p align="center">Kelebihan/Kekurangan</p>
-                                </th>
+                                        <p align="center"> Kekurangan</p>
+                                    </th>
+                                    <th>
+                                        <p align="center"> Kelebihan</p>
+                                    </th>
                                 <th>
                                     <p align="center">Tunai</p>
                                 </th>
