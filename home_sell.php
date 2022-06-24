@@ -49,6 +49,9 @@ include("php/header.php");
                     <p align="center">Id/Nama</p>
                   </th>
                   <th>
+                    <p align="center">Customer</p>
+                  </th>
+                  <th>
                     <p align="center">Kuantitas</p>
                   </th>
                   <th>
@@ -75,6 +78,7 @@ include("php/header.php");
                   $GivenDate = date('D , d-M , Y', strtotime($row["given_date"]));
                   $s_id  = $row['s_id'];
                   $p_name  = $row['p_name'];
+                  $name  = $row['name'];
                   $banyak  = $row['banyak'];
                   $harga  = $row['harga'];
                   $total = $row['total'];
@@ -84,6 +88,7 @@ include("php/header.php");
                   <tr>
                     <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $GivenDate ?></a></td>
                     <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $s_id ?>/ <?php echo $p_name ?></a></td>
+                    <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $name ?></a></td>
                     <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $banyak ?></a></td>
                     <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $harga ?></a></td>
                     <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $total ?> </a></td>
@@ -104,6 +109,9 @@ include("php/header.php");
                 <th>
                   <p align="center">Id/Nama</p>
                 </th>
+                <th>
+                    <p align="center">Customer</p>
+                  </th>
                 <th>
                   <p align="center">Kuantitas</p>
                 </th>

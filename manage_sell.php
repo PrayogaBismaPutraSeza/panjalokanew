@@ -66,6 +66,21 @@ while ($row = $q->fetch_assoc()) {
         </div>
       </div>
       <div class="form-group">
+              <label class="col-sm-5 control-label">Customer :</label>
+              <div class="col-sm-4">
+                <select class="form-control" id="name" style=" height:35px;" name="name" onchange="myFunction(this.value)">
+                  <option value=''>------- Pilih Customer --------</option>
+                  <?php
+                  $query1  = "SELECT id, name from customer where delete_status = '0'";
+                  $q1 = $conn->query($query1);
+                  while ($row1 = $q1->fetch_assoc()) {
+                  ?>
+                    <option class="form-control" value="<?php echo $row1["name"] ?>"><?php echo $row1["name"] ?></option>
+                  <?php  } ?>
+                </select>
+              </div>
+            </div>
+      <div class="form-group">
         <label class="col-sm-5 control-label">Stok :</label>
         <div class="col-sm-4">
           <input type="number" id="stock_quantity" name="stock_quantity" class="form-control" value="<?php echo $row['stock']; ?>" required="required" readonly>
