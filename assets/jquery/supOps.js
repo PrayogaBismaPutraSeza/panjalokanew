@@ -6,6 +6,7 @@ $(function () {
     
           function sum() {
           $("#result").val(Number($("#banyak").val()) + Number($("#operation_value").val()));
+          $("#total").val(Number($("#harga").val()) * Number($("#operation_value").val()));
           //$("#subt").val(Number($("#num1").val()) - Number($("#num2").val()));
           }
     
@@ -13,7 +14,11 @@ $(function () {
           $("#banyak, #operation_value").on("keydown keyup", sub);
     
           function sub() {
+            var x = 0;
           $("#result").val(Number($("#banyak").val()) - Number($("#operation_value").val()));
+          if( $("#result").val() < 0){
+            $("#result").val(x);
+          }
           //$("#subt").val(Number($("#num1").val()) - Number($("#num2").val()));
           }
     

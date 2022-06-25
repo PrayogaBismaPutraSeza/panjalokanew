@@ -29,7 +29,7 @@ while ($row = $q->fetch_assoc()) {
   <div id="page-inner">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="page-head-line">Buy Supply: <?php echo $row['p_name']; ?></h1>
+        <h1 class="page-head-line">Use Supply: <?php echo $row['p_name']; ?></h1>
         <h1 class="page-subhead-line">Welcome to <strong><?php echo ' ' . $siteName ?></strong> Today is:
           <i class="icon-calendar icon-large"></i>
 
@@ -62,12 +62,12 @@ while ($row = $q->fetch_assoc()) {
           <input type="number" id="banyak" name="banyak" class="form-control" value="<?php echo $row['banyak']; ?>" required="required" readonly>
         </div>
       </div>
+      
       <div class="form-group">
         <label class="col-sm-5 control-label">Select Operation:</label>
         <div class="col-sm-4">
-          <input type="radio" id="stock_operation" name="stock_operation" value="add">Add &nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" id="stock_operation" name="stock_operation" value="sub">Substract
-
+          <input type="radio" id="stock_operation" name="stock_operation" value="sub">Pakai
+          
 
         </div>
       </div>
@@ -83,12 +83,12 @@ while ($row = $q->fetch_assoc()) {
           <input type="number" id="result" name="result" class="form-control" readonly>
         </div>
       </div>
-
+      
       <div class="form-group">
         <label class="col-sm-5 control-label"></label>
         <div class="col-sm-4">
           <input type="submit" name="submit" value="Update" class="btn btn-warning">
-          <a href="home_store.php" class="btn btn-danger">Cancel</a>
+          <a href="home_supply.php" class="btn btn-danger">Cancel</a>
         </div>
       </div>
 
