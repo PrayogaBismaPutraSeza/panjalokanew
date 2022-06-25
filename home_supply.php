@@ -90,6 +90,7 @@ include("php/header.php");
 
 
                     <td align="center">
+                    <a class="btn btn-warning" href="manage_supply.php?p_id=<?php echo $row["b_id"]; ?>">Kelola</a>
                       <a class="btn btn-danger" href="delete_supply.php?b_id=<?php echo $row["b_id"]; ?>">Hapus</a>
 
                     </td>

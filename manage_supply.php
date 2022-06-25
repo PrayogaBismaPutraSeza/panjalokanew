@@ -13,7 +13,7 @@ while ($row = $q->fetch_assoc()) {
 
 
 <?php
-$id = $_REQUEST['b_id'];
+$id = $_REQUEST['p_id'];
 
 $query  = "SELECT * from buy where b_id='" . $id . "'";
 $q = $conn->query($query);
@@ -45,7 +45,7 @@ while ($row = $q->fetch_assoc()) {
     </div>
 
 
-    <form class="form-horizontal" action="update_quantity.php" method="post" name="form">
+    <form class="form-horizontal" action="update_stokSup.php" method="post" name="form">
       <input type="hidden" name="new" value="1" />
       <input name="b_id" type="hidden" value="<?php echo $row['b_id']; ?>" />
 
@@ -128,7 +128,7 @@ while ($row = $q->fetch_assoc()) {
       });
     });
   </script>
-  <script src="assets/jquery/stockOperation.js" type="text/javascript"></script>
+  <script src="assets/jquery/supOps.js" type="text/javascript"></script>
   <?php
   include("last.php");
   ?>
