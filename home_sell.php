@@ -58,6 +58,9 @@ include("php/header.php");
                     <p align="center">Harga</p>
                   </th>
                   <th>
+                    <p align="center">Diskon</p>
+                  </th>
+                  <th>
                     <p align="center">Total</p>
                   </th>
                   <th>
@@ -81,7 +84,9 @@ include("php/header.php");
                   $name  = $row['name'];
                   $banyak  = $row['banyak'];
                   $harga  = $row['harga'];
-                  $total = $row['total'];
+                  $diskon  = $row['diskon'];
+                  $total  = $row['total'];
+                  $totalDis  = $row['totalDis'];
 
                 ?>
 
@@ -91,7 +96,8 @@ include("php/header.php");
                     <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $name ?></a></td>
                     <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $banyak ?></a></td>
                     <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $harga ?></a></td>
-                    <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $total ?> </a></td>
+                    <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $diskon ?></a><a> %</a></td>
+                    <td align="center"><a href="view_sell.php?s_id=<?php echo $row["s_id"]; ?>" title="Update"><?php echo $totalDis ?> </a></td>
 
                     <td align="center">
                       <a class="btn btn-danger" href="delete_sell.php?s_id=<?php echo $row["s_id"]; ?>">Hapus</a>
@@ -118,6 +124,9 @@ include("php/header.php");
                 <th>
                   <p align="center">Harga</p>
                 </th>
+                <th>
+                    <p align="center">Diskon</p>
+                  </th>
                 <th>
                   <p align="center">Total</p>
                 </th>

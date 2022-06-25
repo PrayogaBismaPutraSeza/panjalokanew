@@ -100,6 +100,7 @@ while ($row = $q->fetch_assoc()) {
 
         </div>
       </div>
+      
       <div class="form-group">
         <label class="col-sm-5 control-label">Kuantitas :</label>
         <div class="col-sm-4">
@@ -116,6 +117,18 @@ while ($row = $q->fetch_assoc()) {
         <label class="col-sm-5 control-label">Total Bayar :</label>
         <div class="col-sm-4">
           <input type="number" id="total" name="total" class="form-control" readonly>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">Diskon :</label><a>%</a>
+        <div class="col-sm-1">
+          <input type="number" id="diskon" name="diskon" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">Total Bayar Setelah Diskon:</label>
+        <div class="col-sm-4">
+          <input type="number" id="totalDis" name="totalDis" class="form-control" readonly> 
         </div>
       </div>
       <div class="form-group">
@@ -164,6 +177,7 @@ while ($row = $q->fetch_assoc()) {
     });
   </script>
   <script src="assets/jquery/sellOperation.js" type="text/javascript"></script>
+  <script src="assets/jquery/discOps.js" type="text/javascript"></script>
   <?php
   include("last.php");
   ?>
