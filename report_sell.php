@@ -29,6 +29,9 @@ include("first.php"); //include auth.php file on all secure pages
                                     <p align="center">Harga</p>
                                 </th>
                                 <th>
+                                    <p align="center">Diskon</p>
+                                </th>
+                                <th>
                                     <p align="center">Total</p>
                                 </th>
                             </tr>
@@ -46,9 +49,12 @@ include("first.php"); //include auth.php file on all secure pages
                                 $GivenDate = date('D , d-M , Y', strtotime($row["given_date"]));
                                 $s_id  = $row['s_id'];
                                 $p_name  = $row['p_name'];
+                                $name  = $row['name'];
                                 $banyak  = $row['banyak'];
                                 $harga  = $row['harga'];
-                                $total = $row['total'];
+                                $diskon  = $row['diskon'];
+                                $total  = $row['total'];
+                                $totalDis  = $row['totalDis'];
 
                             ?>
 
@@ -57,7 +63,8 @@ include("first.php"); //include auth.php file on all secure pages
                                     <td align="center"><a title="Update"><?php echo $s_id ?>/ <?php echo $p_name ?></a></td>
                                     <td align="center"><a title="Update"><?php echo $banyak ?></a></td>
                                     <td align="center"><a title="Update"><?php echo $harga ?></a></td>
-                                    <td align="center"><a title="Update"><?php echo $total ?> </a></td>
+                                    <td align="center"><a title="Update"><?php echo $diskon ?></a><a> %</a></td>
+                                    <td align="center"><a title="Update"><?php echo $totalDis ?> </a></td>
 
 
                                 </tr>
@@ -77,6 +84,9 @@ include("first.php"); //include auth.php file on all secure pages
                             </th>
                             <th>
                                 <p align="center">Harga</p>
+                            </th>
+                            <th>
+                                <p align="center">Diskon</p>
                             </th>
                             <th>
                                 <p align="center">Total</p>
