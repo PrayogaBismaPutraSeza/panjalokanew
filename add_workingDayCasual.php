@@ -10,8 +10,9 @@ $allreadyAdded = false;
 $empty = false;
 if (isset($_POST['submit']) != "") {
   $emp_id      = $_POST['emp_id'];
-  $w_date      = $_POST['w_date'];
-
+  date_default_timezone_set("Asia/Jakarta");
+  $w_date = date('Y-m-d', strtotime($_POST['w_date']) );
+ 
   if ($w_date == " ") {
     $empty = true;
   }
