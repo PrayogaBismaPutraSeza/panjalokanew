@@ -28,9 +28,7 @@ if ($emp_type == "Casual") {
   $salary = $salary_rate;
 }
 
-$query3  = "SELECT * from salary where emp_id = $emp_id";
-$q3 = $conn->query($query3);
-$row3 = $q3->fetch_assoc();
+
 $bonus = $row2["bonus"];
 $query4  = "SELECT d_amount,d_date,d_method from deductions where emp_id = $emp_id ";
 $q4 = $conn->query($query4);

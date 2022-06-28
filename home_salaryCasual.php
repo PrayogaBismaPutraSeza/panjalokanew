@@ -4,21 +4,7 @@ include("add_salary.php");
 
 ?>
 
-<?php
-$query  = "SELECT * from overtime";
-$q = $conn->query($query);
-while ($row = $q->fetch_assoc()) {
-    @$rate           = $row['rate'];
-}
 
-$query  = "SELECT * from salary";
-$q = $conn->query($query);
-while ($row = $q->fetch_assoc()) {
-    @$emp_id           = $row['emp_id'];
-    @$salary           = $row['salary_rate'];
-}
-$netpay = 0;
-?>
 
 <?php
 include("php/header.php");
