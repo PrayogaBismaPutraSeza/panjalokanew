@@ -92,7 +92,7 @@ include("php/header.php");
 
                             <label class="col-sm-3 control-label">Yang harus dibayar :</label>
                             <div class="col-sm-4">
-                                <?php echo $netpay*$days; ?>
+                                <?php echo ($salary_rate * $days) + $bonus ; ?>
                             </div>
                             <div class="col-sm-5">
                                 <span style="color:#ff4d4d"><?php echo $message3; ?><span><br>
