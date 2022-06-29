@@ -21,9 +21,9 @@ $query1  = "SELECT count(w_date) as rate from works where emp_id = $emp_id";
 $q1 = $conn->query($query1);
 $row1 = $q1->fetch_assoc();
 $days   = $row1['rate'];
-
-if ($emp_type == "Casual") {
-  $salary = $salary_rate * $days;
+$bonus = $row2["bonus"];
+if ($emp_type == "Freelance") {
+  $salary = ($salary_rate * $days) + $bonus;
 } else {
   $salary = $salary_rate;
 }
@@ -66,11 +66,21 @@ while ($row4 = $q4->fetch_assoc()) {
     $ADpay_id = $row4['pay_id'];
   }
 }
+$query10  = "SELECT count(w_date) as rate from works where emp_id = $emp_id";
+$q10 = $conn->query($query1);
+$row10 = $q10->fetch_assoc();
+$days   = $row10['rate'];
 
+if ($emp_type == "Freelance") {
+  $income   = ($salary_rate * $days) + $bonus;
+} else {
+  $income   = $bonus + $salary + $due;
+}
 $deduction       = $d_amount;
-$income   = $bonus + $salary + $due;
+
 $salaryPaid = $deduction + $advance;
 $netpay   = $income - $salaryPaid;
+
 
 
 $message3 = " Jika tidak dibayar uang ini akan tetap jatuh tempo pada bulan depan.";
