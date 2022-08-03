@@ -49,9 +49,6 @@ include("php/header.php");
                     <p align="center">Jenis Kelamin</p>
                   </th>
                   <th>
-                    <p align="center">Status Pegawai</p>
-                  </th>
-                  <th>
                     <p align="center">Divisi</p>
                   </th>
                   <th>
@@ -84,7 +81,6 @@ include("php/header.php");
                   <tr>
                     <td align="center"><a href="view_employee.php?emp_id=<?php echo $row["emp_id"]; ?>" title="Update"><?php echo $row['fname'] ?> <?php echo $row['lname'] ?></br><?php echo $row['mobileNo'] ?></a></td>
                     <td align="center"><a href="view_employee.php?emp_id=<?php echo $row["emp_id"]; ?>" title="Update"><?php echo $row['gender'] ?></a></td>
-                    <td align="center"><a href="view_employee.php?emp_id=<?php echo $row["emp_id"]; ?>" title="Update"><?php echo $row['emp_type'] ?></a></td>
                     <td align="center"><a href="view_employee.php?emp_id=<?php echo $row["emp_id"]; ?>" title="Update"><?php echo $row['division'] ?></a></td>
                     <td align="center"><a href="view_employee.php?emp_id=<?php echo $row["emp_id"]; ?>" title="Update"><?php echo $row['salary'] ?></a></td>
 
@@ -98,25 +94,22 @@ include("php/header.php");
               </tbody>
 
               <tr class="info">
-                <th>
-                  <p align="center">Nama/No Hp</p>
-                </th>
-                <th>
-                  <p align="center">Jenis Kelamin</p>
-                </th>
-                <th>
-                  <p align="center">Status Pegawai</p>
-                </th>
-                <th>
-                  <p align="center">Divisi</p>
-                </th>
-                <th>
-                  <p align="center">Tarif Gaji</p>
-                </th>
-                <th>
-                  <p align="center">Aksi</p>
-                </th>
-              </tr>
+                  <th>
+                    <p align="center">Nama/No Hp</p>
+                  </th>
+                  <th>
+                    <p align="center">Jenis Kelamin</p>
+                  </th>
+                  <th>
+                    <p align="center">Divisi</p>
+                  </th>
+                  <th>
+                    <p align="center">Tarif Gaji</p>
+                  </th>
+                  <th>
+                    <p align="center">Aksi</p>
+                  </th>
+                </tr>
             </table>
           </form>
         </div>
@@ -169,17 +162,7 @@ include("php/header.php");
                 </select>
               </div>
             </div>
-            <div class="form-group">
-              <label class="col-sm-4 control-label">Status Pegawai</label>
-              <div class="col-sm-8">
-                <select name="emp_type" class="form-control" placeholder="Status Pegawai" required>
-                  <option value="">Status Pegawai</option>
-                  <option value="Tetap">Tetap</option>
-                  <option value="Freelance">Freelance</option>
-                  <option value="Kontrak">Kontrak</option>
-                </select>
-              </div>
-            </div>
+            
             <div class="form-group">
               <label class="col-sm-4 control-label">Divisi</label>
               <div class="col-sm-8">

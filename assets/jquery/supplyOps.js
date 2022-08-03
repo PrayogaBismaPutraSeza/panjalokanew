@@ -14,7 +14,6 @@ $(function () {
           $("#stock_quantity, #banyak, #harga").on("keydown keyup", sub);
     
           function sub() {
-          $("#result").val(Number($("#stock_quantity").val()) - Number($("#banyak").val()));
           $("#total").val(Number($("#harga").val()) * Number($("#banyak").val()));
           //$("#subt").val(Number($("#num1").val()) - Number($("#num2").val()));
           }

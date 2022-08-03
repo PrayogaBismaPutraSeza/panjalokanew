@@ -41,7 +41,7 @@ include("first.php"); //include auth.php file on all secure pages
                             global $b_id;
 
 
-                            $query = "select * from buy where delete_status = '0' ORDER BY b_id asc ";
+                            $query = "select * from buy_laporan where delete_status = '0' ORDER BY b_id asc ";
                             $q = $conn->query($query);
                             while ($row = $q->fetch_assoc()) {
                                 $b_id     = $row['b_id'];

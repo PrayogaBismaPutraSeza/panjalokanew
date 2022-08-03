@@ -14,18 +14,14 @@ include("php/header.php");
         <nav class="navbar navbar-inverse">
             <div class="navbar-header">
 
-                <ul class="nav navbar-nav">
-                    <li><a href="home_salaryRegular.php">Pegawai Tetap</a></li>
-                    <li class="active"><a href="home_salaryCasual.php">Pegawai Freelance</a></li>
-                    <li><a href="home_salaryJobOrder.php">Pegawai Kontrak</a></li>
-                </ul>
+                
             </div>
         </nav>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <h1 class="page-head-line">Gaji Pegawai Freelance</h1>
-            <h1 class="page-subhead-line">Selamat Datang di Sistem ERP<strong><?php echo ' ' . $siteName ?></strong>
+            <h1 class="page-head-line">Gaji Pegawai</h1>
+            <h1 class="page-subhead-line">Selamat Datang di<strong><?php echo ' ' . $siteName ?></strong>
                 <i class="icon-calendar icon-large"></i>
 
 

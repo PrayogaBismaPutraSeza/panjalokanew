@@ -12,8 +12,8 @@ include("php/header.php");
 <div id="page-inner">
   <div class="row">
     <div class="col-md-12">
-      <h1 class="page-head-line">Buy Supply</h1>
-      <h1 class="page-subhead-line">Selamat Datang di Sistem ERP<strong><?php echo ' ' . $siteName ?></strong>
+      <h1 class="page-head-line">Beli Bahan Baku dan Produksi</h1>
+      <h1 class="page-subhead-line">Selamat Datang di<strong><?php echo ' ' . $siteName ?></strong>
         <i class="icon-calendar icon-large"></i>
 
 
@@ -90,7 +90,7 @@ include("php/header.php");
 
 
                     <td align="center">
-                    <a class="btn btn-warning" href="manage_supply.php?p_id=<?php echo $row["b_id"]; ?>">Kelola</a>
+                    <a class="btn btn-warning" href="manage_supply.php?p_id=<?php echo $row["b_id"]; ?>">Produksi</a>
                       <a class="btn btn-danger" href="delete_supply.php?b_id=<?php echo $row["b_id"]; ?>">Hapus</a>
 
                     </td>
@@ -150,8 +150,9 @@ include("php/header.php");
                 <input class="form-control" id="datepicker" placeholder="Pilih Tanggal" name="given_date" type="text" />
                 <script>
                   $('#datepicker').datepicker({
-                    uiLibrary: 'bootstrap4'
-                  });
+                    format:'mm/dd/yyyy',
+                    uiLibrary: 'bootstrap4'                    
+                  }).datepicker("setDate",'now');
                 </script>
               </div>
             </div>

@@ -29,9 +29,9 @@ include("php/header.php");
         <form class="form-horizontal">
             <fieldset>
                 <a class="btn btn-success" href="report_cash.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
-                <a class="btn btn-primary" href="home_sell.php" target="_blank"><i class='bx bx-printer'></i> Laporan Penjualan PDF</a>
+                <a class="btn btn-primary" href="laporan.php" target="_blank"><i class='bx bx-printer'></i> Laporan Penjualan PDF</a>
                 <a class="btn btn-danger" href="home_payment.php" target="_blank"><i class='bx bx-printer'></i> Laporan Pembayaran Gaji PDF</a>
-                <a class="btn btn-info" href="home_supply.php" target="_blank"><i class='bx bx-printer'></i> Laporan Pembelian Supply PDF</a>
+                <a class="btn btn-info" href="supply.php" target="_blank"><i class='bx bx-printer'></i> Laporan Pembelian Supply PDF</a>
                 <a class="btn btn-warning" href="dailyTransactions.php" target="_blank"><i class='bx bx-printer'></i> Laporan Pengeluaran PDF</a>
                 <br><br>
                 <div class="table-responsive">

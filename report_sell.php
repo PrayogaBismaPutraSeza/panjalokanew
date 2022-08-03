@@ -7,96 +7,60 @@ include("first.php"); //include auth.php file on all secure pages
         <h1 class="page-head-line">Penjualan</h1>
     </div>
 </div>
-<div class="well bs-component">
-    <form class="form-horizontal">
-        <fieldset>
-            <div class="table-responsive">
-                <form method="post" action="">
-                    <table class="table table-bordered table-hover table-condensed">
-                        <!-- <h3><b>Ordinance</b></h3> -->
+<div class="card">
+    <div class="card-header">
+        <div class="card-tittle">
+            <i class="fa fa-table me-2"></i> Data Laporan 
+        </div>
+    </div>
+        <div class="card-body">
+            <table class="table table-striped table-sm table-bordered dt-responsive nowrap" id="table" width="100%">
                         <thead>
-                            <tr class="info">
-                                <th>
-                                    <p align="center">Tanggal</p>
-                                </th>
-                                <th>
-                                    <p align="center">Id/Nama</p>
-                                </th>
-                                <th>
-                                    <p align="center">Kuantitas</p>
-                                </th>
-                                <th>
-                                    <p align="center">Harga</p>
-                                </th>
-                                <th>
-                                    <p align="center">Diskon</p>
-                                </th>
-                                <th>
-                                    <p align="center">Total</p>
-                                </th>
-                            </tr>
+                        <tr>
+                            <th>No.</th>
+                            <th>No. Nota</th>
+                            <th>Pelanggan</th>
+                            <th>Qty</th>
+                            <th>Catatan</th>
+                            <th>SubTotal</th>
+                            <th>Pembayaran</th>
+                            <th>Kembalian</th>
+                            <th>Tanggal</th>
+                            
+                        </tr>
                         </thead>
                         <tbody>
                             <?php
-
-                            global $s_id;
-
-
-                            $query = "select * from sell where delete_status = '0' ORDER BY s_id asc ";
-                            $q = $conn->query($query);
-                            while ($row = $q->fetch_assoc()) {
-                                date_default_timezone_set("Asia/Jakarta");
-                                $GivenDate = date('D , d-M , Y', strtotime($row["given_date"]));
-                                $s_id  = $row['s_id'];
-                                $p_name  = $row['p_name'];
-                                $name  = $row['name'];
-                                $banyak  = $row['banyak'];
-                                $harga  = $row['harga'];
-                                $diskon  = $row['diskon'];
-                                $total  = $row['total'];
-                                $totalDis  = $row['totalDis'];
-
-                            ?>
-
-                                <tr>
-                                    <td align="center"><a title="Update"><?php echo $GivenDate ?></a></td>
-                                    <td align="center"><a title="Update"><?php echo $s_id ?>/ <?php echo $p_name ?></a></td>
-                                    <td align="center"><a title="Update"><?php echo $banyak ?></a></td>
-                                    <td align="center"><a title="Update"><?php echo $harga ?></a></td>
-                                    <td align="center"><a title="Update"><?php echo $diskon ?></a><a> %</a></td>
-                                    <td align="center"><a title="Update"><?php echo $totalDis ?> </a></td>
-
-
-                                </tr>
-
-                            <?php } ?>
-                        </tbody>
-
-                        <tr class="info">
-                            <th>
-                                <p align="center">Tanggal</p>
-                            </th>
-                            <th>
-                                <p align="center">Id/Nama</p>
-                            </th>
-                            <th>
-                                <p align="center">Kuantitas</p>
-                            </th>
-                            <th>
-                                <p align="center">Harga</p>
-                            </th>
-                            <th>
-                                <p align="center">Diskon</p>
-                            </th>
-                            <th>
-                                <p align="center">Total</p>
-                            </th>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-        </fieldset>
-    </form>
+                                $no=1;
+                                $data_produk=mysqli_query($conn,"SELECT * FROM laporan l, pelanggan e
+                                WHERE  e.idpelanggan=l.idpelanggan ORDER BY idlaporan ASC");
+                                while($d=mysqli_fetch_array($data_produk)){
+                                    $idlaporan= $d['idlaporan'];
+                                    $nota= $d['no_nota'];
+                                    ?>
+                                    
+                                    <tr>
+                                        <td><?php echo $no++ ?></td>
+                                        <td><?php echo $d['no_nota'] ?></td>
+                                        <td><?php echo $d['nama_pelanggan'] ?></td>
+                                        <td><?php 
+                                            $itungtrans = mysqli_query($conn,"SELECT SUM(quantity) as jumlahtrans
+                                             FROM tb_nota where no_nota='$nota'");
+                                            $itungtrans2 = mysqli_fetch_assoc($itungtrans);
+                                            $itungtrans3 = $itungtrans2['jumlahtrans'];
+                                            echo $itungtrans3;
+                                        ?></td>
+                                         <td class="catatan"><?php echo $d['catatan'] ?></td>
+                                         <td>Rp.<?php echo ($d['totalbeli']) ?></td>
+                                         <td>Rp.<?php echo ($d['pembayaran']) ?></td>
+                                         <td>Rp.<?php echo ($d['kembalian']) ?></td>
+                                        <td><?php echo $d['tgl_sub'] ?></td>
+                                        
+                                    </tr>		
+                        <?php }?>
+					</tbody>
+                </table>
+        </div>
 </div>
 <script>
     window.print();

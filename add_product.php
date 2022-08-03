@@ -10,8 +10,8 @@ if (isset($_POST['submit']) != "") {
     $company = $_POST['company'];
     $type   = $_POST['type'];
     $quantity  = $_POST['quantity'];
-    $price  = $_POST['price'];
-    $stock  = $_POST['stock'];
+    $price  = 0;
+    $stock  = 0;
 
 
     $addProduct = $conn->query("INSERT into product(p_name, p_type, p_quantity, p_company, price,stock)VALUES('$p_name','$type','$quantity', '$company', '$price','$stock')");

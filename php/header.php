@@ -24,12 +24,12 @@
                 </ul>
             </li>
             <li>
-                <a href="home_customer.php">
+                <a href="pelanggan.php">
                     <i class='bx bx-user'></i>
                     <span class="link_name">Customer</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="home_customer.php">Customer</a></li>
+                    <li><a class="link_name" href="pelanggan.php">Customer</a></li>
                 </ul>
             </li>
             <li>
@@ -43,25 +43,46 @@
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Human Resource</a></li>
                     <li><a href="home_employee.php">Pegawai</a></li>
-                    <li><a href="home_salaryRegular.php">Gaji</a></li>
+                    <li><a href="home_salaryCasual.php">Gaji</a></li>
                 </ul>
             </li>
             <li>
-                <a href="home_supply.php">
-                    <i class='bx bxs-truck'></i>
-                    <span class="link_name">Buy Supply</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="home_supply.php">Buy Supply</a></li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bxs-collection'></i>
+                        <span class="link_name">Produksi dan Bahan</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu ">
+                    <li><a  href="home_supply.php">Produksi dan Bahan</a></li>
+                    <li><a  href="supply.php">Laporan Beli Bahan</a></li>
+                    <li><a  href="home_produksi.php">Hasil Produksi</a></li>
                 </ul>
+                
             </li>
             <li>
-                <a href="home_store.php">
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-collection'></i>
+                        <span class="link_name">Produk</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu ">
+                    <li><a  href="kategori.php">Kategori</a></li>
+                    <li><a  href="produk.php">Produk</a></li>
+                </ul>
+
+            </li>
+            <li>
+            <li>
+                <a href="home_kasir.php">
                     <i class='bx bx-store'></i>
                     <span class="link_name">Toko</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="home_store.php">Toko</a></li>
+                    <li><a class="link_name" href="home_kasir.php">Toko (jual Barang)</a></li>
                 </ul>
             </li>
             <li>
@@ -74,21 +95,16 @@
                 </ul>
             </li>
             <li>
-                <a href="home_report.php">
-                    <i class='bx bx-book-content'></i>
-                    <span class="link_name">Laporan</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="home_report.php">Laporan</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="home_sell.php">
-                    <i class='bx bx-bookmark-alt'></i>
-                    <span class="link_name">Penjualan</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="home_sell.php">Penjualan</a></li>
+                <div class="iocn-link">
+                    <a href="home_report.php">
+                        <i class='bx bx-book-content'></i>
+                        <span class="link_name">Laporan</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu ">
+                    <li><a  href="home_report.php">Laporan</a></li>
+                    <li><a  href="laporan.php">Laporan Penjualan</a></li>
                 </ul>
             </li>
             <li>

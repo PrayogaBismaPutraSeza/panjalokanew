@@ -93,8 +93,7 @@ include("php/header.php");
                     <td align="center"><a href="manage_product_quantity.php?p_id=<?php echo $row["p_id"]; ?>" title="Update"><?php echo $stock ?> Ps</a></td>
 
                     <td align="center">
-                      <a class="btn btn-primary" href="manage_sell.php?p_id=<?php echo $row["p_id"]; ?>">Jual</a>
-                      <a class="btn btn-warning" href="manage_product_quantity.php?p_id=<?php echo $row["p_id"]; ?>">Kelola</a>
+                      
                       <a class="btn btn-danger" href="delete_product.php?p_id=<?php echo $row["p_id"]; ?>">Hapus</a>
 
                     </td>
@@ -172,18 +171,7 @@ include("php/header.php");
                 <input type="text" name="quantity" class="form-control" placeholder="Masukkan kuantitas produk" required="required">
               </div>
             </div>
-            <div class="form-group">
-              <label class="col-sm-4 control-label">Harga :</label>
-              <div class="col-sm-8">
-                <input type="number" name="price" class="form-control" placeholder="Masukkan harga produk" required="required">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-4 control-label">Stok :</label>
-              <div class="col-sm-8">
-                <input type="number" name="stock" class="form-control" placeholder="Masukkan kuantitas stok" required="required">
-              </div>
-            </div>
+
 
             <div class="form-group">
               <label class="col-sm-4 control-label"></label>

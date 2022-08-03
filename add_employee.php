@@ -10,7 +10,7 @@ if (isset($_POST['submit']) != "") {
   $fname      = $_POST['fname'];
   $mobile      = $_POST['mobile'];
   $gender     = $_POST['gender'];
-  $type       = $_POST['emp_type'];
+  $type       = "freelance";
   $division   = $_POST['division'];
   $salary_rate   = $_POST['salary_rate'];
 

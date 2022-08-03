@@ -21,10 +21,10 @@
                 while ($row = $q->fetch_assoc()) {
                   $total_cash = $total_cash + $row["amount"];
                 }
-                $query  = "SELECT total from sell where delete_status='0'";
+                $query  = "SELECT totalbeli from laporan";
                 $q = $conn->query($query);
                 while ($row = $q->fetch_assoc()) {
-                  $total_cash = $total_cash + $row["total"];
+                  $total_cash = $total_cash + $row["totalbeli"];
                 }
                 ?>
                 <a class="btn btn-primary " align="center" href="home_cash.php"><strong>Total Uang Perusahaan : Rp.</strong> <?php echo $total_cash; ?> </a>
@@ -44,7 +44,7 @@
                 while ($row = $q->fetch_assoc()) {
                   $total_cost = $total_cost + $row["pay_amount"];
                 }
-                $query  = "SELECT total from buy where delete_status='0'";
+                $query  = "SELECT total from buy_laporan where delete_status='0'";
                 $q = $conn->query($query);
                 while ($row = $q->fetch_assoc()) {
                   $total_cost = $total_cost + $row["total"];
@@ -99,7 +99,7 @@
 
   <div class="col-md-4">
     <div class="main-box mb-pink">
-      <a href="home_customer.php">
+      <a href="pelanggan.php">
         <i class="fa fa-user fa-5x"></i>
         <h5>Customer</h5>
       </a>
@@ -118,7 +118,7 @@
   <div class="col-md-4">
     <div class="main-box mb-dull">
       <a href="home_payment.php">
-        <i class="fa fa-inr fa-5x"></i>
+        <i class="fa fa-usd fa-5x"></i>
         <h5>Pembayaran</h5>
       </a>
     </div>
@@ -126,7 +126,7 @@
 
   <div class="col-md-4">
     <div class="main-box mb-red">
-      <a href="home_salaryRegular.php">
+      <a href="home_salaryCasual.php">
         <i class="fa fa-money fa-5x"></i>
         <h5>Gaji</h5>
       </a>
@@ -137,14 +137,14 @@
     <div class="main-box mb-red">
       <a href="home_supply.php">
         <i class="fa fa-truck fa-5x"></i>
-        <h5>Buy Supply</h5>
+        <h5>Produksi dan Bahan</h5>
       </a>
     </div>
   </div>              
 
   <div class="col-md-4">
     <div class="main-box mb-red">
-      <a href="home_sell.php">
+      <a href="home_kasir.php">
         <i class="fa fa-file-text fa-5x"></i>
         <h5>Sell</h5>
       </a>
@@ -152,7 +152,7 @@
   </div>
   <div class="col-md-4">
     <div class="main-box bg-primary">
-      <a href="home_store.php">
+      <a href="produk.php">
         <i class="fa fa-box fa-5x"></i>
         <h5>Toko</h5>
       </a>
