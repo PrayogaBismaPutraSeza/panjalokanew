@@ -10,7 +10,7 @@ while ($row = $q->fetch_assoc()) {
 }
 ?>
 <?php
-include("php/header.php");
+
 ?>
 <div id="page-inner">
   <div class="row">
@@ -33,7 +33,7 @@ include("php/header.php");
   <div class="well bs-component">
     <form class="form-horizontal">
       <fieldset>
-      <a class="btn btn-info" href="report_produksi.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
+      
         
         <br><br>
         <div class="table-responsive">
@@ -72,9 +72,7 @@ include("php/header.php");
                 <th>
                   <p align="center">Hpp</p>
                 </th>
-                <th>
-                  <p align="center">Action</p>
-                </th>
+                
                 </tr>
               </thead>
               <tbody>
@@ -110,9 +108,7 @@ include("php/header.php");
                     <td align="center">Rp. <?php echo number_format($bhnbakar) ?></td>
                     <td align="center"><?php echo $stok ?> Kg</td>
                     <td align="center">Rp. <?php echo $hpp ?></td>
-                    <td align="center">
-                      <a class="btn btn-danger" href="deleteProduksi.php?id=<?php echo $row["id"]; ?>">Hapus</a>
-                    </td>
+                    
                   </tr>
 
                 <?php } ?>
@@ -150,9 +146,7 @@ include("php/header.php");
                 <th>
                   <p align="center">Hpp</p>
                 </th>
-                <th>
-                  <p align="center">Action</p>
-                </th>
+                
               </tr>
             </table>
           </form>
@@ -196,9 +190,6 @@ include("php/header.php");
 
 
 
-
-  <?php
-
-  include("last.php");
-
-  ?>
+<script>
+    window.print();
+</script>
