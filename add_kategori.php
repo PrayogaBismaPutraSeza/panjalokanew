@@ -22,7 +22,7 @@ if (isset($_POST['submit']) != "") {
     ?>
         <script>
             alert('Invalid.');
-            window.location.href = 'index.php';
+            window.location.href = 'kategori.php';
         </script>
 <?php
     }
