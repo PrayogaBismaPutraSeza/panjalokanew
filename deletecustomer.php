@@ -1,21 +1,21 @@
 <?php
 require('db.php');
 
-$id = $_GET['id'];
+$idpelanggan = $_GET['idpelanggan'];
 
-$deleteCustomer = $conn->query("DELETE FROM customer WHERE id=$id");
+$deleteCustomer = $conn->query("DELETE FROM pelanggan WHERE idpelanggan=$idpelanggan");
 if ($deleteCustomer) {
 ?>
     <script>
-        alert('Customer berhasil dihapus');
-        window.location.href = 'home_customer.php';
+        alert('Pelanggan berhasil dihapus');
+        window.location.href = 'pelanggan.php';
     </script>
 <?php
 } else {
 ?>
     <script>
         alert('Error Acures');
-        window.location.href = 'home_customer.php';
+        window.location.href = 'pelanggan.php';
     </script>
 <?php
 }

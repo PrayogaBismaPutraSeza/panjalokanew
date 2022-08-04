@@ -9,9 +9,9 @@ while ($row = $q->fetch_assoc()) {
 }
 ?>
 <?php
-$id = $_REQUEST['id'];
+$id = $_REQUEST['idpelanggan'];
 
-$query  = "SELECT * from customer where id='" . $id . "'";
+$query  = "SELECT * from pelanggan where idpelanggan='" . $id . "'";
 $q = $conn->query($query);
 while ($row = $q->fetch_assoc()) {
 
@@ -23,7 +23,7 @@ while ($row = $q->fetch_assoc()) {
   <div id="page-inner">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="page-head-line">Customer: <?php echo $row['name']; ?></h1>
+        <h1 class="page-head-line">Customer: <?php echo $row['nama_pelanggan']; ?></h1>
         <h1 class="page-subhead-line">Selamat Datang di Sistem ERP<strong><?php echo ' ' . $siteName ?></strong>
           <i class="icon-calendar icon-large"></i>
 
@@ -40,38 +40,31 @@ while ($row = $q->fetch_assoc()) {
 
     <form class="form-horizontal" action="update_customer.php" method="post" name="form">
       <input type="hidden" name="new" value="1" />
-      <input name="id" type="hidden" value="<?php echo $row['id']; ?>" />
+      <input name="idpelanggan" type="hidden" value="<?php echo $row['idpelanggan']; ?>" />
 
       <div class="form-group">
-        <label class="col-sm-5 control-label">Customer :</label>
+        <label class="col-sm-5 control-label">Nama Pelanggan :</label>
         <div class="col-sm-4">
-          <input type="text" name="name" class="form-control" value="<?php echo $row['name']; ?>" required="required">
+          <input type="text" name="nama_pelanggan" class="form-control" value="<?php echo $row['nama_pelanggan']; ?>" required="required">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">Telepon :</label>
+        <div class="col-sm-4">
+          <input type="text" name="telepon_pelanggan" class="form-control" value="<?php echo $row['telepon_pelanggan']; ?>" required="required">
         </div>
       </div>
       <div class="form-group">
         <label class="col-sm-5 control-label">Alamat :</label>
         <div class="col-sm-4">
-          <input type="text" name="address" class="form-control" value="<?php echo $row['address']; ?>" required="required">
+          <input type="text" name="alamat_pelanggan" class="form-control" value="<?php echo $row['alamat_pelanggan']; ?>" required="required">
         </div>
       </div>
-      <div class="form-group">
-        <label class="col-sm-5 control-label">Hp :</label>
-        <div class="col-sm-4">
-          <input type="text" name="mobile" class="form-control" value="<?php echo $row['mobile']; ?>" required="required">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="col-sm-5 control-label">Detail :</label>
-        <div class="col-sm-4">
-          <input type="text" name="details" class="form-control" value="<?php echo $row['details']; ?>" required="required">
-        </div>
-      </div>
-
       <div class="form-group">
         <label class="col-sm-5 control-label"></label>
         <div class="col-sm-4">
           <input type="submit" name="submit" value="Update" class="btn btn-danger">
-          <a href="home_customer.php" class="btn btn-primary">Cancel</a>
+          <a href="pelanggan.php" class="btn btn-primary">Cancel</a>
         </div>
       </div>
 
