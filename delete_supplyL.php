@@ -8,8 +8,8 @@ $deleteProduct = $conn->query("DELETE FROM buy  WHERE b_id=$b_id");
 if ($deleteProduct) {
 ?>
     <script>
-        alert('Bahan Baku berhasil dihapus');
-        window.location.href = 'home_supply.php';
+        alert('Buy Supply berhasil dihapus');
+        window.location.href = 'supply.php';
     </script>
 <?php
 } else {
