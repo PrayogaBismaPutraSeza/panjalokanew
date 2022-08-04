@@ -88,12 +88,12 @@ include("php/header.php");
                                     <tr>
                                         <td align="center"><?php echo $emp_id ?></td>
                                         <td align="center"><b><?php echo $fname ?> <?php echo $lname ?></b></td>
-                                        <td align="center"><?php echo $salary_rate ?>/Hari</td>
+                                        <td align="center">Rp<?php echo number_format($salary_rate) ?>/Hari</td>
                                         <td align="center"><?php echo $days ?> Hari</td>
-                                        <td align="center"><?php echo $due ?></b></td>
-                                        <td align="center"><?php echo $deduction ?></b></td>
-                                        <td align="center"><?php echo $advance ?></b></td>
-                                        <td align="center"><?php echo $bonus ?></b></td>
+                                        <td align="center">Rp<?php echo number_format($due) ?></b></td>
+                                        <td align="center">Rp<?php echo number_format($deduction) ?></b></td>
+                                        <td align="center">Rp<?php echo number_format($advance) ?></b></td>
+                                        <td align="center">Rp<?php echo number_format($bonus) ?></b></td>
                                         <td align="center">
                                             <a class="btn btn-warning" href="edit_casualAccount.php?emp_id=<?php echo $row2["emp_id"]; ?>">Edit</a>
                                         </td>

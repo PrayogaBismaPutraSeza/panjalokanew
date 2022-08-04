@@ -83,8 +83,8 @@ include("php/header.php");
                                         <td align="center"><?php echo $nama_produk ?></td>
                                         <td align="center"><?php echo $nama_kategori ?></td>
                                         <td align="center"><?php echo $stock ?></td>
-                                        <td align="center">Rp<?php echo number_format($harga_modal, 0) ?></td>
-                                        <td align="center">Rp<?php echo number_format($harga_jual, 0) ?></td>
+                                        <td align="center">Rp<?php echo number_format($harga_modal) ?></td>
+                                        <td align="center">Rp<?php echo number_format($harga_jual) ?></td>
                                         <td align="center"><?php echo $tgl_input ?></td>
                                         <td align="center">
                                             <a class="btn btn-warning" href="view_produk.php?idproduk=<?php echo $row["idproduk"]; ?>">Edit</a>
