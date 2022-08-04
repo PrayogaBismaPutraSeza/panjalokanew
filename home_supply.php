@@ -84,9 +84,9 @@ include("php/header.php");
                     <td align="center"><?php echo $given_date ?></a></td>
                     <td align="center"><?php echo $b_id ?>/<?php echo $p_name ?></a></td>
                     <td align="center"><?php echo $company ?></a></td>
-                    <td align="center"><?php echo $harga ?></a></td>
+                    <td align="center">Rp<?php echo number_format($harga) ?></a></td>
                     <td align="center"><?php echo $banyak ?></a></td>
-                    <td align="center"><?php echo $total ?></a></td>
+                    <td align="center">Rp<?php echo number_format($total) ?></a></td>
 
 
                     <td align="center">

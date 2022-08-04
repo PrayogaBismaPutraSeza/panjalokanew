@@ -30,7 +30,7 @@ include("php/header.php");
     <form class="form-horizontal">
       <fieldset>
 
-        
+
         <a class="btn btn-info" href="report_supply.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
         <br><br>
         <div class="table-responsive">
@@ -84,13 +84,13 @@ include("php/header.php");
                     <td align="center"><?php echo $given_date ?></a></td>
                     <td align="center"><?php echo $b_id ?>/<?php echo $p_name ?></a></td>
                     <td align="center"><?php echo $company ?></a></td>
-                    <td align="center"><?php echo $harga ?></a></td>
+                    <td align="center">Rp<?php echo number_format($harga) ?></a></td>
                     <td align="center"><?php echo $banyak ?></a></td>
-                    <td align="center"><?php echo $total ?></a></td>
+                    <td align="center">Rp<?php echo number_format($total) ?></a></td>
 
 
                     <td align="center">
-                    
+
                       <a class="btn btn-danger" href="delete_supplyL.php?b_id=<?php echo $row["b_id"]; ?>">Hapus</a>
 
                     </td>
@@ -150,9 +150,9 @@ include("php/header.php");
                 <input class="form-control" id="datepicker" placeholder="Pilih Tanggal" name="given_date" type="text" />
                 <script>
                   $('#datepicker').datepicker({
-                    format:'mm/dd/yyyy',
-                    uiLibrary: 'bootstrap4'                    
-                  }).datepicker("setDate",'now');
+                    format: 'mm/dd/yyyy',
+                    uiLibrary: 'bootstrap4'
+                  }).datepicker("setDate", 'now');
                 </script>
               </div>
             </div>

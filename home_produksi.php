@@ -33,8 +33,8 @@ include("php/header.php");
   <div class="well bs-component">
     <form class="form-horizontal">
       <fieldset>
-      <a class="btn btn-info" href="report_produksi.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
-        
+        <a class="btn btn-info" href="report_produksi.php" target="_blank"><i class='bx bx-printer'></i> Cetak PDF</a>
+
         <br><br>
         <div class="table-responsive">
           <form method="post" action="">
@@ -42,39 +42,39 @@ include("php/header.php");
               <!-- <h3><b>Ordinance</b></h3> -->
               <thead>
                 <tr class="info">
-                <th>
-                  <p align="center">Id</p>
-                </th>
-                <th>
-                  <p align="center">Tanggal</p>
-                </th>
-                <th>
-                  <p align="center">Nama Produk Jadi</p>
-                </th>
-                <th>
-                  <p align="center">Pegawai 1</p>
-                </th>
-                <th>
-                  <p align="center">Pegawai 2</p>
-                </th>
-                <th>
-                  <p align="center">Bahan</p>
-                </th>
-                <th>
-                  <p align="center">Jumlah Bahan Digunakan</p>
-                </th>
-                <th>
-                  <p align="center">Bahan Bakar</p>
-                </th>
-                <th>
-                  <p align="center">Hasil Jadi</p>
-                </th>
-                <th>
-                  <p align="center">Hpp</p>
-                </th>
-                <th>
-                  <p align="center">Action</p>
-                </th>
+                  <th>
+                    <p align="center">Id</p>
+                  </th>
+                  <th>
+                    <p align="center">Tanggal</p>
+                  </th>
+                  <th>
+                    <p align="center">Nama Produk Jadi</p>
+                  </th>
+                  <th>
+                    <p align="center">Pegawai 1</p>
+                  </th>
+                  <th>
+                    <p align="center">Pegawai 2</p>
+                  </th>
+                  <th>
+                    <p align="center">Bahan</p>
+                  </th>
+                  <th>
+                    <p align="center">Jumlah Bahan Digunakan</p>
+                  </th>
+                  <th>
+                    <p align="center">Bahan Bakar</p>
+                  </th>
+                  <th>
+                    <p align="center">Hasil Jadi</p>
+                  </th>
+                  <th>
+                    <p align="center">Hpp</p>
+                  </th>
+                  <th>
+                    <p align="center">Action</p>
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -107,9 +107,9 @@ include("php/header.php");
                     <td align="center"><?php echo $name2 ?> </td>
                     <td align="center"><?php echo $bahan ?></td>
                     <td align="center"><?php echo $jumbahan ?> Kg</td>
-                    <td align="center">Rp. <?php echo number_format($bhnbakar) ?></td>
+                    <td align="center">Rp<?php echo number_format($bhnbakar) ?></td>
                     <td align="center"><?php echo $stok ?> Kg</td>
-                    <td align="center">Rp. <?php echo $hpp ?></td>
+                    <td align="center">Rp<?php echo number_format($hpp) ?></td>
                     <td align="center">
                       <a class="btn btn-danger" href="deleteProduksi.php?id=<?php echo $row["id"]; ?>">Hapus</a>
                     </td>
@@ -162,7 +162,7 @@ include("php/header.php");
   </div>
 
   <!-- this modal is for ADDING an Product -->
-  
+
   <!-- this modal is for my Colins -->
   <div class="modal fade" id="colins" role="dialog">
     <div class="modal-dialog modal-sm">

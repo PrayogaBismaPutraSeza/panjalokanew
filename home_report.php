@@ -83,7 +83,7 @@ include("php/header.php");
                                     <tr>
                                         <td align="center"><?php echo $sn ?></td>
                                         <td align="center"><?php echo $GivenDate ?></td>
-                                        <td align="center"><?php echo $amount  ?></td>
+                                        <td align="center">Rp<?php echo number_format($amount) ?></td>
                                         <td align="center"><?php echo $remark  ?></td>
                                     </tr>
                                 <?php } ?>
