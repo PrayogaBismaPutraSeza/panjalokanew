@@ -9,7 +9,7 @@ if ($deleteProduct) {
 ?>
     <script>
         alert('Buy Supply berhasil dihapus');
-        window.location.href = 'home_supply.php';
+        window.location.href = 'supply.php';
     </script>
 <?php
 } else {
