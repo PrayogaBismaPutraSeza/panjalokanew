@@ -10,14 +10,6 @@ include("add_salary.php");
 include("php/header.php");
 ?>
 <div id="page-inner">
-    <div class="masthead">
-        <nav class="navbar navbar-inverse">
-            <div class="navbar-header">
-
-                
-            </div>
-        </nav>
-    </div>
     <div class="row">
         <div class="col-md-12">
             <h1 class="page-head-line">Gaji Pegawai</h1>
