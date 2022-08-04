@@ -15,17 +15,17 @@ $(function () {
     
           function sub() {
           var B = Number($("#banyak").val());
-          var c = 0;
+          var c = 155000;
           var d = 0;
           if((Number($("#operation_value").val()) > Number($("#banyak").val()))|| (Number($("#operation_value").val()) > 150 || (Number($("#operation_value").val()) < 150))){
             $("#result").val(B);
-            $("#stok").val(c);
+            $("#stok").val(d);
             $("#hpp").val(d);
             $("#hppKg").val(d);       
           } else {
             $("#result").val(Number($("#banyak").val()) - Number($("#operation_value").val()));
             $("#stok").val(Number($("#operation_value").val()) - (Number($("#operation_value").val()) * 0.3));
-            $("#hpp").val((Number($("#harga").val()) * Number($("#operation_value").val())) + 155000);
+            $("#hpp").val((Number($("#harga").val()) * Number($("#operation_value").val())) + c);
             $("#hppKg").val(Number($("#hpp").val()) / Number($("#operation_value").val()));
           }
           //$("#subt").val(Number($("#num1").val()) - Number($("#num2").val()));

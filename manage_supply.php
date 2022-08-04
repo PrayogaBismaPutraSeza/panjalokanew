@@ -224,7 +224,7 @@ while ($row = $q->fetch_assoc()) {
       });
     });
   </script>
-  <script src="assets/jquery/supOps2.js" type="text/javascript"></script>
+  <script src="assets/jquery/supOps.js" type="text/javascript"></script>
   <?php
   include("last.php");
   ?>

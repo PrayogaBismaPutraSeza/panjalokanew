@@ -22,7 +22,7 @@ $q1 = $conn->query($query1);
 $row1 = $q1->fetch_assoc();
 $days   = $row1['rate'];
 $bonus = $row2["bonus"];
-if ($emp_type == "Freelance") {
+if ($emp_type == "freelance") {
   $salary = ($salary_rate * $days) + $bonus;
 } else {
   $salary = $salary_rate;
@@ -71,7 +71,7 @@ $q10 = $conn->query($query1);
 $row10 = $q10->fetch_assoc();
 $days   = $row10['rate'];
 
-if ($emp_type == "Freelance") {
+if ($emp_type == "freelance") {
   $income   = ($salary_rate * $days) + $bonus;
 } else {
   $income   = $bonus + $salary + $due;
