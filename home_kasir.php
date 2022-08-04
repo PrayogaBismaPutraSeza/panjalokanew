@@ -203,7 +203,7 @@ $kodeCart = $huruf . $tgl . sprintf("%03s", $urutan);
             <input type="text" class="form-control form-control-sm bg-white" id="stock" readonly>
         </div>
         <div class="col-6 col-lg-1 m-pr-0">
-            <label class="mb-1">Qty</label>
+            <label class="mb-1">Qty /Kg</label>
             <input type="number" class="form-control form-control-sm" id="quantity" onchange="total()"
             name="quantity" placeholder="0" required>
         </div>
@@ -273,7 +273,7 @@ if(isset($_POST['tambahcuy'])){
                                         <td><?php echo $d['kode_produk'] ?></td>
                                         <td><?php echo $d['nama_produk'] ?></td>
                                         <td>Rp.<?php echo ($d['harga_jual']) ?></td>
-                                        <td><?php echo $d['quantity'] ?></td>
+                                        <td><?php echo $d['quantity'] ?> Kg</td>
                                         <td>Rp.<?php echo ($subtotalcart) ?></td>
                                         <td>
                                             <form method="post" class="d-inline-block">
