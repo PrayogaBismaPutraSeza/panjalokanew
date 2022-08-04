@@ -31,7 +31,7 @@ if (isset($_POST['submit']) != "") {
     date_default_timezone_set("Asia/Jakarta");
     $w_date = date('Y-m-d', strtotime($_POST['given_date']) );
     
-    if ($w_date == " ") {
+    if ($w_date == " " && $p_name && $name1 == " " && $name2 == " ") {
         $empty = true;
     }
     $query4  = "SELECT w_date from works where emp_id = $emp_id1";

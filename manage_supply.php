@@ -98,9 +98,9 @@ while ($row = $q->fetch_assoc()) {
                 <select class="form-control" id="name" style=" height:35px;" name="name" onchange="myFunction(this.value)">
                   <option value=''>------- Pilih Pegawai --------</option>
                   <?php
-                  $query1  = "SELECT emp_id, fname, lname from employee where delete_status = '0'AND emp_type = 'freelance' AND division = 'produksi'";
+                  $query1  = "SELECT emp_id, fname, lname,salary from employee where delete_status = '0'AND emp_type = 'freelance' AND division = 'produksi'";
                   $q1 = $conn->query($query1);
-                  while ($row1 = $q1->fetch_assoc()) {
+                  while ($row1 = $q1->fetch_assoc()) { 
                   ?>
                     <option class="form-control" name="emp_id1" value="<?php echo $row1["emp_id"] ?> <?php echo $row1["fname"] ?> <?php echo $row1["lname"] ?>"><?php echo $row1["emp_id"] ?> . <?php echo $row1["fname"] ?> <?php echo $row1["lname"] ?></option>
                   <?php  } ?>
@@ -152,7 +152,7 @@ while ($row = $q->fetch_assoc()) {
       <div class="form-group">
         <label class="col-sm-5 control-label">Value :</label>
         <div class="col-sm-4">
-          <input type="number" id="operation_value" name="operation_value" class="form-control">
+          <input type="number" id="operation_value" name="operation_value" value='0' class="form-control">
         </div>
       </div>
       <div class="form-group">
