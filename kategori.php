@@ -8,14 +8,6 @@ while ($row = $q->fetch_assoc()) {
 ?>
 <?php
 include("php/header.php");
-$result1 = mysqli_query($conn, "SELECT * FROM user");
-while ($data = mysqli_fetch_array($result1)) {
-    $user = $data['username'];
-    $id = $data['id'];
-    $toko = $data['nama_toko'];
-    $alamat = $data['alamat'];
-    $telp = $data['telepon'];
-}
 ?>
 <div id="page-inner">
     <div class="row">
