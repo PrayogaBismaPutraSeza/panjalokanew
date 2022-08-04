@@ -91,7 +91,7 @@ include("php/header.php");
 
                     <td align="center">
                     
-                      <a class="btn btn-danger" href="delete_supply.php?b_id=<?php echo $row["b_id"]; ?>">Hapus</a>
+                      <a class="btn btn-danger" href="delete_supplyL.php?b_id=<?php echo $row["b_id"]; ?>">Hapus</a>
 
                     </td>
                   </tr>
