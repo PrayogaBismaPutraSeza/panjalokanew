@@ -90,7 +90,7 @@ include("php/header.php");
 
 
                     <td align="center">
-                    <a class="btn btn-warning" href="manage_supply.php?p_id=<?php echo $row["b_id"]; ?>">Produksi</a>
+                      <a class="btn btn-warning" href="manage_supply.php?p_id=<?php echo $row["b_id"]; ?>">Produksi</a>
                       <a class="btn btn-danger" href="delete_supply.php?b_id=<?php echo $row["b_id"]; ?>">Hapus</a>
 
                     </td>
@@ -150,9 +150,9 @@ include("php/header.php");
                 <input class="form-control" id="datepicker" placeholder="Pilih Tanggal" name="given_date" type="text" />
                 <script>
                   $('#datepicker').datepicker({
-                    format:'mm/dd/yyyy',
-                    uiLibrary: 'bootstrap4'                    
-                  }).datepicker("setDate",'now');
+                    format: 'mm/dd/yyyy',
+                    uiLibrary: 'bootstrap4'
+                  }).datepicker("setDate", 'now');
                 </script>
               </div>
             </div>

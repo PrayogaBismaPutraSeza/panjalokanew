@@ -1,8 +1,6 @@
-
-
-<?php 
+<?php
 include("first.php");
-
+include("add_kategori.php");
 $query  = "SELECT * from deductions WHERE deduction_id='1'";
 $q = $conn->query($query);
 while ($row = $q->fetch_assoc()) {
@@ -11,8 +9,7 @@ while ($row = $q->fetch_assoc()) {
 <?php
 include("php/header.php");
 $result1 = mysqli_query($conn, "SELECT * FROM user");
-while($data = mysqli_fetch_array($result1))
-{
+while ($data = mysqli_fetch_array($result1)) {
     $user = $data['username'];
     $id = $data['id'];
     $toko = $data['nama_toko'];
@@ -21,144 +18,137 @@ while($data = mysqli_fetch_array($result1))
 }
 ?>
 <div id="page-inner">
-  <div class="row">
-    <div class="col-md-12">
-      <h1 class="page-head-line">Kasir</h1>
-      <h1 class="page-subhead-line">Selamat Datang di<strong><?php echo ' ' . $siteName ?></strong>
-        <i class="icon-calendar icon-large"></i>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-head-line">Kategori</h1>
+            <h1 class="page-subhead-line">Selamat Datang di<strong><?php echo ' ' . $siteName ?></strong>
+                <i class="icon-calendar icon-large"></i>
 
 
-        <?php
-        date_default_timezone_set("Asia/Jakarta");
-        echo  date(" l, F d Y") . "<br>";
+                <?php
+                date_default_timezone_set("Asia/Jakarta");
+                echo  date(" l, F d Y") . "<br>";
 
-        ?>
-      </h1>
+                ?>
+            </h1>
 
-    </div>
-  </div>
-<br>
-<?php
-            if(isset($_POST['addkategori']))
-            {
-                $namakategori = htmlspecialchars($_POST['nama_kategori']);    
-                $tambahkat = mysqli_query($conn,"INSERT INTO kategori (nama_kategori) values ('$namakategori')");
-                if ($tambahkat){
-                    echo '<script>alert("Berhasil Menambahkan Data");window.location="kategori.php"</script>';
-                } else {
-                    echo '<script>alert("Gagal Menambahkan Data");history.go(-1);</script>';
-                }
-                
-            };
-            ?>
-<div class="card">
-    <div class="card-header">
-        <div class="card-tittle"><i class="fa fa-table me-2 d-none d-sm-inline-block d-md-inline-block"></i> Data Kategori 
-        <?php 
-            if(!empty($_GET['edit'])){
-                $idkategori = $_GET['edit'];
-                $edit = mysqli_query($conn,"SELECT * FROM kategori WHERE idkategori='$idkategori'");
-                while($e=mysqli_fetch_array($edit)){
-                    $namo= $e['nama_kategori'];
-                    echo '<form method="POST" class="float-right">
-                    <div class="input-group">
-                        <input type="text" name="nama_kategori" class="form-control form-control-sm bg-white"
-                        style="border-radius:0.428rem 0px 0px 0.428rem;"
-                        placeholder="Masukan Kategori" value="'.$namo.'" required>
-                        <div class="input-group-append">
-                            <button class="btn btn-success btn-xs p-1" name="update"
-                            style="border-radius: 0px 0.428rem 0.428rem 0px;" type="submit">
-                                <i class="fas fa-check"></i><span class="d-none d-sm-inline-block d-md-inline-block ml-1">Update</span>
-                            </button>
-                            <a href="kategori.php" class="btn btn-danger btn-xs py-1 px-2 ml-1"><i class="fas fa-times"></i>
-                            <span class="d-none d-sm-inline-block d-md-inline-block ml-1">Batal</span></a>
-                        </div>
-                    </div>
-                </form>';
-                }
-                if(isset($_POST['update'])){
-                    $namakategori = htmlspecialchars($_POST['nama_kategori']);
-                    $editup = mysqli_query($conn,"UPDATE kategori SET nama_kategori='$namakategori' WHERE idkategori='$idkategori'");
-                    echo '<script>alert("Berhasil Update Kategori");window.location="kategori.php"</script>';
-                    }
-            } else { ?>
-                <form method="POST" class="float-right">
-                <div class="input-group">
-                    <input type="text" name="nama_kategori" class="form-control form-control-sm bg-white"
-                    style="border-radius:0.428rem 0px 0px 0.428rem;"
-                    placeholder="Masukan Kategori" required>
-                    <div class="input-group-append">
-                        <button class="btn btn-primary btn-xs p-1" name="addkategori"
-                        style="border-radius: 0px 0.428rem 0.428rem 0px;" type="submit">
-                            <i class="fa fa-plus"></i><span class="d-none d-sm-inline-block d-md-inline-block ml-1">Tambah</span>
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <?php } ?>
         </div>
     </div>
-        <div class="card-body">
-            <table class="table table-striped table-sm table-bordered dt-responsive nowrap" id="table" width="100%">
-                        <thead>
-                        <tr>
-                            <th>No.</th>
-                            <th>Nama Kategori</th>
-                            <th>Qty</th>
-                            <th>Tanggal</th>
-                            <th>Opsi</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                $no=1;
-                                $data_produk=mysqli_query($conn,"SELECT * FROM kategori ORDER BY idkategori ASC");
-                                while($d=mysqli_fetch_array($data_produk)){
-                                    $idkategori = $d['idkategori'];
-                                    ?>
-                                    
+    <div class="well bs-component">
+        <form class="form-horizontal">
+            <fieldset>
+                <button type="button" data-toggle="modal" data-target="#addkategori" class="btn btn-success">Tambah Kategori Baru</button>
+                <br><br>
+                <div class="table-responsive">
+                    <form method="post" action="">
+                        <table class="table table-bordered table-hover table-condensed" id="myTable">
+                            <thead>
+                                <tr class="info">
+                                    <th>
+                                        <p align="center">Nama Kategori</p>
+                                    </th>
+                                    <th>
+                                        <p align="center">Qty</p>
+                                    </th>
+                                    <th>
+                                        <p align="center">Tanggal</p>
+                                    </th>
+                                    <th>
+                                        <p align="center">Aksi</p>
+                                    </th>
+                            </thead>
+                            <tbody>
+                                <?php
+                                global $idkategori;
+
+                                $query = "select * from kategori ORDER BY idkategori ASC ";
+                                $q = $conn->query($query);
+                                while ($row = $q->fetch_assoc()) {
+                                    $idkategori = $row['idkategori'];
+                                    $nama_kategori = $row['nama_kategori'];
+                                    $tgl_dibuat = $row['tgl_dibuat'];
+
+                                ?>
                                     <tr>
-                                        <td><?php echo $no++ ?></td>
-                                        <td><?php echo $d['nama_kategori'] ?></td>
-                                        <td><?php 
-                                            $result1 = mysqli_query($conn,"SELECT Count(idproduk) AS count FROM produk p, kategori k WHERE p.idkategori=k.idkategori and k.idkategori='$idkategori' ORDER BY idproduk ASC");
-                                            $cekrow = mysqli_num_rows($result1);
-                                            $row1 = mysqli_fetch_assoc($result1);
-                                            $count = $row1['count'];
-                                            if($cekrow > 0){
-                                            echo ($count);
-                                            }
-                                        ?></td>
-                                        <td><?php echo $d['tgl_dibuat'] ?></td>
-                                        <td>
-                                        <a href="?edit=<?php echo $idkategori ?>" class="btn btn-primary btn-xs">
-                                            <i class="fa fa-pen fa-xs mr-1"></i>Edit
-                                        </a>
-                                            <a class="btn btn-danger btn-xs" href="?hapus=<?php echo $idkategori ?>" 
-                                            onclick="javascript:return confirm('Hapus Data produk - <?php echo $d['nama_kategori'] ?> ?');">
-                                            <i class="fa fa-trash fa-xs mr-1"></i>Hapus</a>
+                                        <td align="center"><?php echo $nama_kategori ?></td>
+                                        <td align="center"><?php $result1 = mysqli_query($conn, "SELECT Count(idproduk) AS count FROM produk p, kategori k WHERE p.idkategori=k.idkategori and k.idkategori='$idkategori' ORDER BY idproduk ASC");
+                                                            $cekrow = mysqli_num_rows($result1);
+                                                            $row1 = mysqli_fetch_assoc($result1);
+                                                            $count = $row1['count'];
+                                                            if ($cekrow > 0) {
+                                                                echo ($count);
+                                                            } ?></td>
+                                        <td align="center"><?php echo $tgl_dibuat ?></td>
+
+
+                                        <td align="center">
+                                            <a class="btn btn-warning" href="view_kategori.php?idkategori=<?php echo $row["idkategori"]; ?>">Edit</a>
+                                            <a class="btn btn-danger" href="delete_kategori.php?idkategori=<?php echo $row["idkategori"]; ?>">Hapus</a>
+
                                         </td>
-                                    </tr>		
-                        <?php }?>
-					</tbody>
-                </table>
+                                    </tr>
+
+                                <?php } ?>
+                            </tbody>
+
+                            <tr class="info">
+                                <th>
+                                    <p align="center">Nama Kategori</p>
+                                </th>
+                                <th>
+                                    <p align="center">Qty</p>
+                                </th>
+                                <th>
+                                    <p align="center">Tanggal</p>
+                                </th>
+                                <th>
+                                    <p align="center">Aksi</p>
+                                </th>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- this modal is for ADDING an Product -->
+    <div class="modal fade" id="addkategori" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="padding:20px 50px;">
+                    <button type="button" class="close" data-dismiss="modal" title="Close">&times;</button>
+
+                    <input type="hidden" name="b_id" value="<?php echo $b_id; ?>" class="form-control">
+                    <h3 align="center"><b>Tambah kategori</b></h3>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+
+                    <form class="form-horizontal" action="#" name="form" method="post">
+                        <div class="form-group">
+
+                            <label class="col-sm-4 control-label">Nama Kategori :</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="nama_kategori" class="form-control" placeholder="Masukkan kategori" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"></label>
+                            <div class="col-sm-8">
+                                <input type="submit" name="submit" class="btn btn-success" value="Tambahkan">
+                                <input type="reset" name="" class="btn btn-danger" value="Kosongkan Form">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
         </div>
-</div>
+    </div>
+    <?php
 
-<?php 
-	if(!empty($_GET['hapus'])){
-		$idkategori = $_GET['hapus'];
-		$hapus_data = mysqli_query($conn, "DELETE FROM kategori WHERE idkategori='$idkategori'");
-        if($hapus_data){
-            echo '<script>alert("Berhasi Hapus Kategori");window.location="kategori.php"</script>';
-        } else {
-            echo '<script>alert("gagal Hapus Kategori");history.go(-1);</script>';
-        }
-	};
+    include("last.php");
+
     ?>
-<?php
-
-include("last.php");
-
-?>
-
