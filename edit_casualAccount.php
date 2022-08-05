@@ -47,7 +47,7 @@ include("php/header.php");
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Gaji :</label>
                             <div class="col-sm-4">
-                                <input type="text" name="salary" class="form-control" value="<?php echo $salary_rate; ?>" required="required">
+                                <input type="text" name="salary" class="form-control" value="Rp<?php echo number_format($salary_rate); ?>" required="required">
                             </div>
                         </div>
                         <div class="form-group">
@@ -66,7 +66,7 @@ include("php/header.php");
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Kelebihan :</label>
                             <div class="col-sm-4">
-                                <input type="readonly" name="advance" class="form-control" value="<?php echo $advanceSalary; ?>" required="required">
+                                <input type="readonly" name="advance" class="form-control" value="Rp<?php echo number_format($advanceSalary); ?>" required="required">
                             </div>
                             <div class="col-sm-4">
                                 <span style="color:blue"><?php echo $message1 ?> </span><br>
@@ -76,13 +76,13 @@ include("php/header.php");
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Bonus :</label>
                             <div class="col-sm-4">
-                                <input type="text" name="bonus" class="form-control" value="<?php echo $bonus; ?>" required="required">
+                                <input type="text" name="bonus" class="form-control" value="Rp<?php echo number_format($bonus); ?>" required="required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Jumlah Pembayaran:</label>
                             <div class="col-sm-4">
-                                <input type="text" name="totalDeduction" class="form-control" value="<?php echo $d_amount; ?>" required="required">
+                                <input type="text" name="totalDeduction" class="form-control" value="Rp<?php echo number_format($d_amount); ?>" required="required">
                             </div>
                         </div>
 
@@ -92,7 +92,7 @@ include("php/header.php");
 
                             <label class="col-sm-3 control-label">Yang harus dibayar :</label>
                             <div class="col-sm-4">
-                                <?php echo $netpay ; ?>
+                                Rp<?php echo number_format($netpay); ?>
                             </div>
                             <div class="col-sm-5">
                                 <span style="color:#ff4d4d"><?php echo $message3; ?><span><br>
@@ -103,11 +103,11 @@ include("php/header.php");
 
                             <label class="col-sm-3 control-label">Total Pembayaran :</label>
                             <div class="col-sm-4">
-                                <?php echo $salaryPaid; ?>
+                                Rp<?php echo number_format($salaryPaid); ?>
                             </div>
                             <div class="col-sm-5">
-                                <?php echo "Tunai : " . $paid_in_cash; ?><br>
-                                <?php echo "Transfer : " . $paid_in_bkash; ?>
+                                <?php echo "Tunai : Rp" . number_format($paid_in_cash); ?><br>
+                                <?php echo "Transfer : Rp" . number_format($paid_in_bkash); ?>
                             </div>
                         </div>
                         <div class="form-group">
@@ -220,7 +220,7 @@ include("php/header.php");
                                             <tr>
                                                 <td align="center"><?php echo $d_date ?></td>
                                                 <td align="center"><?php echo $d_Cause ?></td>
-                                                <td align="center"><?php echo $d_amount ?></td>
+                                                <td align="center">Rp<?php echo number_format($d_amount) ?></td>
                                                 </td>
                                             </tr>
                                         <?php } ?>

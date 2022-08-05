@@ -103,7 +103,7 @@ include("php/header.php");
       <div class="form-group">
         <label class="col-sm-5 control-label">Gaji :</label>
         <div class="col-sm-4">
-          <input type="text" name="salary" class="form-control" value="<?php echo $row['salary']; ?>" required="required">
+          <input type="text" name="salary" class="form-control" value="Rp<?php echo number_format($row['salary']); ?>" required="required">
         </div>
       </div><br><br>
       <div class="form-group">
